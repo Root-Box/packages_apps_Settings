@@ -39,6 +39,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String TAG = "Rootbox";
 
     private static final String KEY_LOCK_CLOCK = "lock_clock";
+    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private final Configuration mCurConfig = new Configuration();
 
     @Override
@@ -48,6 +49,17 @@ public class Rootbox extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.rootbox_settings);
         // Do not display lock clock preference if its not installed
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
+
+        // Only show the hardware keys config on a device that does not have a navbar
+        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            if (windowManager.hasNavigationBar()) {
+                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
+            }
+        } catch (RemoteException e) {
+            // Do nothing
+        }
     }
     
     @Override
