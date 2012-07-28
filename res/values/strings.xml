@@ -2346,6 +2346,8 @@
 
     <!-- Device specific settings -->
     <string name="advanced_settings_title">Device options</string>
+    <!-- Update Me -->
+    <string name="update_settings_title">RootBox Update</string>
 
     <!-- Applications Settings --> <skip />
     <!-- Applications settings screen, setting option name for the user to go to the screen to manage installed applications  -->
