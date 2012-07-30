@@ -68,6 +68,17 @@
                 android:targetPackage="com.aokp.romcontrol" />
     </header>
 
+    <!-- ExTweaks -->
+    <header
+        android:id="@+id/extweaks_settings" 
+        android:icon="@drawable/ic_settings_extweaks" 
+        android:title="@string/extweaks_settings_title">
+        <intent 
+            android:targetPackage="com.darekxan.extweaks.app" 
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.darekxan.extweaks.app.ExTweaksActivity" />
+    </header>
+
     <!-- Device Specific settings -->
     <header
         android:id="@+id/device_settings"
