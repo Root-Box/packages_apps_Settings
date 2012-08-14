@@ -109,8 +109,8 @@
             android:title="@string/update_settings_title">
         <intent
                 android:action="android.intent.action.MAIN"
-                android:targetPackage="com.acquariusoft.UpdateMe"
-                android:targetClass="com.acquariusoft.UpdateMe.UpdateMeActivity" />
+                android:targetPackage="com.updater.ota"
+                android:targetClass="com.updater.ota.OTAUpdaterActivity" />
     </header>
 
     <!-- DEVICE -->
