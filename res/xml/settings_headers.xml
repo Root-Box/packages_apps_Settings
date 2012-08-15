@@ -104,7 +104,6 @@
 
     <!-- Update Me -->
     <header 
-            android:id="@+id/update_settings"
             android:icon="@drawable/ic_settings_update"
             android:title="@string/update_settings_title">
         <intent
