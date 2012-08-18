@@ -29,6 +29,15 @@
                 android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
   </PreferenceScreen>
 
+  <PreferenceScreen
+        android:key="screen_security"
+        android:icon="@drawable/ic_settings_security"
+        android:fragment="com.android.settings.SecuritySettings"
+        android:title="@string/screen_security_category"
+        android:summary="@string/screen_security_summary">
+        <extra android:name="cm_security" android:value="true" />
+  </PreferenceScreen>
+
   <CheckBoxPreference
 	android:key="power_menu_expanded_desktop"
         android:icon="@drawable/ic_lock_expanded_desktop"

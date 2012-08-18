@@ -23,8 +23,10 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.IWindowManager;
 import java.util.regex.Matcher;
@@ -46,6 +48,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private PreferenceScreen mLockscreenButtons;
     private CheckBoxPreference mExpandedDesktopPref;
     private final Configuration mCurConfig = new Configuration();
+
+    public boolean hasButtons() {
+        return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
