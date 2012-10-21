@@ -382,7 +382,7 @@ public class Settings extends PreferenceActivity
             if (id == R.id.dock_settings) {
                 if (!needsDockSettings())
                     target.remove(header);
-            } else if (id == R.id.operator_settings || id == R.id.manufacturer_settings || id == R.id.device_settings || id == R.id.extweaks_settings) {
+            } else if (id == R.id.operator_settings || id == R.id.manufacturer_settings || id == R.id.paranoid_settings || id == R.id.device_settings || id == R.id.extweaks_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
             } else if (id == R.id.wifi_settings) {
                 // Remove WiFi Settings if WiFi service is not available.
