@@ -1,4 +1,4 @@
-package com.android.settings.about;
+package com.android.settings;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,14 +7,14 @@ import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 
-import com.android.settings.AOKPPreferenceFragment;
+import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class About extends AOKPPreferenceFragment {
+public class About extends SettingsPreferenceFragment {
 
     public static final String TAG = "About";
 
@@ -26,7 +26,6 @@ public class About extends AOKPPreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(R.string.title_about);
         addPreferencesFromResource(R.xml.prefs_about);
         mSiteUrl = findPreference("rootbox_website");
         mSourceUrl = findPreference("rootbox_source");
