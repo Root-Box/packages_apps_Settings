@@ -31,9 +31,9 @@
 		android:title="@string/devs">
 		<com.android.settings.about.DeveloperPreference
 			android:title="Bajee"
-			aokp:nameDev="Bajee"
-			aokp:twitterHandle="Bajee11"
-			aokp:donateLink="@string/donate_bajee" />
+			android:nameDev="Bajee"
+			android:twitterHandle="Bajee11"
+			android:donateLink="@string/donate_bajee" />
 	</PreferenceCategory>
 
 </PreferenceScreen>
