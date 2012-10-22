@@ -130,7 +130,6 @@
 		android:fragment="com.android.settings.about.About"
 		android:title="@string/about_rootbox"
 		android:summary="@string/about_rootbox_summary" />
-    </header>
 
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
