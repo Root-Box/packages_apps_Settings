@@ -4270,6 +4270,7 @@
 
     <!-- About RootBox -->
     <string name="title_about">About RootBox</string>
+    <string name="app_name">RootBox</string>
     <string name="devs">Developer</string>
     <string name="rootbox">Vanilla RootBox</string>
     <string name="rootbox_website_title">RootBox Blog</string>
