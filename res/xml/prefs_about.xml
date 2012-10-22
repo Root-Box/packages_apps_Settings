@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory
+		android:key="android"
+		android:title="@string/rootbox">
+
+		<Preference
+			android:key="rootbox_website"
+			android:title="@string/rootbox_website_title"
+			android:summary="@string/rootbox_website_summary" />
+
+		<Preference
+			android:key="rootbox_source"
+			android:title="@string/rootbox_source_title"
+			android:summary="@string/rootbox_source_summary" />
+
+
+		<Preference
+			android:key="rootbox_irc"
+			android:title="@string/rootbox_irc_title"
+			android:summary="@string/rootbox_irc_summary" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="devs"
+		android:title="@string/devs">
+		<com.android.settings.about.DeveloperPreference
+			android:title="Bajee"
+			aokp:nameDev="Bajee"
+			aokp:twitterHandle="Bajee11"
+			aokp:donateLink="@string/donate_bajee" />
+	</PreferenceCategory>
+
+</PreferenceScreen>

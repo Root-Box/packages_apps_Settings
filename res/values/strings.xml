@@ -32,8 +32,8 @@
     <string name="header_category_wireless_networks">WIRELESS &amp; NETWORKS</string>
     <!-- Settings main menu category heading. Device Tweaks (Rom Control, ExTweaks, Themes...). [CHAR LIMIT=40] -->
     <string name="header_category_tweaks">DEVICE TWEAKS</string>
-    <!-- Settings main menu category heading. OTA Update RootBox. [CHAR LIMIT=40] -->
-    <string name="header_category_ota">OTA UPDATES</string>
+    <!-- Settings main menu category heading. RootBox Section. [CHAR LIMIT=40] -->
+    <string name="header_category_rootbox">ROOTBOX</string>
     <!-- Settings main menu category heading. Device (Sound, display, battery, applications...). [CHAR LIMIT=40] -->
     <string name="header_category_device">DEVICE</string>
     <!-- Settings main menu category heading. Personal (Accounts, security, language, backup...). [CHAR LIMIT=40] -->
@@ -2365,7 +2365,7 @@
     <!-- Device specific settings -->
     <string name="advanced_settings_title">Galaxy Settings</string>
     <!-- Update Me -->
-    <string name="update_settings_title">RootBox Update</string>
+    <string name="update_settings_title">Update Center</string>
     <!-- ExTweaks -->
     <string name="extweaks_settings_title">ExTweaks</string>
 
@@ -4267,5 +4267,18 @@
     <!-- USB Mass Storage -->
     <string name="usb_mass_storage_title">Mass storage</string>
     <string name="usb_mass_storage_summary">Enable USB mass storage</string>
+
+    <!-- About RootBox -->
+    <string name="devs">Developer</string>
+    <string name="rootbox">Vanilla RootBox</string>
+    <string name="rootbox_website_title">RootBox Blog</string>
+    <string name="rootbox_website_summary">Find latest news and updates about RootBox.</string>
+    <string name="rootbox_source_title">RootBox Source</string>
+    <string name="rootbox_source_summary">RootBox is open sourced. You can find source at github.com/Root-Box</string>
+    <string name="rootbox_irc_title">Join me on IRC</string>
+    <string name="rootbox_irc_summary">#aokp-sgs2 @ irc.freenode.net</string>
+    <string name="about_rootbox">About RootBox</string>
+    <string name="about_rootbox_summary">@null</string>
+    <string name="donate_bajee">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=62LG5GU2RSW9Y</string>
 
 </resources>

@@ -111,7 +111,7 @@
     </header>
 
     <!-- ROOTBOX OTA UPDATES -->
-    <header android:title="@string/header_category_ota" />
+    <header android:title="@string/header_category_rootbox" />
 
     <!-- Update Me -->
     <header 
@@ -121,6 +121,15 @@
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.s0up.goomanager"
                 android:targetClass="com.s0up.goomanager.GooManagerActivity" />
+    </header>
+
+    <!-- About RootBox -->
+    <header
+		android:id="@+id/about"
+                android:icon="@drawable/ic_settings_update"
+		android:fragment="com.android.settings.about.About"
+		android:title="@string/about_rootbox"
+		android:summary="@string/about_rootbox_summary" />
     </header>
 
     <!-- DEVICE -->
