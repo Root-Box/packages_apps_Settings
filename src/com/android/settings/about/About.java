@@ -7,8 +7,8 @@ import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 
-import com.android.settings.about.AOKPPreferenceFragment;
-import com.aokp.romcontrol.R;
+import com.android.settings.AOKPPreferenceFragment;
+import com.android.settings.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;

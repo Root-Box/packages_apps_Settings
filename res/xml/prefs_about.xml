@@ -30,10 +30,10 @@
 		android:key="devs"
 		android:title="@string/devs">
 		<com.android.settings.about.DeveloperPreference
-			android:title="Bajee"
-			android:nameDev="Bajee"
-			android:twitterHandle="Bajee11"
-			android:donateLink="@string/donate_bajee" />
+			settings:title="Bajee"
+			settings:nameDev="Bajee"
+			settings:twitterHandle="Bajee11"
+			settings:donateLink="@string/donate_bajee" />
 	</PreferenceCategory>
 
 </PreferenceScreen>
