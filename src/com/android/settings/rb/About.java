@@ -1,4 +1,4 @@
-package com.android.settings;
+package com.android.settings.cnd;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -19,17 +19,16 @@ public class About extends SettingsPreferenceFragment {
     public static final String TAG = "About";
 
     Preference mSiteUrl;
+    Preference mForumUrl;
     Preference mSourceUrl;
-    Preference mReviewUrl;
-    Preference mIrcUrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.prefs_about);
+        addPreferencesFromResource(R.xml.about_rom);
         mSiteUrl = findPreference("rootbox_website");
+        mForumUrl = findPreference("rootbox_irc");
         mSourceUrl = findPreference("rootbox_source");
-        mIrcUrl = findPreference("rootbox_irc");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
         ArrayList<Preference> devs = new ArrayList<Preference>();
@@ -51,11 +50,12 @@ public class About extends SettingsPreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
             launchUrl("http://wheretwo.com/Rootbox");
+        } else if (preference == mForumUrl) {
+            launchUrl("http://webchat.freenode.net/?channels=aokp-sgs2");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/Root-Box");
-        } else if (preference == mIrcUrl) {
-            launchUrl("http://webchat.freenode.net/?channels=aokp-sgs2");
         }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

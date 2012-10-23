@@ -110,7 +110,7 @@
                 android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 
-    <!-- ROOTBOX OTA UPDATES -->
+    <!-- ROOTBOX SECTION -->
     <header android:title="@string/header_category_rootbox" />
 
     <!-- Update Me -->
@@ -125,11 +125,10 @@
 
     <!-- About RootBox -->
     <header
-		android:id="@+id/about"
-                android:icon="@drawable/ic_settings_update"
-		android:fragment="com.android.settings.about.About"
-		android:title="@string/about_rootbox"
-		android:summary="@string/about_rootbox_summary" />
+        android:id="@+id/about_rom"
+        android:fragment="com.android.settings.rb.About"
+        android:icon="@drawable/ic_settings_about_rb"
+        android:title="@string/about_rb_settings_title" />
 
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />

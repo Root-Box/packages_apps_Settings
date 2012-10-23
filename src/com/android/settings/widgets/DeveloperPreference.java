@@ -1,4 +1,4 @@
-package com.android.settings.about;
+package com.android.settings.widgets;
 
 import android.content.Context;
 import android.content.Intent;
