@@ -1,4 +1,4 @@
-package com.android.settings.cnd;
+package com.android.settings.rb;
 
 import android.content.Intent;
 import android.net.Uri;
