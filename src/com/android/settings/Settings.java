@@ -789,4 +789,6 @@ public class Settings extends PreferenceActivity
     public static class AndroidBeamSettingsActivity extends Settings { /* empty */ }
     public static class AnonymousStatsActivity extends Settings { /* empty */ }
     public static class AboutActivity extends Settings { /* empty */ }
+    public static class InterfaceActivity extends Settings { /* empty */ }
+    public static class LockscreenActivity extends Settings { /* empty */ }
 }
