@@ -4290,8 +4290,8 @@
     <string name="interface_settings_title">RootBox Settings</string>
     <string name="interface_lockscreen_title">Lockscreen Options</string>
     <string name="interface_statusbar_title">Statusbar Options</string>
-    <string name="enable_alarm_icon">Enable alarm icon</string>
-    <string name="enable_alarm_icon_summary">Allows you to enable or disable alarm icon in statusbar</string>
+    <string name="disable_alarm_icon">Disable alarm icon</string>
+    <string name="disable_alarm_icon_summary">Allows you to disable alarm icon in statusbar (requires reboot)</string>
     <string name="lockpattern_settings_enable_tactile_feedback_title_summary">Option to enable or disable vibration in lockscreen</string>
 
 

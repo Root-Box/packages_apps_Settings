@@ -48,7 +48,7 @@ import com.android.settings.R;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.Helpers;
 
-public class Statusbar extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class Statusbar extends SettingsPreferenceFragment {
 
     public static final String TAG = "Statusbar";
 

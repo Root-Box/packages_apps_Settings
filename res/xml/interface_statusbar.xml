@@ -22,7 +22,7 @@
 
         <CheckBoxPreference
             android:key="alarm"
-            android:title="@string/enable_alarm_icon"
-            android:summary="@string/enable_alarm_icon_summary" />
+            android:title="@string/disable_alarm_icon"
+            android:summary="@string/disable_alarm_icon_summary" />
 
 </PreferenceScreen>
