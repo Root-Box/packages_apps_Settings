@@ -4286,4 +4286,8 @@
     <string name="rootbox_irc_summary">#aokp-sgs2 @ irc.freenode.net</string>
     <string name="title_about">About RootBox</string>
 
+    <!-- RootBox Settings -->
+    <string name="interface_settings_title">RootBox Settings</string>
+    <string name="interface_lockscreen_title">Lockscreen Options</string>
+
 </resources>
