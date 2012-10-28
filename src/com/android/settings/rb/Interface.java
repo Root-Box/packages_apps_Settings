@@ -60,18 +60,6 @@ public class Interface extends SettingsPreferenceFragment implements
         mTabletDrawer = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER_TABLET);
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
 
-        if (Utils.isTablet(getActivity())) {
-            if (mPhoneDrawer != null) {
-                getPreferenceScreen().removePreference(mPhoneDrawer);
-                getPreferenceScreen().removePreference(mPhoneToggles);
-                getPreferenceScreen().removePreference(mHardwareKeys);
-            }
-        } else {
-            if (mTabletDrawer != null) {
-                getPreferenceScreen().removePreference(mTabletDrawer);
-            }
-        }
-
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
         try {

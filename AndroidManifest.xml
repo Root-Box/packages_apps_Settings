@@ -1474,7 +1474,7 @@
         <!-- RootBox Menu -->
         <activity android:name=".rb.About" />
         <activity android:name=".rb.Interface" />
-        <activity android:name=".rb.Lockscreen" />
+        <activity android:name="Lockscreen" />
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"

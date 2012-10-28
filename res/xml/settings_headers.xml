@@ -127,7 +127,7 @@
     <header
         android:id="@+id/rb_settings"
         android:fragment="com.android.settings.rb.Interface"
-        android:icon="@drawable/ic_settings_about_rb"
+        android:icon="@drawable/ic_settings_rootbox"
         android:title="@string/interface_settings_title" />
 
     <!-- About RootBox -->

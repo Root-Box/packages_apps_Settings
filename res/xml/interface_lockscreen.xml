@@ -17,6 +17,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/interface_lockscreen_title"
+    android:icon="@drawable/ic_settings_rootbox"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <CheckBoxPreference	
