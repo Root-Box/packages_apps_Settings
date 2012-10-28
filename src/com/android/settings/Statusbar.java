@@ -43,10 +43,14 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.R;
+
 
 public class Statusbar extends SettingsPreferenceFragment {
 
 
+    public static final String TAG = "Statusbar";
     private static final String PREF_ALARM_ENABLE = "alarm";
 
     CheckBoxPreference mAlarm;
