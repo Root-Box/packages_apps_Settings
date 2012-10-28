@@ -43,19 +43,13 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.R;
-import com.android.settings.util.CMDProcessor;
-import com.android.settings.util.Helpers;
 
 public class Statusbar extends SettingsPreferenceFragment {
 
-    public static final String TAG = "Statusbar";
 
     private static final String PREF_ALARM_ENABLE = "alarm";
 
     CheckBoxPreference mAlarm;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,7 +62,7 @@ public class Statusbar extends SettingsPreferenceFragment {
         mAlarm = (CheckBoxPreference) findPreference(PREF_ALARM_ENABLE);
         mAlarm.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, 1) == 1);
-
+}
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
@@ -80,5 +74,7 @@ public class Statusbar extends SettingsPreferenceFragment {
         } 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
-
+   private boolean isToggled(Preference pref) {
+        return ((CheckBoxPreference) pref).isChecked();
+    }
 }
