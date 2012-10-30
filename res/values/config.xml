@@ -30,6 +30,6 @@
     <integer name="maximum_user_dictionary_word_length" translatable="false">48</integer>
 
     <!-- Show Expanded Desktop preference -->
-    <bool name="config_show_expandedDesktop">false</bool>
+    <bool name="config_show_expandedDesktop">true</bool>
 
 </resources>
