@@ -4275,6 +4275,7 @@
     <string name="app_name">RootBox</string>
     <string name="devs">Developer</string>
     <string name="donate_bajee">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=62LG5GU2RSW9Y</string>
+    <string name="donate_pier">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=UR24T97QA36CJ</string>
     <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
     <string name="donate_aokp">http://aokp.co/</string>
     <string name="rootbox">Vanilla RootBox</string>

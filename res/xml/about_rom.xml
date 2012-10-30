@@ -42,6 +42,12 @@
 		android:title="@string/contributors_title">
 
 		<com.android.settings.widgets.DeveloperPreference
+            android:title="Pier"
+            rb:nameDev="pier"
+            rb:twitterHandle="XniX"
+            rb:donateLink="@string/donate_pier" />
+
+		<com.android.settings.widgets.DeveloperPreference
             android:title="CyanogenMod"
             rb:nameDev="cyanogenmod"
             rb:twitterHandle="cyanogenmod"
@@ -52,11 +58,6 @@
             rb:nameDev="aokp"
             rb:twitterHandle="aokp_rom"
             rb:donateLink="@string/donate_aokp" />
-
-		<com.android.settings.widgets.DeveloperPreference
-            android:title="Pier"
-            rb:nameDev="pier"
-            rb:twitterHandle="XniX" />
 
 	</PreferenceCategory>
 
