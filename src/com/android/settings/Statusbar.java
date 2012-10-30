@@ -75,6 +75,7 @@ public class Statusbar extends SettingsPreferenceFragment {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, checked ? 1 : 0);
+            restartSystemUI();
         } 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

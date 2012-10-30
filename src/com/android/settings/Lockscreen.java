@@ -85,7 +85,7 @@ public class Lockscreen extends SettingsPreferenceFragment
         int resid = 0;
         if (!mLockPatternUtils.isSecure()) {
             if (mLockPatternUtils.isLockScreenDisabled()) {
-                resid = R.xml.security_settings_lockscreen;
+                resid = R.xml.interface_lockscreen;
             } else {
                 resid = R.xml.interface_lockscreen;
             }
