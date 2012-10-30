@@ -45,6 +45,8 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.util.CMDProcessor;
+import com.android.settings.util.Helpers;
 
 
 public class Statusbar extends SettingsPreferenceFragment {
@@ -75,7 +77,7 @@ public class Statusbar extends SettingsPreferenceFragment {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, checked ? 1 : 0);
-            restartSystemUI();
+            Helpers.restartSystemUI();
         } 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

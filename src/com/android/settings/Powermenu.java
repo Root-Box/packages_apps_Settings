@@ -40,6 +40,7 @@ public class Powermenu extends SettingsPreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+    boolean value;
         if (preference == mExpandedDesktopPref) {
             value = mExpandedDesktopPref.isChecked();
             Settings.System.putInt(getContentResolver(),
