@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol.fragments;
+package com.android.settings;
 
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
