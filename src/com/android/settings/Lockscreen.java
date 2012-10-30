@@ -83,30 +83,7 @@ public class Lockscreen extends SettingsPreferenceFragment
 
        // Add options for lock/unlock screen
         int resid = 0;
-        if (!mLockPatternUtils.isSecure()) {
-            if (mLockPatternUtils.isLockScreenDisabled()) {
-                resid = R.xml.interface_lockscreen;
-            } else {
-                resid = R.xml.interface_lockscreen;
-            }
-        } else if (mLockPatternUtils.usingBiometricWeak() &&
-                mLockPatternUtils.isBiometricWeakInstalled()) {
-            resid = R.xml.security_settings_biometric_weak;
-        } else {
-            switch (mLockPatternUtils.getKeyguardStoredPasswordQuality()) {
-                case DevicePolicyManager.PASSWORD_QUALITY_SOMETHING:
-                    resid = R.xml.security_settings_pattern;
-                    break;
-                case DevicePolicyManager.PASSWORD_QUALITY_NUMERIC:
-                    resid = R.xml.security_settings_pin;
-                    break;
-                case DevicePolicyManager.PASSWORD_QUALITY_ALPHABETIC:
-                case DevicePolicyManager.PASSWORD_QUALITY_ALPHANUMERIC:
-                case DevicePolicyManager.PASSWORD_QUALITY_COMPLEX:
-                    resid = R.xml.security_settings_password;
-                    break;
-            }
-        }
+        resid = R.xml.interface_lockscreen;    
         addPreferencesFromResource(resid);
 
         // tactile feedback. Should be common to all unlock preference screens.
