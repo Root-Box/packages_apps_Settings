@@ -28,7 +28,6 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.Spannable;
@@ -48,11 +47,9 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.Helpers;
-import com.android.settings.Utils;
 
 
-public class Statusbar extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+public class Statusbar extends SettingsPreferenceFragment {
 
 
     public static final String TAG = "Statusbar";
@@ -89,21 +86,14 @@ public class Statusbar extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, checked ? 1 : 0);
             Helpers.restartSystemUI();
-        } 
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-    private boolean isToggled(Preference pref) {
-        return ((CheckBoxPreference) pref).isChecked();
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        boolean result = false;
-        if (preference == mStatusbarTransparency) {
+        } else if (preference == mStatusbarTransparency) {
             int statusBarTransparency = Integer.valueOf((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_TRANSPARENCY, statusBarTransparency);
-     }
-        return result;
- }
+        } 
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+   private boolean isToggled(Preference pref) {
+        return ((CheckBoxPreference) pref).isChecked();
+    }
 }
