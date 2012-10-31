@@ -54,10 +54,8 @@ public class Statusbar extends SettingsPreferenceFragment {
 
     public static final String TAG = "Statusbar";
     private static final String PREF_ALARM_ENABLE = "alarm";
-    private static final String STATUS_BAR_TRANSPARENCY = "status_bar_transparency";
 
     CheckBoxPreference mAlarm;
-    ListPreference mStatusbarTransparency;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,12 +68,6 @@ public class Statusbar extends SettingsPreferenceFragment {
         mAlarm = (CheckBoxPreference) findPreference(PREF_ALARM_ENABLE);
         mAlarm.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, 1) == 1);
-
-        mStatusbarTransparency = (ListPreference) findPreference(STATUS_BAR_TRANSPARENCY);
-        int statusBarTransparency = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_TRANSPARENCY, 100);
-        mStatusbarTransparency.setValue(String.valueOf(statusBarTransparency));
-        mStatusbarTransparency.setOnPreferenceChangeListener(this);
 }
 
     @Override
@@ -86,10 +78,6 @@ public class Statusbar extends SettingsPreferenceFragment {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, checked ? 1 : 0);
             Helpers.restartSystemUI();
-        } else if (preference == mStatusbarTransparency) {
-            int statusBarTransparency = Integer.valueOf((String) newValue);
-            result = Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_TRANSPARENCY, statusBarTransparency);
         } 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
