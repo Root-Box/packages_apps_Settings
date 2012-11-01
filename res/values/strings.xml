@@ -4297,9 +4297,6 @@
     <string name="lockpattern_settings_enable_tactile_feedback_title_summary">Option to enable or disable vibration in lockscreen</string>
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide the status bar and navigation bar.</string>
-    <string name="lockscreen_widgets_title">Lockscreen alignment</string>
-    <string name="lockscreen_widgets_dialog_title">Lockscreen alignment</string>
-    <string name="lockscreen_widgets_result_successful">Lockscreen aligned</string>
 
 
 
