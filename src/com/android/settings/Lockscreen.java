@@ -61,6 +61,7 @@ public class Lockscreen extends SettingsPreferenceFragment
     private LockPatternUtils mLockPatternUtils;
     private ListPreference mLockAfter;
     private CheckBoxPreference mTactileFeedback;
+    private ListPreference mWidgetsAlignment;
 
 
     @Override
