@@ -53,6 +53,7 @@ public class Lockscreen extends SettingsPreferenceFragment
     // Lock Settings
     private static final String KEY_TACTILE_FEEDBACK_ENABLED = "unlock_tactile_feedback";
     private static final String KEY_SECURITY_CATEGORY = "security_category";
+    public static final String KEY_WIDGETS_PREF = "lockscreen_widgets";
 
     DevicePolicyManager mDPM;
 
@@ -71,6 +72,12 @@ public class Lockscreen extends SettingsPreferenceFragment
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
 
         mChooseLockSettingsHelper = new ChooseLockSettingsHelper(getActivity());
+
+        mWidgetsAlignment = (ListPreference) findPreference(KEY_WIDGETS_PREF);
+        mWidgetsAlignment.setOnPreferenceChangeListener(this);
+        mWidgetsAlignment.setValue(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.LOCKSCREEN_LAYOUT,
+                0) + "");
     }
 
     private PreferenceScreen createPreferenceHierarchy() {
@@ -128,7 +135,18 @@ public class Lockscreen extends SettingsPreferenceFragment
 
         return true;
 
-}
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        boolean handled = false;
+        if (preference == mWidgetsAlignment) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                                    Settings.System.LOCKSCREEN_LAYOUT, value);
+            return true;
+        }
+        return false;   
+    }
     private boolean isToggled(Preference pref) {
         return ((CheckBoxPreference) pref).isChecked();
     }

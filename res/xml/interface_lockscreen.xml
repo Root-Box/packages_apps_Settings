@@ -25,4 +25,12 @@
         android:title="@string/lockpattern_settings_enable_tactile_feedback_title"
         android:summary="@string/lockpattern_settings_enable_tactile_feedback_title_summary"/>
 
+    <ListPreference
+        android:key="lockscreen_widgets"
+        android:persistent="false"
+        android:dialogTitle="@string/lockscreen_widgets_title"
+        android:title="@string/lockscreen_widgets_title"
+        android:entries="@array/lockscreen_widgets_entries"
+        android:entryValues="@array/lockscreen_widgets_values"/>
+
 </PreferenceScreen>
