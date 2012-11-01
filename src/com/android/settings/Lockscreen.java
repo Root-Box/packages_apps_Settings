@@ -47,8 +47,8 @@ import java.util.ArrayList;
 /**
  * Gesture lock pattern settings.
  */
-public class Statusbar extends SettingsPreferenceFragment implements	
-        OnPreferenceChangeListener {
+public class Lockscreen extends SettingsPreferenceFragment
+         {
 
     // Lock Settings
     private static final String KEY_TACTILE_FEEDBACK_ENABLED = "unlock_tactile_feedback";
