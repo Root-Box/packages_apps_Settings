@@ -47,7 +47,7 @@ import java.util.ArrayList;
 /**
  * Gesture lock pattern settings.
  */
-public class Lockscreen extends SettingsPreferenceFragment implements	
+public class Statusbar extends SettingsPreferenceFragment implements	
         OnPreferenceChangeListener {
 
     // Lock Settings
