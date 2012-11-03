@@ -72,7 +72,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = getActivity();
-        mResolver = mActivity.getContentResolver()
+        mResolver = mActivity.getContentResolver();
 
         mLockPatternUtils = new LockPatternUtils(getActivity());
 
