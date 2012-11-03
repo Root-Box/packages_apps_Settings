@@ -4268,6 +4268,16 @@
     <string name="usb_mass_storage_title">Mass storage</string>
     <string name="usb_mass_storage_summary">Enable USB mass storage</string>
 
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">!!!</string>
+
     <!-- About RootBox -->
     <string name="about_rb_settings_title">About RootBox</string>
     <string name="about_rootbox">About RootBox</string>
@@ -4292,16 +4302,25 @@
     <string name="interface_lockscreen_title">Lockscreen Options</string>
     <string name="interface_statusbar_title">Statusbar Options</string>
     <string name="interface_powermenu_title">Power Menu Options</string>
+
+    <!-- StatusBar Settings -->
     <string name="enable_alarm_icon">Enable alarm icon</string>
     <string name="enable_alarm_icon_summary">Allows you to enable alarm icon in statusbar (requires UI restart)</string>
-    <string name="lockpattern_settings_enable_tactile_feedback_title_summary">Option to enable or disable vibration in lockscreen</string>
-    <string name="power_menu_expanded_desktop">Expanded desktop</string>
-    <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide the status bar and navigation bar.</string>
     <string name="status_bar_transparency">Statusbar Transparency</string>
     <string name="status_bar_transparency_summary">Adjust statusbar transparency</string>
+
+    <!-- PowerMenu Settings -->
+    <string name="power_menu_expanded_desktop">Expanded desktop</string>
+    <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide the status bar and navigation bar.</string>
+
+    <!-- Lockscreen Settings -->
+    <string name="lockpattern_settings_enable_tactile_feedback_title_summary">Option to enable or disable vibration in lockscreen</string>
     <string name="lockscreen_clock_align_title">Clock alignment</string>
     <string name="lockscreen_clock_align_left">Left</string>
     <string name="lockscreen_clock_align_center">Center</string>
     <string name="lockscreen_clock_align_right">Right</string>
+    <string name="alt_lockscreen_title">Use alternative lockscreen</string>
+    <string name="alt_lockscreen_summary">Experimental lockscreen</string>
+    <string name="alt_lock_bg_color_title">Alternative lock background color</string>
 
 </resources>

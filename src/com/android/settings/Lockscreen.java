@@ -18,6 +18,7 @@ package com.android.settings;
 
 
 import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -56,6 +57,9 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     private static final String KEY_TACTILE_FEEDBACK_ENABLED = "unlock_tactile_feedback";
     private static final String KEY_SECURITY_CATEGORY = "security_category";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
+    private static final String PREF_ALT_LOCKSCREEN = "alt_lockscreen";
+    private static final String PREF_ALT_LOCKSCREEN_BG_COLOR = "alt_lock_bg_color";
+    
 
     DevicePolicyManager mDPM;
 
@@ -64,6 +68,8 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     private ListPreference mLockAfter;
     private CheckBoxPreference mTactileFeedback;
     private ListPreference mClockAlign;
+    private CheckBoxPreference mAltLockscreen;
+    private ColorPickerPreference mAltLockscreenBgColor;
     private Activity mActivity;
     ContentResolver mResolver;
 
@@ -83,6 +89,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
+
+        mAltLockscreen = (CheckBoxPreference) findPreference(PREF_ALT_LOCKSCREEN);
+        mAltLockscreen.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.USE_ALT_LOCKSCREEN, false));
+
+        mAltLockscreenBgColor = (ColorPickerPreference) findPreference(PREF_ALT_LOCKSCREEN_BG_COLOR);
+        mAltLockscreenBgColor.setOnPreferenceChangeListener(this);
     }
 
     private PreferenceScreen createPreferenceHierarchy() {
@@ -144,7 +157,12 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
         if (KEY_TACTILE_FEEDBACK_ENABLED.equals(key)) {
             lockPatternUtils.setTactileFeedbackEnabled(isToggled(preference));
-        } else {
+        } else if (preference == mAltLockscreen) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.USE_ALT_LOCKSCREEN,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;        
+        }
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
@@ -153,11 +171,19 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        boolean handled = false;
          if (preference == mClockAlign) {
             int value = Integer.valueOf((String) objValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
             mClockAlign.setSummary(mClockAlign.getEntries()[value]);
+            return true;
+          } else if (preference == mAltLockscreenBgColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.ALT_LOCK_BG_COLOR, intHex);
             return true;
         }
         return false;
