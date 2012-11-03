@@ -21,6 +21,7 @@ import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentResolver;
 import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -63,11 +64,15 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     private ListPreference mLockAfter;
     private CheckBoxPreference mTactileFeedback;
     private ListPreference mClockAlign;
+    private Activity mActivity;
+    ContentResolver mResolver;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mActivity = getActivity();
+        mResolver = mActivity.getContentResolver()
 
         mLockPatternUtils = new LockPatternUtils(getActivity());
 
