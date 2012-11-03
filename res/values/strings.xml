@@ -4299,7 +4299,9 @@
     <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide the status bar and navigation bar.</string>
     <string name="status_bar_transparency">Statusbar Transparency</string>
     <string name="status_bar_transparency_summary">Adjust statusbar transparency</string>
-
-
+    <string name="lockscreen_clock_align_title">Clock alignment</string>
+    <string name="lockscreen_clock_align_left">Left</string>
+    <string name="lockscreen_clock_align_center">Center</string>
+    <string name="lockscreen_clock_align_right">Right</string>
 
 </resources>

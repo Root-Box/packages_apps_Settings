@@ -892,4 +892,16 @@
         <item>25</item>
         <item>0</item>
     </string-array>
+
+    <string-array name="lockscreen_clock_align_entries">
+        <item>@string/lockscreen_clock_align_left</item>
+        <item>@string/lockscreen_clock_align_center</item>
+        <item>@string/lockscreen_clock_align_right</item>
+    </string-array>
+
+    <string-array name="lockscreen_clock_align_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

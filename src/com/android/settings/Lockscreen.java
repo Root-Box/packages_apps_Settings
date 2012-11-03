@@ -47,12 +47,14 @@ import java.util.ArrayList;
 /**
  * Gesture lock pattern settings.
  */
-public class Lockscreen extends SettingsPreferenceFragment
-         {
+public class Lockscreen extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
+
 
     // Lock Settings
     private static final String KEY_TACTILE_FEEDBACK_ENABLED = "unlock_tactile_feedback";
     private static final String KEY_SECURITY_CATEGORY = "security_category";
+    private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
 
     DevicePolicyManager mDPM;
 
@@ -60,6 +62,7 @@ public class Lockscreen extends SettingsPreferenceFragment
     private LockPatternUtils mLockPatternUtils;
     private ListPreference mLockAfter;
     private CheckBoxPreference mTactileFeedback;
+    private ListPreference mClockAlign;
 
 
     @Override
@@ -71,6 +74,9 @@ public class Lockscreen extends SettingsPreferenceFragment
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
 
         mChooseLockSettingsHelper = new ChooseLockSettingsHelper(getActivity());
+
+        mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
+        mClockAlign.setOnPreferenceChangeListener(this);
     }
 
     private PreferenceScreen createPreferenceHierarchy() {
@@ -114,6 +120,17 @@ public class Lockscreen extends SettingsPreferenceFragment
         }
     }
 
+   private void updateState() {
+        int resId;
+        // Set the clock align value
+        if (mClockAlign != null) {
+            int clockAlign = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, 2);
+            mClockAlign.setValue(String.valueOf(clockAlign));
+            mClockAlign.setSummary(mClockAlign.getEntries()[clockAlign]);
+        }
+    }
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         final String key = preference.getKey();
@@ -127,8 +144,19 @@ public class Lockscreen extends SettingsPreferenceFragment
         }
 
         return true;
-
 }
+
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+         if (preference == mClockAlign) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
+            mClockAlign.setSummary(mClockAlign.getEntries()[value]);
+            return true;
+        }
+        return false;
+    }
+
     private boolean isToggled(Preference pref) {
         return ((CheckBoxPreference) pref).isChecked();
     }
