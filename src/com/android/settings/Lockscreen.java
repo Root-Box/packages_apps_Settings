@@ -73,6 +73,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         mActivity = getActivity();
         mResolver = mActivity.getContentResolver();
+        addPreferencesFromResource(R.xml.interface_lockscreen);
 
         mLockPatternUtils = new LockPatternUtils(getActivity());
 
