@@ -124,7 +124,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.ALT_LOCK_BG_COLOR, intHex);
             return true;
-      } else if preference == mClockAlign) {
+      } else if (preference == mClockAlign) {
             int value = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
