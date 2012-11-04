@@ -1,5 +1,4 @@
 /*
- * Copyright (C) 2007 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,77 +15,59 @@
 
 package com.android.settings;
 
-
-import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import java.io.File;
+import java.io.IOException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
-import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.UserId;
-import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.provider.MediaStore;
 import android.provider.Settings;
-import android.security.KeyStore;
-import android.telephony.TelephonyManager;
-import android.util.Log;
+import android.view.Display;
+import android.view.Window;
+import android.widget.Toast;
 
-import com.android.internal.telephony.Phone;
-import com.android.internal.widget.LockPatternUtils;
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
-import java.util.ArrayList;
-
-/**
- * Gesture lock pattern settings.
- */
 public class Lockscreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-
-    // Lock Settings
-    private static final String KEY_TACTILE_FEEDBACK_ENABLED = "unlock_tactile_feedback";
-    private static final String KEY_SECURITY_CATEGORY = "security_category";
+    private static final String TAG = "Lockscreen";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
     private static final String PREF_ALT_LOCKSCREEN = "alt_lockscreen";
     private static final String PREF_ALT_LOCKSCREEN_BG_COLOR = "alt_lock_bg_color";
-    
 
-    DevicePolicyManager mDPM;
 
-    private ChooseLockSettingsHelper mChooseLockSettingsHelper;
-    private LockPatternUtils mLockPatternUtils;
-    private ListPreference mLockAfter;
-    private CheckBoxPreference mTactileFeedback;
     private ListPreference mClockAlign;
     private CheckBoxPreference mAltLockscreen;
     private ColorPickerPreference mAltLockscreenBgColor;
     private Activity mActivity;
     ContentResolver mResolver;
-
+    Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = getActivity();
         mResolver = mActivity.getContentResolver();
+
         addPreferencesFromResource(R.xml.interface_lockscreen);
-
-        mLockPatternUtils = new LockPatternUtils(getActivity());
-
-        mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
-
-        mChooseLockSettingsHelper = new ChooseLockSettingsHelper(getActivity());
-
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
 
@@ -98,49 +79,21 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         mAltLockscreenBgColor.setOnPreferenceChangeListener(this);
     }
 
-    private PreferenceScreen createPreferenceHierarchy() {
-        PreferenceScreen root = getPreferenceScreen();
-	if (root != null) {
-            root.removeAll();
-        }
-        addPreferencesFromResource(R.xml.security_settings);
-        root = getPreferenceScreen();
-
-       // Add options for lock/unlock screen
-        int resid = 0;
-        resid = R.xml.interface_lockscreen;    
-        addPreferencesFromResource(resid);
-
-        // tactile feedback. Should be common to all unlock preference screens.
-        mTactileFeedback = (CheckBoxPreference) root.findPreference(KEY_TACTILE_FEEDBACK_ENABLED);
-        if (!((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).hasVibrator()) {
-            PreferenceGroup securityCategory = (PreferenceGroup)
-                    root.findPreference(KEY_SECURITY_CATEGORY);
-            if (securityCategory != null && mTactileFeedback != null) {
-                securityCategory.removePreference(mTactileFeedback);
-            }
-        }
-           return root;
-        }    
 
     @Override
     public void onResume() {
         super.onResume();
-
-        // Make sure we reload the preference hierarchy since some of these settings
-        // depend on others...
-        createPreferenceHierarchy();
-
-        final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
-
-
-        if (mTactileFeedback != null) {
-            mTactileFeedback.setChecked(lockPatternUtils.isTactileFeedbackEnabled());
-        }
+        updateState();
     }
 
-   private void updateState() {
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    private void updateState() {
         int resId;
+
         // Set the clock align value
         if (mClockAlign != null) {
             int clockAlign = Settings.System.getInt(mResolver,
@@ -152,44 +105,32 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        final String key = preference.getKey();
-
-        final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
-        if (KEY_TACTILE_FEEDBACK_ENABLED.equals(key)) {
-            lockPatternUtils.setTactileFeedbackEnabled(isToggled(preference));
-        } else if (preference == mAltLockscreen) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
+        if (preference == mAltLockscreen) {
+            Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.USE_ALT_LOCKSCREEN,
-                    ((CheckBoxPreference) preference).isChecked());
-            return true;        
-        }
-            // If we didn't handle it, let preferences handle it.
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
-        }
-
-        return true;
-}
-
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        boolean handled = false;
-         if (preference == mClockAlign) {
-            int value = Integer.valueOf((String) objValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
-            mClockAlign.setSummary(mClockAlign.getEntries()[value]);
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
-          } else if (preference == mAltLockscreenBgColor) {
+        }        
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean handled = false;
+        if (preference == mAltLockscreenBgColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.ALT_LOCK_BG_COLOR, intHex);
             return true;
+      } else if preference == mClockAlign) {
+            int value = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
+            mClockAlign.setSummary(mClockAlign.getEntries()[value]);
+            return true;
         }
         return false;
-    }
-
-    private boolean isToggled(Preference pref) {
-        return ((CheckBoxPreference) pref).isChecked();
     }
 }
