@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.rb;
+package com.android.settings;
 
 import android.app.ActivityManagerNative;
 import android.content.Context;
