@@ -50,13 +50,11 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
     private static final String TAG = "Lockscreen";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
-    public static final String KEY_SEE_TRHOUGH_PREF = "lockscreen_see_through";
     private static final String PREF_ALT_LOCKSCREEN = "alt_lockscreen";
     private static final String PREF_ALT_LOCKSCREEN_BG_COLOR = "alt_lock_bg_color";
 
 
     private ListPreference mClockAlign;
-    private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mAltLockscreen;
     private ColorPickerPreference mAltLockscreenBgColor;
     private Activity mActivity;
@@ -72,10 +70,6 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.interface_lockscreen);
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
-
-        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH_PREF);
-        mSeeThrough.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1));
 
         mAltLockscreen = (CheckBoxPreference) findPreference(PREF_ALT_LOCKSCREEN);
         mAltLockscreen.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
@@ -116,15 +110,9 @@ public class Lockscreen extends SettingsPreferenceFragment implements
                     Settings.System.USE_ALT_LOCKSCREEN,
                     ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
-      } else if (preference == mSeeThrough) {
-            int value = mSeeThrough.isChecked() ? 1 : 0;
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_SEE_THROUGH, value);
-            return true;
-        }
-        return false;
         }        
-
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
