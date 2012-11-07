@@ -4317,9 +4317,11 @@
     <string name="lockscreen_clock_align_left">Left</string>
     <string name="lockscreen_clock_align_center">Center</string>
     <string name="lockscreen_clock_align_right">Right</string>
-    <string name="alt_lockscreen_title">Use alternative lockscreen</string>
-    <string name="alt_lockscreen_summary">Experimental lockscreen</string>
-    <string name="alt_lock_bg_color_title">Alternative lock background color</string>
+    <string name="alt_lockscreen_title">Use 4X lockscreen</string>
+    <string name="alt_lockscreen_summary">Alternative lockscreen style</string>
+    <string name="alt_lock_bg_color_title">4X background color</string>
+    <string name="lockscreen_see_through_title">See through lockscreen</string>
+    <string name="lockscreen_see_through_summary">Allows to see the activity behind the lock screen. Custom image will disable this preference.</string>
 
     <!-- Hardware Keys Settings -->
     <string name="title_hardwarekeys">Hardware Keys</string>
