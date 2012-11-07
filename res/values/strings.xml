@@ -4306,9 +4306,6 @@
     <!-- StatusBar Settings -->
     <string name="enable_alarm_icon">Enable alarm icon</string>
     <string name="enable_alarm_icon_summary">Allows you to enable alarm icon in statusbar (requires UI restart)</string>
-    <string name="lockpattern_settings_enable_tactile_feedback_title_summary">Option to enable or disable vibration in lockscreen</string>
-    <string name="power_menu_expanded_desktop">Expanded desktop</string>
-    <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide the status bar and navigation bar.</string>
 
     <!-- PowerMenu Settings -->
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
