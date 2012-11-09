@@ -20,22 +20,12 @@
     android:icon="@drawable/ic_settings_rootbox"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <ListPreference
+     <ListPreference
         android:key="lockscreen_clock_align"
         android:persistent="false"
         android:dialogTitle="@string/lockscreen_clock_align_title"
         android:title="@string/lockscreen_clock_align_title"
         android:entries="@array/lockscreen_clock_align_entries"
         android:entryValues="@array/lockscreen_clock_align_values"/>
-
-    <CheckBoxPreference	
-        android:key="alt_lockscreen"	
-        android:title="@string/alt_lockscreen_title"
-        android:summary="@string/alt_lockscreen_summary" />	
-
-    <net.margaritov.preference.colorpicker.ColorPickerPreference	
-        android:key="alt_lock_bg_color"	
-        android:title="@string/alt_lock_bg_color_title"	
-        android:defaultValue="#D2000000" />
 
 </PreferenceScreen>

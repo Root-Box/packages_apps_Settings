@@ -15,7 +15,6 @@
 
 package com.android.settings;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import java.io.File;
 import java.io.IOException;
 
@@ -50,13 +49,9 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
     private static final String TAG = "Lockscreen";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
-    private static final String PREF_ALT_LOCKSCREEN = "alt_lockscreen";
-    private static final String PREF_ALT_LOCKSCREEN_BG_COLOR = "alt_lock_bg_color";
 
 
     private ListPreference mClockAlign;
-    private CheckBoxPreference mAltLockscreen;
-    private ColorPickerPreference mAltLockscreenBgColor;
     private Activity mActivity;
     ContentResolver mResolver;
     Context mContext;
@@ -70,13 +65,6 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.interface_lockscreen);
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
-
-        mAltLockscreen = (CheckBoxPreference) findPreference(PREF_ALT_LOCKSCREEN);
-        mAltLockscreen.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
-                Settings.System.USE_ALT_LOCKSCREEN, false));
-
-        mAltLockscreenBgColor = (ColorPickerPreference) findPreference(PREF_ALT_LOCKSCREEN_BG_COLOR);
-        mAltLockscreenBgColor.setOnPreferenceChangeListener(this);
     }
 
 
@@ -104,28 +92,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mAltLockscreen) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.USE_ALT_LOCKSCREEN,
-                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
-            return true;
-        }        
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {      
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        boolean handled = false;
-        if (preference == mAltLockscreenBgColor) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.ALT_LOCK_BG_COLOR, intHex);
-            return true;
-      } else if (preference == mClockAlign) {
-            int value = Integer.valueOf((String) newValue);
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+         if (preference == mClockAlign) {
+            int value = Integer.valueOf((String) objValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
             mClockAlign.setSummary(mClockAlign.getEntries()[value]);
