@@ -4319,7 +4319,7 @@
 
     <!-- Lockscreen Settings -->
     <string name="lockpattern_settings_enable_tactile_feedback_title_summary">Option to enable or disable vibration in lockscreen</string>
-    <string name="lockscreen_clock_align_title">Clock alignment</string>
+    <string name="lockscreen_clock_align_title">Lockscreen alignment</string>
     <string name="lockscreen_clock_align_left">Left</string>
     <string name="lockscreen_clock_align_center">Center</string>
     <string name="lockscreen_clock_align_right">Right</string>
