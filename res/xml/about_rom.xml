@@ -43,19 +43,24 @@
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Pier"
-            rb:nameDev="pier"
+            rb:nameDev="PieR"
             rb:twitterHandle="XniX"
             rb:donateLink="@string/donate_pier" />
 
 		<com.android.settings.widgets.DeveloperPreference
+            android:title="Bluefa1con"
+            rb:nameDev="Bluefa1con"
+            rb:twitterHandle="bluefa1con" />
+
+		<com.android.settings.widgets.DeveloperPreference
             android:title="CyanogenMod"
-            rb:nameDev="cyanogenmod"
+            rb:nameDev="CyanogenMod"
             rb:twitterHandle="cyanogenmod"
             rb:donateLink="@string/donate_cyanogenmod" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="AOKP"
-            rb:nameDev="aokp"
+            rb:nameDev="AOKP"
             rb:twitterHandle="aokp_rom"
             rb:donateLink="@string/donate_aokp" />
 
