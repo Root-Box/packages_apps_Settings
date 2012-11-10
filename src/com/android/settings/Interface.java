@@ -41,13 +41,19 @@ public class Interface extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_DRAWER_TABLET = "notification_drawer_tablet";
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
 
     private PreferenceScreen mPhoneDrawer;
     private PreferenceScreen mPhoneToggles;
     private PreferenceScreen mTabletDrawer;
     private PreferenceScreen mHardwareKeys;
+    private PreferenceScreen mLockscreenButtons;
 
     private final Configuration mCurConfig = new Configuration();
+
+    public boolean hasButtons() {
+        return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,10 @@ public class Interface extends SettingsPreferenceFragment implements
         mPhoneToggles = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER_TOGGLES);
         mTabletDrawer = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER_TABLET);
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
+        mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
+        if (!hasButtons()) {
+            getPreferenceScreen().removePreference(mLockscreenButtons);
+        }
 
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));

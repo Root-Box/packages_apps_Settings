@@ -1475,6 +1475,7 @@
         <activity android:name=".rb.About" />
         <activity android:name="Interface" />
         <activity android:name="Lockscreen" />
+        <activity android:name="LockscreenButtons" />
         <activity android:name="Statusbar" />
         <activity android:name="HardwareKeys" />
 

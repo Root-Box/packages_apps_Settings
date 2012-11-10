@@ -27,6 +27,12 @@
         android:title="@string/interface_lockscreen_title" />
 
     <PreferenceScreen
+        android:fragment="com.android.settings.LockscreenButtons"
+        android:key="lockscreen_buttons"
+        android:title="@string/lockscreen_buttons_title"
+        android:summary="@string/lockscreen_buttons_summary" />
+
+    <PreferenceScreen
         android:key="status_bar_settings"
         android:fragment="com.android.settings.Statusbar"
         android:icon="@drawable/ic_settings_statusbar"
