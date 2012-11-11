@@ -38,4 +38,6 @@
         android:entries="@array/lockscreen_long_key_press_entries"
         android:entryValues="@array/lockscreen_long_key_press_values"/>
 
+    </PreferenceCategory>
+
 </PreferenceScreen>
