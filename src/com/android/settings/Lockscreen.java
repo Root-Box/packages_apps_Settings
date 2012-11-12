@@ -49,9 +49,11 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
     private static final String TAG = "Lockscreen";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
+    private static final String PREF_SHOW_LOCK_BEFORE_UNLOCK = "show_lock_before_unlock";
 
 
     private ListPreference mClockAlign;
+    private CheckBoxPreference mShowLockBeforeUnlock;
     private Activity mActivity;
     ContentResolver mResolver;
     Context mContext;
@@ -65,6 +67,10 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.interface_lockscreen);
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
+
+        mShowLockBeforeUnlock = (CheckBoxPreference) findPreference(PREF_SHOW_LOCK_BEFORE_UNLOCK);
+        mShowLockBeforeUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                 Settings.System.SHOW_LOCK_BEFORE_UNLOCK, 0) == 1);
     }
 
 
@@ -92,7 +98,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {      
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mShowLockBeforeUnlock) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                     Settings.System.SHOW_LOCK_BEFORE_UNLOCK,
+            ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+	return true;
+        }      
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
