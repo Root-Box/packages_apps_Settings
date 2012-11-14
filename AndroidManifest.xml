@@ -1477,7 +1477,6 @@
         <activity android:name="Lockscreen" />
         <activity android:name="LockscreenButtons" />
         <activity android:name="Statusbar" />
-        <activity android:name="HardwareKeys" />
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
