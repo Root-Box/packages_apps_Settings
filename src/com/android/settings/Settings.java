@@ -792,5 +792,6 @@ public class Settings extends PreferenceActivity
     public static class InterfaceActivity extends Settings { /* empty */ }
     public static class LockscreenActivity extends Settings { /* empty */ }
     public static class StatusbarActivity extends Settings { /* empty */ }
+    public static class HardwareKeysActivity extends Settings { /* empty */ }
     public static class LockscreenButtonsActivity extends Settings { /* empty */ }
 }
