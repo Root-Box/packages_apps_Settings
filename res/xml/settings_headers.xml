@@ -92,6 +92,13 @@
     <!-- ROOTBOX OTA UPDATES -->
     <header android:title="@string/header_category_rootbox" />
 
+    <!-- CM Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" />
+
     <!-- RootBox Settings -->
     <header
         android:id="@+id/rb_settings"
@@ -166,13 +173,6 @@
     <!-- PERSONAL -->
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
-
-    <!-- Profiles -->
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
 
     <!-- Location -->
     <header
