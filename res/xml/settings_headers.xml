@@ -226,6 +226,13 @@
         android:icon="@drawable/ic_settings_development"
         android:title="@string/development_settings_title" />
 
+    <!-- About RootBox -->
+    <header
+        android:id="@+id/about_rom"
+        android:fragment="com.android.settings.rb.About"
+        android:icon="@drawable/ic_settings_about_rb"
+        android:title="@string/about_rb_settings_title" />
+
     <!-- About Device -->
     <header
         android:id="@+id/about_settings"

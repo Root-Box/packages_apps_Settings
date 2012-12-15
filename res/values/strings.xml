@@ -4474,4 +4474,25 @@
     <string name="vibration_title">Phone vibration</string>
     <string name="link_volume_ringtones">Link volumes</string>
     <string name="link_volume_mutes">Link mute states</string>
+
+    <!-- About RootBox -->
+    <string name="about_rb_settings_title">About RootBox</string>
+    <string name="about_rootbox">About RootBox</string>
+    <string name="about_rootbox_summary">@null</string>
+    <string name="app_name">RootBox</string>
+    <string name="devs">Developer</string>
+    <string name="donate_bajee">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=62LG5GU2RSW9Y</string>
+    <string name="donate_pier">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=UR24T97QA36CJ</string>
+    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="donate_aokp">http://aokp.co/</string>
+    <string name="rootbox">Vanilla RootBox</string>
+    <string name="rootbox_website_title">RootBox Blog</string>
+    <string name="rootbox_website_summary">Find latest news and updates about RootBox.</string>
+    <string name="rootbox_source_title">RootBox Sources</string>
+    <string name="rootbox_source_summary">RootBox Project is open sourced and you can find sources @ www.github.com/Root-Box</string>
+    <string name="rootbox_irc_title">Join me on IRC</string>
+    <string name="rootbox_irc_summary">#aokp-sgs2 @ irc.freenode.net</string>
+    <string name="rootbox_facebook_title">Facebook Page</string>
+    <string name="rootbox_facebook_summary">Subscribe to RootBox Facebook page for updates.</string>
+    <string name="title_about">About RootBox</string>
 </resources>

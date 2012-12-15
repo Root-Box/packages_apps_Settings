@@ -1472,6 +1472,9 @@
                 android:value="com.android.settings.aokpstats.AnonymousStats" />
         </activity>
 
+        <!-- RootBox -->
+        <activity android:name=".rb.About" />
+
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="true"
