@@ -4723,6 +4723,10 @@
     <string name="choose_soundtone">Choose notification tone</string>
     <string name="choose_ringtone">Choose ringtone</string>
     <string name="silent_mode_title">Ring mode</string>
+    <string name="ring_mode_title">Ring mode</string>
+    <string name="ring_mode_normal">Normal</string>
+    <string name="ring_mode_vibrate">Vibrate</string>
+    <string name="ring_mode_mute">Mute</string>
 
     <!-- Pie controls -->
     <string name="pie_controls_title">Pie controls</string>
