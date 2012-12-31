@@ -92,6 +92,13 @@
     <!-- ROOTBOX OTA UPDATES -->
     <header android:title="@string/header_category_rootbox" />
 
+    <!-- RootBox Settings -->
+    <header
+        android:id="@+id/rb_settings"
+        android:fragment="com.android.settings.Rootbox"
+        android:icon="@drawable/ic_settings_dock"
+        android:title="@string/rootbox_settings_title" />
+
     <!-- Update Me -->
     <header 
             android:icon="@drawable/ic_settings_update"
