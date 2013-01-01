@@ -96,7 +96,7 @@
     <header
         android:id="@+id/rb_settings"
         android:fragment="com.android.settings.Rootbox"
-        android:icon="@drawable/ic_settings_dock"
+        android:icon="@drawable/ic_settings_rootbox"
         android:title="@string/rootbox_settings_title" />
 
     <!-- Update Me -->
