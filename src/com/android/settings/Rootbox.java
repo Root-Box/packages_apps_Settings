@@ -40,6 +40,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
 
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
+    
+    private PreferenceScreen mLockscreenButtons;
     private final Configuration mCurConfig = new Configuration();
 
     @Override
@@ -47,6 +50,12 @@ public class Rootbox extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.rootbox_settings);
+
+        mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
+        if (!hasButtons()) {
+            getPreferenceScreen().removePreference(mLockscreenButtons);
+        }
+
         // Do not display lock clock preference if its not installed
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
 

@@ -1477,6 +1477,7 @@
         <!-- RootBox -->
         <activity android:name=".rb.About" />
         <activity android:name="Rootbox" />
+        <activity android:name=".cyanogenmod.LockscreenButtons" />
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
