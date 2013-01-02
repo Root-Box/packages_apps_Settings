@@ -4588,4 +4588,9 @@
     <string name="rootbox_facebook_title">Facebook Page</string>
     <string name="rootbox_facebook_summary">Subscribe to RootBox Facebook page for updates.</string>
     <string name="title_about">About RootBox</string>
+
+    <!-- AOKP specific sound settings
+    <string name="camera_sounds">Camera sounds</string> ** TODO ** -->
+    <string name="safe_headset_volume_title">Safe headset volume</string>
+
 </resources>
