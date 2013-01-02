@@ -41,8 +41,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
+    private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     
     private PreferenceScreen mLockscreenButtons;
+    private CheckBoxPreference mExpandedDesktopPref;
     private final Configuration mCurConfig = new Configuration();
 
     @Override
@@ -54,6 +56,18 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
         if (!hasButtons()) {
             getPreferenceScreen().removePreference(mLockscreenButtons);
+        }
+
+        mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
+        boolean showExpandedDesktopPref =
+            getResources().getBoolean(R.bool.config_show_expandedDesktop);
+        if (!showExpandedDesktopPref) {
+            if (mExpandedDesktopPref != null) {
+                getPreferenceScreen().removePreference(mExpandedDesktopPref);
+            }
+        } else {
+            mExpandedDesktopPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
         }
 
         // Do not display lock clock preference if its not installed
@@ -83,8 +97,18 @@ public class Rootbox extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
+         boolean value;
+
+         if (preference == mExpandedDesktopPref) {
+            value = mExpandedDesktopPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
+                    value ? 1 : 0);
+         }  else {
+              return super.onPreferenceTreeClick(preferenceScreen, preference);
+         }
+         return true;    
+     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
