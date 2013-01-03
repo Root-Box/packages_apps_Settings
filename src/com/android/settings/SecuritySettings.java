@@ -707,7 +707,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (preference == mLockAfter) {
             int timeout = Integer.parseInt((String) value);
             try {
-                Settings.Secure.putInt(getContentResolver(),
+                Settings.Global.putInt(getContentResolver(),
                         Settings.Secure.LOCK_SCREEN_LOCK_AFTER_TIMEOUT, timeout);
             } catch (NumberFormatException e) {
                 Log.e("SecuritySettings", "could not persist lockAfter timeout setting", e);
