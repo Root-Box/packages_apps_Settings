@@ -16,6 +16,7 @@
 package com.android.settings;
 
 import android.app.ActivityManagerNative;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
@@ -44,6 +45,8 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
+    private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
+    private CheckBoxPreference mHeadsetConnectPlayer;
     
     private PreferenceScreen mLockscreenButtons;
     private CheckBoxPreference mExpandedDesktopPref;
@@ -56,6 +59,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ContentResolver resolver = getContentResolver();
 
         addPreferencesFromResource(R.xml.rootbox_settings);
 
@@ -63,6 +67,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
         if (!hasButtons()) {
             getPreferenceScreen().removePreference(mLockscreenButtons);
         }
+
+        mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
+        mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
+                Settings.System.HEADSET_CONNECT_PLAYER, 0) != 0);
 
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
         boolean showExpandedDesktopPref =
@@ -110,7 +118,11 @@ public class Rootbox extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
                     value ? 1 : 0);
+         } else if (preference == mHeadsetConnectPlayer) {
+            Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
+                    mHeadsetConnectPlayer.isChecked() ? 1 : 0);
          }  else {
+              // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);
          }
          return true;    
