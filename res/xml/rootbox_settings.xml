@@ -36,6 +36,13 @@
         android:summary="@string/headset_connect_player_summary"
         android:persistent="false" />
 
+  <PreferenceScreen
+        android:key="lock_screen_shortcuts"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:fragment="com.android.settings.rb.Shortcuts"
+        android:title="@string/lock_screen_shortcuts_title"
+        android:summary="@string/lock_screen_shortcuts_summary" />
+
   <CheckBoxPreference
 	android:key="power_menu_expanded_desktop"
         android:icon="@drawable/ic_lock_expanded_desktop"
