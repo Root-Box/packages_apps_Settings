@@ -111,6 +111,15 @@
         android:title="@string/lockscreen_seethrough"
         android:summary="@string/lockscreen_seethrough_summary" />
 
+  <ListPreference
+        android:key="lockscreen_background"
+        android:icon="@drawable/ic_rb_lock_alpha"
+        android:persistent="false"
+        android:dialogTitle="@string/lockscreen_custom_background_title"
+        android:title="@string/lockscreen_custom_background_title"
+        android:entries="@array/lockscreen_background_entries"
+        android:entryValues="@array/lockscreen_background_values" />
+
   <PreferenceScreen
         android:key="lock_screen_shortcuts"
         android:icon="@drawable/ic_rb_lock_shortcuts"
