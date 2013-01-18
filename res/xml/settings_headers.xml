@@ -115,6 +115,16 @@
         android:icon="@drawable/ic_settings_rootbox"
         android:title="@string/rootbox_settings_title" />
 
+    <!-- DPI Settings -->
+    <header 
+            android:icon="@drawable/ic_menu_scan_network"
+            android:title="@string/dpi_settings">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="de.robv.android.xposed.mods.appsettings"
+                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
+    </header>
+
     <!-- Update Me -->
     <header 
             android:icon="@drawable/ic_settings_update"

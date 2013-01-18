@@ -4596,6 +4596,9 @@
     <string name="rootbox_facebook_summary">Subscribe to RootBox Facebook page for updates.</string>
     <string name="title_about">About RootBox</string>
 
+    <!-- Per App Dpi -->
+    <string name="dpi_settings">DPI Settings</string>
+
     <!-- Paranoid Lockscreen -->
     <string name="icon_picker_type">Select icon type:</string>
     <string name="icon_default">Default</string>
