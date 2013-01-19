@@ -115,16 +115,6 @@
         android:icon="@drawable/ic_settings_rootbox"
         android:title="@string/rootbox_settings_title" />
 
-    <!-- DPI Settings -->
-    <header 
-            android:icon="@drawable/ic_menu_scan_network"
-            android:title="@string/dpi_settings">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.mods.appsettings"
-                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-    </header>
-
     <!-- Update Me -->
     <header 
             android:icon="@drawable/ic_settings_update"
@@ -133,6 +123,27 @@
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.s0up.goomanager"
                 android:targetClass="com.s0up.goomanager.GooManagerActivity" />
+    </header>
+
+    <!-- DPI Settings -->
+    <header android:title="@string/dpi_settings" />
+
+    <header 
+            android:icon="@drawable/ic_menu_scan_network"
+            android:title="@string/xposed_frameworks_settings">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="de.robv.android.xposed.installer"
+                android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
+   </header>
+
+   <header 
+            android:icon="@drawable/ic_settings_multiuser"
+            android:title="@string/xposed_dpi_settings">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="de.robv.android.xposed.mods.appsettings"
+                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
     </header>
 
     <!-- DEVICE -->

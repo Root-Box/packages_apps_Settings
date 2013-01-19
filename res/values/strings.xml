@@ -4597,7 +4597,9 @@
     <string name="title_about">About RootBox</string>
 
     <!-- Per App Dpi -->
-    <string name="dpi_settings">DPI Settings</string>
+    <string name="dpi_settings">DPI &amp; TABLET SETTINGS</string>
+    <string name="xposed_dpi_settings">Per-App Settings</string>
+    <string name="xposed_frameworks_settings">Modules Management</string>
 
     <!-- Paranoid Lockscreen -->
     <string name="icon_picker_type">Select icon type:</string>
