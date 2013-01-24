@@ -98,7 +98,7 @@
                 android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </header>
 
-    <!-- ROOTBOX OTA UPDATES -->
+    <!-- ROOTBOX SECTION -->
     <header android:title="@string/header_category_rootbox" />
 
     <!-- CM Profiles -->
@@ -115,6 +115,17 @@
         android:icon="@drawable/ic_settings_rootbox"
         android:title="@string/rootbox_settings_title" />
 
+    <!-- LMT Settings -->
+    <header 
+            android:id="@+id/lmt_settings"
+            android:icon="@drawable/ic_menu_scan_network"
+            android:title="@string/lmt_settings_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.lmt"
+                android:targetClass="com.android.lmt.LMT" />
+    </header>
+
     <!-- Update Me -->
     <header 
             android:icon="@drawable/ic_settings_update"
@@ -129,7 +140,7 @@
     <header android:title="@string/dpi_settings" />
 
     <header 
-            android:icon="@drawable/ic_menu_scan_network"
+            android:icon="@drawable/ic_settings_advanced"
             android:title="@string/xposed_frameworks_settings">
         <intent
                 android:action="android.intent.action.MAIN"
