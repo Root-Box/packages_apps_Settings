@@ -9,24 +9,24 @@
 		android:title="@string/rootbox">
 
 		<Preference
-			android:key="rootbox_website"
-			android:title="@string/rootbox_website_title"
-			android:summary="@string/rootbox_website_summary" />
-
-		<Preference
 			android:key="rootbox_source"
 			android:title="@string/rootbox_source_title"
 			android:summary="@string/rootbox_source_summary" />
 
 		<Preference
-			android:key="rootbox_irc"
-			android:title="@string/rootbox_irc_title"
-			android:summary="@string/rootbox_irc_summary" />
+			android:key="rootbox_support"
+			android:title="@string/rootbox_support_title"
+			android:summary="@string/rootbox_support_summary" />
 
 		<Preference
 			android:key="rootbox_facebook"
 			android:title="@string/rootbox_facebook_title"
 			android:summary="@string/rootbox_facebook_summary" />
+
+		<Preference
+			android:key="rootbox_googleplus"
+			android:title="@string/rootbox_googleplus_title"
+			android:summary="@string/rootbox_googleplus_summary" />
 	</PreferenceCategory>
 
 	<PreferenceCategory
@@ -39,7 +39,43 @@
             rb:twitterHandle="Bajee11"
             rb:donateLink="@string/donate_bajee" />
 
-	</PreferenceCategory>    
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="support"
+		android:title="@string/support_team_title">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="Kubics"
+            rb:nameDev="Kubics"
+            rb:twitterHandle="kubics77" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="Hannibal226"
+            rb:nameDev="Hannibal226"
+            rb:twitterHandle="Hannibal226" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="GaboWinter"
+            rb:nameDev="GaboWinter"
+            rb:twitterHandle="gabofv" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="Christiancs1969"
+            rb:nameDev="Christiancs1969"
+            rb:twitterHandle="christiancs1969" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="Kroz"
+            rb:nameDev="Kroz"
+            rb:twitterHandle="kroz46" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="Blue Falcon"
+            rb:nameDev="Blue Falcon"
+            rb:twitterHandle="bluefa1con" />
+
+	</PreferenceCategory>          
 
 	<PreferenceCategory
 		android:key="contributors"

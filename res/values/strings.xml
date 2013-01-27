@@ -2351,8 +2351,6 @@
     <string name="about_settings_summary">View legal info, status, software version</string>
     <!-- About phone settings screen, setting option name to go to dialog that shows legal info -->
     <string name="legal_information">Legal information</string>
-    <!-- About phone settings screen, setting option name to see a list of contributors -->
-    <string name="contributors_title">Contributors</string>
     <!-- About phone settings screen, setting option name to show regulatory information [CHAR LIMIT=25] -->
     <string name="regulatory_information">Regulatory information</string>
     <!-- Note: this may be replaced by a more-specific title of the activity that will get launched --> <skip />
@@ -4591,20 +4589,22 @@
     <string name="about_rootbox">About RootBox</string>
     <string name="about_rootbox_summary">@null</string>
     <string name="app_name">RootBox</string>
+    <string name="contributors_title">Contributors</string>
     <string name="devs">Developer</string>
     <string name="donate_bajee">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=62LG5GU2RSW9Y</string>
     <string name="donate_pier">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=UR24T97QA36CJ</string>
     <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
     <string name="donate_aokp">http://aokp.co/</string>
     <string name="rootbox">Vanilla RootBox</string>
-    <string name="rootbox_website_title">RootBox Blog</string>
-    <string name="rootbox_website_summary">Find latest news and updates about RootBox.</string>
+    <string name="rootbox_support_title">RootBox Support</string>
+    <string name="rootbox_support_summary">Visit RootBox official support thread for non-development questions.</string>
     <string name="rootbox_source_title">RootBox Sources</string>
     <string name="rootbox_source_summary">RootBox Project is open sourced and you can find sources @ www.github.com/Root-Box</string>
-    <string name="rootbox_irc_title">Join me on IRC</string>
-    <string name="rootbox_irc_summary">#aokp-sgs2 @ irc.freenode.net</string>
     <string name="rootbox_facebook_title">Facebook Page</string>
     <string name="rootbox_facebook_summary">Subscribe to RootBox Facebook page for updates.</string>
+    <string name="rootbox_googleplus_title">Google+ Community</string>
+    <string name="rootbox_googleplus_summary">Join our G+ Community page for real time updates.</string>
+    <string name="support_team_title">Support Team</string>
     <string name="title_about">About RootBox</string>
 
     <!-- LMT Settings -->

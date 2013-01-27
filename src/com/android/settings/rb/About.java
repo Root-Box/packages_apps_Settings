@@ -18,19 +18,19 @@ public class About extends SettingsPreferenceFragment {
 
     public static final String TAG = "About";
 
-    Preference mSiteUrl;
-    Preference mForumUrl;
+    Preference mSupportUrl;
     Preference mSourceUrl;
     Preference mFacebookUrl;
+    Preference mGooglePlusUrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.about_rom);
-        mSiteUrl = findPreference("rootbox_website");
-        mForumUrl = findPreference("rootbox_irc");
+        mSupportUrl = findPreference("rootbox_support");
         mSourceUrl = findPreference("rootbox_source");
         mFacebookUrl = findPreference("rootbox_facebook");
+        mGooglePlusUrl = findPreference("rootbox_googleplus");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
         ArrayList<Preference> devs = new ArrayList<Preference>();
@@ -50,14 +50,14 @@ public class About extends SettingsPreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSiteUrl) {
-            launchUrl("http://wheretwo.com/Rootbox");
-        } else if (preference == mForumUrl) {
-            launchUrl("http://webchat.freenode.net/?channels=aokp-sgs2");
+        if (preference == mSupportUrl) {
+            launchUrl("http://forum.xda-developers.com/showthread.php?t=2117444");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/Root-Box");
         } else if (preference == mFacebookUrl) {
             launchUrl("http://facebook.com/333083833406934");
+        } else if (preference == mGooglePlusUrl) {
+            launchUrl("https://plus.google.com/u/0/communities/115833651542488654391");
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
