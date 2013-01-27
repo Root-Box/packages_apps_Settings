@@ -1479,6 +1479,8 @@
         <activity android:name=".rb.Shortcuts" />
         <activity android:name=".rb.Targets" />
         <activity android:name="Rootbox" />
+        <activity android:name=".paranoid.Pie" />
+        <activity android:name=".paranoid.PieColor" />
         <activity android:name=".cyanogenmod.LockscreenButtons" />
 
         <!-- CyanogenMod activities Start -->

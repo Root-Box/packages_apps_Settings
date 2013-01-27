@@ -37,6 +37,13 @@
         android:summary="@string/headset_connect_player_summary"
         android:persistent="false" />
 
+  <PreferenceScreen
+        android:key="pie_control"
+        android:icon="@drawable/ic_settings_pie"
+        android:fragment="com.android.settings.paranoid.Pie"
+        android:title="@string/pie_controls_title"
+        android:summary="@string/pie_controls_summary" />
+
   <CheckBoxPreference
         android:key="volume_adjust_sounds"
         android:icon="@drawable/ic_settings_sound"
