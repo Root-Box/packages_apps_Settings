@@ -1477,6 +1477,7 @@
         <!-- RootBox -->
         <activity android:name=".rb.About" />
         <activity android:name=".rb.Shortcuts" />
+        <activity android:name=".rb.Targets" />
         <activity android:name="Rootbox" />
         <activity android:name=".cyanogenmod.LockscreenButtons" />
 
