@@ -4574,6 +4574,10 @@
     <string name="headset_connect_player_title">Headset</string>
     <string name="headset_connect_player_summary">Launch music app on headset connection</string>
 
+    <!-- Volume Adjustment Sound settings -->
+    <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
+    <string name="volume_adjust_sounds_enable_summary">Play sound when adjusting volume with hard keys</string>
+  
     <!-- time range preference -->
     <string name="start_time_title">Start</string>
     <string name="end_time_title">End</string>

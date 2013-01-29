@@ -46,10 +46,12 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
-    private CheckBoxPreference mHeadsetConnectPlayer;
+    private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     
     private PreferenceScreen mLockscreenButtons;
     private CheckBoxPreference mExpandedDesktopPref;
+    private CheckBoxPreference mHeadsetConnectPlayer;
+    private CheckBoxPreference mVolumeAdjustSounds;
     private final Configuration mCurConfig = new Configuration();
 
     public boolean hasButtons() {
@@ -71,6 +73,11 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
         mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
                 Settings.System.HEADSET_CONNECT_PLAYER, 0) != 0);
+
+        mVolumeAdjustSounds = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUNDS);
+        mVolumeAdjustSounds.setPersistent(false);
+        mVolumeAdjustSounds.setChecked(Settings.System.getInt(resolver,
+                Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED, 1) != 0);
 
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
         boolean showExpandedDesktopPref =
@@ -121,6 +128,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mHeadsetConnectPlayer) {
             Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
                     mHeadsetConnectPlayer.isChecked() ? 1 : 0);
+         } else if (preference == mVolumeAdjustSounds) {
+            Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
+                    mVolumeAdjustSounds.isChecked() ? 1 : 0);
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);
