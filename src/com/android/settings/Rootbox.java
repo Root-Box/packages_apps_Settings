@@ -26,6 +26,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -47,11 +48,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
+    private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     
     private PreferenceScreen mLockscreenButtons;
     private CheckBoxPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
+    private CheckBoxPreference mKillAppLongpressBack;
     private final Configuration mCurConfig = new Configuration();
 
     public boolean hasButtons() {
@@ -78,6 +81,16 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mVolumeAdjustSounds.setPersistent(false);
         mVolumeAdjustSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED, 1) != 0);
+
+        mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
+                updateKillAppLongpressBackOptions();
+
+        boolean hasNavBarByDefault = getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+
+        if (hasNavBarByDefault) {
+            ((PreferenceGroup) findPreference("misc")).removePreference(mKillAppLongpressBack);
+        }
 
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
         boolean showExpandedDesktopPref =
@@ -111,6 +124,16 @@ public class Rootbox extends SettingsPreferenceFragment implements
         super.onResume();
     }
 
+    private void writeKillAppLongpressBackOptions() {
+        Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.KILL_APP_LONGPRESS_BACK, mKillAppLongpressBack.isChecked() ? 1 : 0);
+    }
+
+    private void updateKillAppLongpressBackOptions() {
+        mKillAppLongpressBack.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.KILL_APP_LONGPRESS_BACK, 0) != 0);
+    }
+
     @Override
     public void onPause() {
         super.onPause();
@@ -131,6 +154,8 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mVolumeAdjustSounds) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
                     mVolumeAdjustSounds.isChecked() ? 1 : 0);
+         } else if (preference == mKillAppLongpressBack) {
+            writeKillAppLongpressBackOptions();
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);

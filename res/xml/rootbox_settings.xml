@@ -81,6 +81,12 @@
         android:summary="@string/power_menu_expanded_desktop_summary"
 	android:defaultValue="false" />
 
+  <CheckBoxPreference
+        android:key="kill_app_longpress_back"
+        android:icon="@drawable/ic_item_delete"
+        android:title="@string/kill_app_longpress_back"
+        android:summary="@string/kill_app_longpress_back_summary" />
+
   <PreferenceScreen
         android:key="hardware_keys"
         android:icon="@drawable/ic_settings_hardware_keys"
