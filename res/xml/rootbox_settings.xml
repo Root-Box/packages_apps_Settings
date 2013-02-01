@@ -61,14 +61,14 @@
 
   <PreferenceScreen
         android:key="lock_screen_targets"
-        android:icon="@drawable/ic_settings_lock_screen"
+        android:icon="@drawable/ic_settings_lock_targets"
         android:fragment="com.android.settings.rb.Targets"
         android:title="@string/lockscreen_target_title"
         android:summary="@string/lockscreen_target_summary" />
 
   <PreferenceScreen
         android:key="lock_screen_shortcuts"
-        android:icon="@drawable/ic_settings_lock_screen"
+        android:icon="@drawable/ic_settings_lock_shortcuts"
         android:fragment="com.android.settings.rb.Shortcuts"
         android:title="@string/lock_screen_shortcuts_title"
         android:summary="@string/lock_screen_shortcuts_summary" />
@@ -104,7 +104,7 @@
 
   <CheckBoxPreference
         android:key="kill_app_longpress_back"
-        android:icon="@drawable/ic_item_delete"
+        android:icon="@drawable/ic_settings_back_kill"
         android:title="@string/kill_app_longpress_back"
         android:summary="@string/kill_app_longpress_back_summary" />
 
