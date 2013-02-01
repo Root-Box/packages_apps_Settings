@@ -92,7 +92,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_showNavigationBar);
 
         if (hasNavBarByDefault) {
-            ((PreferenceGroup) findPreference("misc")).removePreference(mKillAppLongpressBack);
+            getPreferenceScreen().removePreference(mKillAppLongpressBack);
         }
 
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
