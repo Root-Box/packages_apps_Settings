@@ -25,9 +25,11 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.IWindowManager;
@@ -67,6 +69,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
         ContentResolver resolver = getContentResolver();
 
         addPreferencesFromResource(R.xml.rootbox_settings);
+        PreferenceScreen prefs = getPreferenceScreen();
 
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
         if (!hasButtons()) {
