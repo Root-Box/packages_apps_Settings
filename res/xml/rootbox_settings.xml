@@ -25,7 +25,7 @@
 
   <PreferenceScreen
         android:key="lock_clock"
-        android:icon="@drawable/ic_settings_chronus"
+        android:icon="@drawable/ic_rb_chronus"
         android:title="@string/lock_clock_title"
         android:summary="@string/lock_clock_summary">
         <intent android:action="android.intent.action.MAIN"
@@ -41,14 +41,14 @@
 
   <CheckBoxPreference
         android:key="headset_connect_player"
-        android:icon="@drawable/ic_settings_headset"
+        android:icon="@drawable/ic_rb_headset"
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary"
         android:persistent="false" />
 
   <CheckBoxPreference
         android:key="volume_adjust_sounds"
-        android:icon="@drawable/ic_settings_sound"
+        android:icon="@drawable/ic_rb_sound"
         android:title="@string/volume_adjust_sounds_enable_title"
         android:summary="@string/volume_adjust_sounds_enable_summary"
         android:persistent="true" />
@@ -61,21 +61,21 @@
 
   <PreferenceScreen
         android:key="lock_screen_targets"
-        android:icon="@drawable/ic_settings_lock_targets"
+        android:icon="@drawable/ic_rb_targets"
         android:fragment="com.android.settings.rb.Targets"
         android:title="@string/lockscreen_target_title"
         android:summary="@string/lockscreen_target_summary" />
 
   <PreferenceScreen
         android:key="lock_screen_shortcuts"
-        android:icon="@drawable/ic_settings_lock_shortcuts"
+        android:icon="@drawable/ic_rb_shortcuts"
         android:fragment="com.android.settings.rb.Shortcuts"
         android:title="@string/lock_screen_shortcuts_title"
         android:summary="@string/lock_screen_shortcuts_summary" />
 
   <PreferenceScreen
         android:key="screen_security"
-        android:icon="@drawable/ic_settings_security"
+        android:icon="@drawable/ic_rb_security"
         android:fragment="com.android.settings.SecuritySettings"
         android:title="@string/screen_security_category"
         android:summary="@string/screen_security_summary">
@@ -90,21 +90,21 @@
 
   <PreferenceScreen
         android:key="pie_control"
-        android:icon="@drawable/ic_settings_pie"
+        android:icon="@drawable/ic_rb_pie"
         android:fragment="com.android.settings.paranoid.Pie"
         android:title="@string/pie_controls_title"
         android:summary="@string/pie_controls_summary" />
 
   <CheckBoxPreference
 	android:key="power_menu_expanded_desktop"
-        android:icon="@drawable/ic_lock_expanded_desktop"
+        android:icon="@drawable/ic_rb_expanded_desktop"
 	android:title="@string/power_menu_expanded_desktop"
         android:summary="@string/power_menu_expanded_desktop_summary"
 	android:defaultValue="false" />
 
   <CheckBoxPreference
         android:key="kill_app_longpress_back"
-        android:icon="@drawable/ic_settings_back_kill"
+        android:icon="@drawable/ic_rb_back_kill"
         android:title="@string/kill_app_longpress_back"
         android:summary="@string/kill_app_longpress_back_summary" />
 
@@ -116,14 +116,14 @@
 
   <PreferenceScreen
         android:key="hardware_keys"
-        android:icon="@drawable/ic_settings_hardware_keys"
+        android:icon="@drawable/ic_rb_hardware_keys"
         android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
         android:title="@string/hardware_keys_title" 
         android:summary="@string/hardware_keys_summary" />
 
   <PreferenceScreen
         android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
-        android:icon="@drawable/ic_settings_lockscreen"
+        android:icon="@drawable/ic_rb_lockscreen"
         android:key="lockscreen_buttons"
         android:title="@string/lockscreen_buttons_title"
         android:summary="@string/lockscreen_buttons_summary" />
