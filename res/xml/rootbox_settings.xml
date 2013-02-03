@@ -25,7 +25,7 @@
 
   <PreferenceScreen
         android:key="lock_clock"
-        android:icon="@drawable/ic_rb_chronus"
+        android:icon="@drawable/ic_rb_clock"
         android:title="@string/lock_clock_title"
         android:summary="@string/lock_clock_summary">
         <intent android:action="android.intent.action.MAIN"
