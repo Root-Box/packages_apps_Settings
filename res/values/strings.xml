@@ -4449,8 +4449,8 @@
     <string name="hardware_keys_header">Hardware Keys</string>
  
     <!-- LockClock CyanogenMod -->
-    <string name="lock_clock_title">Chronus</string>
-    <string name="lock_clock_summary">View or change how the \'Chronus\' Home and Lock screen widgets will display</string>
+    <string name="lock_clock_title">cLock</string>
+    <string name="lock_clock_summary">View or change how the \'cLock\' Home and Lock screen widgets will display</string>
 
     <!--- Sms security limit -->
     <string name="app_security_title">App security</string>
