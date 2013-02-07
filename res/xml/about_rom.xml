@@ -14,9 +14,9 @@
 			android:summary="@string/rootbox_source_summary" />
 
 		<Preference
-			android:key="rootbox_support"
-			android:title="@string/rootbox_support_title"
-			android:summary="@string/rootbox_support_summary" />
+			android:key="rootbox_blog"
+			android:title="@string/rootbox_blog_title"
+			android:summary="@string/rootbox_blog_summary" />
 
 		<Preference
 			android:key="rootbox_facebook"

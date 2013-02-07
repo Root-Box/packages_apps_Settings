@@ -18,7 +18,7 @@ public class About extends SettingsPreferenceFragment {
 
     public static final String TAG = "About";
 
-    Preference mSupportUrl;
+    Preference mBlogUrl;
     Preference mSourceUrl;
     Preference mFacebookUrl;
     Preference mGooglePlusUrl;
@@ -27,7 +27,7 @@ public class About extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.about_rom);
-        mSupportUrl = findPreference("rootbox_support");
+        mBlogUrl = findPreference("rootbox_blog");
         mSourceUrl = findPreference("rootbox_source");
         mFacebookUrl = findPreference("rootbox_facebook");
         mGooglePlusUrl = findPreference("rootbox_googleplus");
@@ -50,8 +50,8 @@ public class About extends SettingsPreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSupportUrl) {
-            launchUrl("http://forum.xda-developers.com/showthread.php?t=2117444");
+        if (preference == mBlogUrl) {
+            launchUrl("http://www.rootbox.ca");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/Root-Box");
         } else if (preference == mFacebookUrl) {

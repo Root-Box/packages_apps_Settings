@@ -4606,8 +4606,8 @@
     <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
     <string name="donate_aokp">http://aokp.co/</string>
     <string name="rootbox">Vanilla RootBox</string>
-    <string name="rootbox_support_title">RootBox Support</string>
-    <string name="rootbox_support_summary">Visit RootBox official support thread for non-development questions.</string>
+    <string name="rootbox_blog_title">RootBox Blog</string>
+    <string name="rootbox_blog_summary">Visit RootBox Blog for latest news about the ROM.</string>
     <string name="rootbox_source_title">RootBox Sources</string>
     <string name="rootbox_source_summary">RootBox Project is open sourced and you can find sources @ www.github.com/Root-Box</string>
     <string name="rootbox_facebook_title">Facebook Page</string>
