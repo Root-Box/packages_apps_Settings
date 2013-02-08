@@ -4577,6 +4577,12 @@
     <!-- Expanded Desktop -->
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide status and navigation bar.</string>
+    <string name="summary_expanded_desktop">%1$s</string>
+    <string name="expanded_desktop_summary_status_bar">With status bar</string>
+    <string name="expanded_desktop_summary_no_status_bar">Without status bar</string>
+    <string name="expanded_desktop_disabled">Off</string>
+    <string name="expanded_desktop_status_bar">With status bar</string>
+    <string name="expanded_desktop_no_status_bar">Without status bar</string>
 
     <!-- Headset Music -->
     <string name="headset_connect_player_title">Headset</string>
@@ -4760,6 +4766,7 @@
     <!-- Pie controls -->
     <string name="pie_controls_title">Pie controls</string>
     <string name="pie_controls_summary">Allows navigation and status report on expanded desktop mode</string>
+    <string name="pie_targets_title">Targets</string>
     <string name="pie_gravity_title">Pie gravity</string>
     <string name="pie_gravity_summary">Select the location where Pie will be placed at</string>
     <string name="pie_gravity_top">Top</string>
@@ -4797,15 +4804,16 @@
     <string name="pie_gap_huge">Huge</string>
     <string name="pie_trigger_title">Trigger size</string>
     <string name="pie_trigger_summary">Determine the size of the triggering area that will start pie controls</string>
-    <string name="pie_trigger_small">Small (Default)</string>
+    <string name="pie_trigger_small">Small</string>
+    <string name="pie_trigger_normal">Normal (Default)</string>
     <string name="pie_trigger_big">Big</string>
     <string name="pie_trigger_huge">Huge</string>
-    <string name="pie_notifications_title">Enable Chevron Targets</string>
-    <string name="pie_notifications_summary">Enabling, will let the Notification panels and QuickSettings active when swipe.</string>
     <string name="pie_menu_title">Show menu button always</string>
     <string name="pie_menu_summary">Whether or not the menu button will appear when unneeded</string>
     <string name="pie_search_title">Show search button</string>
     <string name="pie_search_summary">Access to GoogleNow via Pie</string>
+    <string name="pie_lastapp_title">Last App button</string>
+    <string name="pie_lastapp_summary">Enable last app button on Pie</string>
     <string name="all_color">Custom Colors</string>
     <string name="stock_color">Default Colors</string>
 

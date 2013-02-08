@@ -47,13 +47,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
-    private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
+    private static final String PREF_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     
     private PreferenceScreen mLockscreenButtons;
-    private CheckBoxPreference mExpandedDesktopPref;
+    private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
     private CheckBoxPreference mKillAppLongpressBack;
@@ -95,17 +95,12 @@ public class Rootbox extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mKillAppLongpressBack);
         }
 
-        mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
-        boolean showExpandedDesktopPref =
-            getResources().getBoolean(R.bool.config_show_expandedDesktop);
-        if (!showExpandedDesktopPref) {
-            if (mExpandedDesktopPref != null) {
-                getPreferenceScreen().removePreference(mExpandedDesktopPref);
-            }
-        } else {
-            mExpandedDesktopPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
-        }
+        PreferenceScreen prefSet = getPreferenceScreen();
+        mExpandedDesktopPref = (ListPreference) prefSet.findPreference(PREF_EXPANDED_DESKTOP);
+        mExpandedDesktopPref.setOnPreferenceChangeListener(this);
+        int expandedDesktopValue = Settings.System.getInt(getContentResolver(), Settings.System.EXPANDED_DESKTOP_STATUS_BAR_STATE, 0);
+        mExpandedDesktopPref.setValue(String.valueOf(expandedDesktopValue));
+        updateExpandedDesktopSummary(expandedDesktopValue);
 
         // Do not display lock clock preference if its not installed
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
@@ -146,12 +141,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
          boolean value;
 
-         if (preference == mExpandedDesktopPref) {
-            value = mExpandedDesktopPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
-                    value ? 1 : 0);
-         } else if (preference == mHeadsetConnectPlayer) {
+         if (preference == mHeadsetConnectPlayer) {
             Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
                     mHeadsetConnectPlayer.isChecked() ? 1 : 0);
          } else if (preference == mVolumeAdjustSounds) {
@@ -166,9 +156,36 @@ public class Rootbox extends SettingsPreferenceFragment implements
          return true;    
      }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
-        return true;
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mExpandedDesktopPref) {
+            int expandedDesktopValue = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.EXPANDED_DESKTOP_STATUS_BAR_STATE, expandedDesktopValue);
+            updateExpandedDesktopSummary(expandedDesktopValue);
+            return true;
+        }
+        return false;
+    }
+
+    private void updateExpandedDesktopSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            /* expanded desktop deactivated */
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0);
+            mExpandedDesktopPref.setSummary(res.getString(R.string.expanded_desktop_disabled));
+        } else if (value == 1) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1);
+            String statusBarPresent = res.getString(R.string.expanded_desktop_summary_status_bar);
+            mExpandedDesktopPref.setSummary(res.getString(R.string.summary_expanded_desktop, statusBarPresent));
+        } else if (value == 2) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1);
+            String statusBarPresent = res.getString(R.string.expanded_desktop_summary_no_status_bar);
+            mExpandedDesktopPref.setSummary(res.getString(R.string.summary_expanded_desktop, statusBarPresent));
+        }
     }
 
     private boolean removePreferenceIfPackageNotInstalled(Preference preference) {

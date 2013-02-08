@@ -17,15 +17,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/pie_controls_title">
 
+   <PreferenceScreen
+            android:key="pie_color"
+            android:title="@string/pie_color_title"
+            android:fragment="com.android.settings.paranoid.PieColor" />
+
     <PreferenceCategory
         android:key="pie_control"
-        android:title="@string/pie_controls_title" />
-
-        <CheckBoxPreference
-            android:key="pie_controls"
-            android:title="@string/pie_controls_title"
-            android:summary="@string/pie_controls_summary"
-            android:defaultValue="false" />
+        android:title="@string/pie_controls_title" >
 
         <ListPreference
             android:key="pie_trigger"
@@ -67,11 +66,11 @@
             android:entries="@array/entries_pie_gap"
             android:entryValues="@array/values_pie_gap" />
 
-        <CheckBoxPreference
-            android:key="pie_notifications"
-            android:title="@string/pie_notifications_title"
-            android:summary="@string/pie_notifications_summary"
-            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pie_targets"
+        android:title="@string/pie_targets_title" >
 
         <CheckBoxPreference
             android:key="pie_menu"
@@ -83,9 +82,11 @@
             android:title="@string/pie_search_title"
             android:summary="@string/pie_search_summary" />
 
-        <PreferenceScreen
-            android:key="pie_color"
-            android:title="@string/pie_color_title"
-            android:fragment="com.android.settings.paranoid.PieColor" />
+        <CheckBoxPreference
+            android:key="pie_lastapp"
+            android:title="@string/pie_lastapp_title"
+            android:summary="@string/pie_lastapp_summary" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
