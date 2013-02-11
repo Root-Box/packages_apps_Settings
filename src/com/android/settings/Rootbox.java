@@ -15,10 +15,14 @@
 
 package com.android.settings;
 
+import android.app.Activity;
 import android.app.ActivityManagerNative;
+import android.content.Intent;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -31,6 +35,7 @@ import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.IWindowManager;
 import java.util.regex.Matcher;
@@ -51,22 +56,30 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+    private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
+    private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     
     private PreferenceScreen mLockscreenButtons;
     private CheckBoxPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
     private CheckBoxPreference mKillAppLongpressBack;
+    private CheckBoxPreference mCrtOff;
+    private CheckBoxPreference mCrtOn;
     private final Configuration mCurConfig = new Configuration();
+    private Context mContext;
 
     public boolean hasButtons() {
         return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
     }
+    
+    private boolean isCrtOffChecked = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ContentResolver resolver = getContentResolver();
+        mContext = getActivity();
 
         addPreferencesFromResource(R.xml.rootbox_settings);
         PreferenceScreen prefs = getPreferenceScreen();
@@ -75,6 +88,28 @@ public class Rootbox extends SettingsPreferenceFragment implements
         if (!hasButtons()) {
             getPreferenceScreen().removePreference(mLockscreenButtons);
         }
+
+       // respect device default configuration
+        // true fades while false animates
+        boolean electronBeamFadesConfig = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_animateScreenLights);
+
+        // use this to enable/disable crt on feature
+        // crt only works if crt off is enabled
+        // total system failure if only crt on is enabled
+        isCrtOffChecked = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
+                electronBeamFadesConfig ? 0 : 1) == 1;
+
+        mCrtOff = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_OFF);
+        mCrtOff.setChecked(isCrtOffChecked);
+        mCrtOff.setOnPreferenceChangeListener(this);
+
+        mCrtOn = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_ON);
+        mCrtOn.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0) == 1);
+        mCrtOn.setEnabled(isCrtOffChecked);
+        mCrtOn.setOnPreferenceChangeListener(this);
 
         mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
         mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
@@ -166,9 +201,28 @@ public class Rootbox extends SettingsPreferenceFragment implements
          return true;    
      }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
-        return true;
+         if (mCrtOff.equals(preference)) {
+            isCrtOffChecked = ((Boolean) newValue).booleanValue();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
+                    (isCrtOffChecked ? 1 : 0));
+            // if crt off gets turned off, crt on gets turned off and disabled
+            if (!isCrtOffChecked) {
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0);
+                mCrtOn.setChecked(false);
+            }
+            mCrtOn.setEnabled(isCrtOffChecked);
+            return true;
+        } else if (mCrtOn.equals(preference)) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
+                    ((Boolean) newValue).booleanValue() ? 1 : 0);
+            return true;
+        }
+        return false;
     }
 
     private boolean removePreferenceIfPackageNotInstalled(Preference preference) {
