@@ -110,11 +110,13 @@
 
    <CheckBoxPreference
         android:key="system_power_crt_screen_off"
+        android:icon="@drawable/ic_rb_crt"
         android:summary="@string/system_power_crt_screen_off_summary"
         android:title="@string/system_power_crt_screen_off_title" />
 
    <CheckBoxPreference
         android:key="system_power_crt_screen_on"
+        android:icon="@drawable/ic_rb_crt"
         android:summary="@string/system_power_crt_screen_on_summary"
         android:title="@string/system_power_crt_screen_on_title" />
 
