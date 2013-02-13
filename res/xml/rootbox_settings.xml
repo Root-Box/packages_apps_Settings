@@ -20,38 +20,48 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
  <PreferenceCategory
-        android:key="rb_clock"
-        android:title="@string/clock_header">
+        android:key="rb_general_ui"
+        android:title="@string/general_ui_header">
 
   <PreferenceScreen
-        android:key="lock_clock"
-        android:icon="@drawable/ic_rb_clock"
-        android:title="@string/lock_clock_title"
-        android:summary="@string/lock_clock_summary">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.cyanogenmod.lockclock"
-                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-  </PreferenceScreen>
+        android:key="pie_control"
+        android:icon="@drawable/ic_rb_pie"
+        android:fragment="com.android.settings.paranoid.Pie"
+        android:title="@string/pie_controls_title"
+        android:summary="@string/pie_controls_summary" />
 
- </PreferenceCategory>
 
- <PreferenceCategory
-        android:key="rb_sound"
-        android:title="@string/sound_header">
-
-  <CheckBoxPreference
-        android:key="headset_connect_player"
-        android:icon="@drawable/ic_rb_headset"
-        android:title="@string/headset_connect_player_title"
-        android:summary="@string/headset_connect_player_summary"
-        android:persistent="false" />
+   <PreferenceScreen
+        android:key="lcd_density_setup"
+        android:icon="@drawable/ic_rb_dpi"
+        android:fragment="com.android.settings.rb.DensityChanger"
+        android:title="@string/lcd_density_title"
+        android:summary="@string/lcd_density_summary" />
 
   <CheckBoxPreference
-        android:key="volume_adjust_sounds"
-        android:icon="@drawable/ic_rb_sound"
-        android:title="@string/volume_adjust_sounds_enable_title"
-        android:summary="@string/volume_adjust_sounds_enable_summary"
-        android:persistent="true" />
+	android:key="power_menu_expanded_desktop"
+        android:icon="@drawable/ic_rb_expanded_desktop"
+	android:title="@string/power_menu_expanded_desktop"
+        android:summary="@string/power_menu_expanded_desktop_summary"
+	android:defaultValue="false" />
+
+  <CheckBoxPreference
+        android:key="kill_app_longpress_back"
+        android:icon="@drawable/ic_rb_back_kill"
+        android:title="@string/kill_app_longpress_back"
+        android:summary="@string/kill_app_longpress_back_summary" />
+
+   <CheckBoxPreference
+        android:key="system_power_crt_screen_off"
+        android:icon="@drawable/ic_rb_crt"
+        android:summary="@string/system_power_crt_screen_off_summary"
+        android:title="@string/system_power_crt_screen_off_title" />
+
+   <CheckBoxPreference
+        android:key="system_power_crt_screen_on"
+        android:icon="@drawable/ic_rb_crt"
+        android:summary="@string/system_power_crt_screen_on_summary"
+        android:title="@string/system_power_crt_screen_on_title" />
 
  </PreferenceCategory>
 
@@ -85,40 +95,38 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="rb_general_ui"
-        android:title="@string/general_ui_header">
+        android:key="rb_clock"
+        android:title="@string/clock_header">
 
   <PreferenceScreen
-        android:key="pie_control"
-        android:icon="@drawable/ic_rb_pie"
-        android:fragment="com.android.settings.paranoid.Pie"
-        android:title="@string/pie_controls_title"
-        android:summary="@string/pie_controls_summary" />
+        android:key="lock_clock"
+        android:icon="@drawable/ic_rb_clock"
+        android:title="@string/lock_clock_title"
+        android:summary="@string/lock_clock_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+  </PreferenceScreen>
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="rb_sound"
+        android:title="@string/sound_header">
 
   <CheckBoxPreference
-	android:key="power_menu_expanded_desktop"
-        android:icon="@drawable/ic_rb_expanded_desktop"
-	android:title="@string/power_menu_expanded_desktop"
-        android:summary="@string/power_menu_expanded_desktop_summary"
-	android:defaultValue="false" />
+        android:key="headset_connect_player"
+        android:icon="@drawable/ic_rb_headset"
+        android:title="@string/headset_connect_player_title"
+        android:summary="@string/headset_connect_player_summary"
+        android:persistent="false" />
 
   <CheckBoxPreference
-        android:key="kill_app_longpress_back"
-        android:icon="@drawable/ic_rb_back_kill"
-        android:title="@string/kill_app_longpress_back"
-        android:summary="@string/kill_app_longpress_back_summary" />
-
-   <CheckBoxPreference
-        android:key="system_power_crt_screen_off"
-        android:icon="@drawable/ic_rb_crt"
-        android:summary="@string/system_power_crt_screen_off_summary"
-        android:title="@string/system_power_crt_screen_off_title" />
-
-   <CheckBoxPreference
-        android:key="system_power_crt_screen_on"
-        android:icon="@drawable/ic_rb_crt"
-        android:summary="@string/system_power_crt_screen_on_summary"
-        android:title="@string/system_power_crt_screen_on_title" />
+        android:key="volume_adjust_sounds"
+        android:icon="@drawable/ic_rb_sound"
+        android:title="@string/volume_adjust_sounds_enable_title"
+        android:summary="@string/volume_adjust_sounds_enable_summary"
+        android:persistent="true" />
 
  </PreferenceCategory>
 

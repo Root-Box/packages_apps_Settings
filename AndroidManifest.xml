@@ -1482,6 +1482,7 @@
         <activity android:name=".rb.About" />
         <activity android:name=".rb.Shortcuts" />
         <activity android:name=".rb.Targets" />
+        <activity android:name=".rb.DensityChanger" />
         <activity android:name="Rootbox" />
         <activity android:name=".paranoid.Pie" />
         <activity android:name=".paranoid.PieColor" />

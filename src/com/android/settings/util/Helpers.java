@@ -28,7 +28,7 @@ public class Helpers {
 
     /**
      * Checks device for SuperUser permission
-     * 
+     *
      * @return If SU was granted or denied
      */
     public static boolean checkSu() {
@@ -61,8 +61,7 @@ public class Helpers {
     public static boolean isNetworkAvailable(final Context c) {
         boolean state = false;
         if (c != null) {
-            ConnectivityManager cm = (ConnectivityManager) c
-                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo netInfo = cm.getActiveNetworkInfo();
             if (netInfo != null && netInfo.isConnected()) {
                 Log.i(TAG, "The device currently has data connectivity");
@@ -139,6 +138,46 @@ public class Helpers {
             }
         }
         return (cmd.su.runWaitFor("busybox mount -o remount," + mount + " /system").success());
+    }
+
+    public static String getFile(final String filename) {
+        String s = "";
+        final File f = new File(filename);
+
+        if (f.exists() && f.canRead()) {
+            try {
+                final BufferedReader br = new BufferedReader(new FileReader(f),
+                        256);
+                String buffer = null;
+                while ((buffer = br.readLine()) != null) {
+                    s += buffer + "\n";
+                }
+
+                br.close();
+            } catch (final Exception e) {
+                Log.e(TAG, "Error reading file: " + filename, e);
+                s = null;
+            }
+        }
+        return s;
+    }
+
+    public static void writeNewFile(String filePath, String fileContents) {
+        File f = new File(filePath);
+        if (f.exists()) {
+            f.delete();
+        }
+
+        try{
+            // Create file
+            FileWriter fstream = new FileWriter(f);
+            BufferedWriter out = new BufferedWriter(fstream);
+            out.write(fileContents);
+            //Close the output stream
+            out.close();
+        }catch (Exception e){
+            Log.d( TAG, "Failed to create " + filePath + " File contents: " + fileContents);
+        }
     }
 
     public static String readOneLine(String fname) {
@@ -328,7 +367,7 @@ public class Helpers {
         Log.d(TAG, "Remounting /system " + read_value);
         return cmd.su.runWaitFor(String.format(REMOUNT_CMD, read_value)).success();
     }
-    
+
     /*
      * Find value of build.prop item (/system can be ro or rw)
      *
@@ -352,39 +391,11 @@ public class Helpers {
         } catch (NullPointerException npe) {
             //swallowed thrown by ill formatted requests
         }
-        
+
         if (value != null) {
             return value;
         } else {
             return DISABLE;
         }
-    }
-    
-    // find value of /sys/kernel/fast_charge/force_fast_charge
-    public static int isFastCharge() {
-        int onOff = 0;
-        String line = "";
-        final String filename = "/sys/kernel/fast_charge/force_fast_charge";
-        final File f = new File(filename);
-        
-        if (f.exists() && f.canRead()) {
-            try {
-                final BufferedReader br = new BufferedReader(new FileReader(f), 256);
-                String buffer = null;
-                while ((buffer = br.readLine()) != null) {
-                    line += buffer + "\n";
-                    try {
-                        onOff = Integer.parseInt(buffer);
-                    } catch (NumberFormatException nfe) {
-                        onOff = 0;
-                    }
-                }
-                br.close();
-            } catch (final Exception e) {
-                Log.e(TAG, "Error reading file: " + filename, e);
-                onOff = 0;
-            }
-        }
-        return onOff;
     }
 }
