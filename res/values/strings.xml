@@ -4899,6 +4899,10 @@
     <!-- Low Battery Warning -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
 
+    <!-- Home Button Wake -->
+    <string name="pref_home_wake_title">Home button</string>
+    <string name="pref_home_wake_summary">Pressing the home button will wake your device</string>
+
     <!-- Recents -->
     <string name="recent_kill_all">Recents style</string>
     <string name="recent_kill_all_summary">Enable kill-all button in Recent Apps window and select position</string>
@@ -5036,9 +5040,13 @@
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware Keys</string>
+    <string name="hardware_keys_summary">Change hardware keys actions</string>
     <string name="hardware_keys_bindings_title">Key Actions</string>
     <string name="hardware_keys_enable_custom_title">Enable Custom Actions</string>
+    <string name="hardware_keys_home_press_title">Home key</string>
     <string name="hardware_keys_home_long_press_title">Longpress Home Key</string>
+    <string name="hardware_keys_back_press_title">Back key</string>
+    <string name="hardware_keys_back_long_press_title">Longpress Back key</string>
     <string name="hardware_keys_menu_press_title">Press Menu Key</string>
     <string name="hardware_keys_menu_long_press_title">Longpress Menu Key</string>
     <string name="hardware_keys_assist_press_title">Press Search Key</string>
@@ -5050,13 +5058,18 @@
     <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
     <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
     <string name="hardware_keys_action_nothing">No Action</string>
+    <string name="hardware_keys_action_home">Home button</string>
+    <string name="hardware_keys_action_back">Back button</string>
     <string name="hardware_keys_action_menu">Open/Close Menu</string>
     <string name="hardware_keys_action_app_switch">Recent Apps Switcher</string>
     <string name="hardware_keys_action_search">Search Assistant</string>
     <string name="hardware_keys_action_voice_search">Voice Search</string>
     <string name="hardware_keys_action_in_app_search">In-app Search</string>
+    <string name="hardware_keys_action_power">Power off</string>
+    <string name="hardware_keys_action_notifications">Notification shade toggle</string>
+    <string name="hardware_keys_action_expanded">Expanded desktop toggle</string>
+    <string name="hardware_keys_action_kill_app">Kill app</string>
     <string name="hardware_keys_action_last_app">Switch to last app</string>
-    <string name="hardware_keys_action_power">Power Button</string>
     <string name="hardware_keys_action_custom_app">Custom App</string>
 
     <!-- Powerwidget -->
