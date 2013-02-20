@@ -99,6 +99,16 @@
                 android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </header>
 
+   <!-- Sprint Tools -->
+    <header android:id="@+id/sprint_tools"
+            android:title="@string/sprint_tools_title"
+            android:icon="@drawable/ic_sprint_tools">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.teameos.settings.device"
+                android:targetClass="org.teameos.settings.device.DeviceSettings" />
+    </header>
+
     <!-- ROOTBOX SECTION -->
     <header android:title="@string/header_category_rootbox" />
 
@@ -149,7 +159,7 @@
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="de.robv.android.xposed.mods.appsettings"
                 android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-    </header>
+   </header>
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
