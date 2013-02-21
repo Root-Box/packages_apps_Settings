@@ -40,7 +40,7 @@
 
   <ListPreference
         android:key="volume_key_cursor_control"
-        android:icon="@drawable/ic_bt_keyboard_hid"
+        android:icon="@drawable/ic_rb_cursor"
         android:persistent="false"
         android:dialogTitle="@string/volume_key_cursor_control_title"
         android:title="@string/volume_key_cursor_control_title"
@@ -49,7 +49,7 @@
 
   <CheckBoxPreference
         android:key="fullscreen_keyboard"
-        android:icon="@drawable/ic_bt_keyboard_hid"
+        android:icon="@drawable/ic_rb_keyboard"
         android:title="@string/fullscreen_keyboard"
         android:summary="@string/fullscreen_keyboard_summary"
         android:defaultValue="false" />
@@ -69,13 +69,13 @@
 
    <CheckBoxPreference
         android:key="system_power_crt_screen_off"
-        android:icon="@drawable/ic_rb_crt"
+        android:icon="@drawable/ic_rb_crt_off"
         android:summary="@string/system_power_crt_screen_off_summary"
         android:title="@string/system_power_crt_screen_off_title" />
 
    <CheckBoxPreference
         android:key="system_power_crt_screen_on"
-        android:icon="@drawable/ic_rb_crt"
+        android:icon="@drawable/ic_rb_crt_on"
         android:summary="@string/system_power_crt_screen_on_summary"
         android:title="@string/system_power_crt_screen_on_title" />
 
