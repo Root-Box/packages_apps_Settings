@@ -89,6 +89,7 @@
                 android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
     </header>
 
+   <!-- Device Options -->
     <header android:id="@+id/advanced_settings"
             android:title="@string/advanced_settings_title"
             android:icon="@drawable/ic_settings_advanced">
@@ -100,13 +101,6 @@
 
     <!-- ROOTBOX SECTION -->
     <header android:title="@string/header_category_rootbox" />
-
-    <!-- CM Profiles -->
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
 
     <!-- RootBox Settings -->
     <header
@@ -214,6 +208,13 @@
     <!-- PERSONAL -->
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
+
+    <!-- CM Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" />
 
     <!-- Location -->
     <header
