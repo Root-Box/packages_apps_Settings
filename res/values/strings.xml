@@ -4926,6 +4926,10 @@
    <string name="system_power_crt_screen_on_title">CRT Screen On</string>
    <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
 
+   <!-- Fullscreen Keyboard -->
+   <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
+   <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
+
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
     <string name="lcd_density_title">LCD Density</string>

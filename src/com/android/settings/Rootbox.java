@@ -60,6 +60,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
+    private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     
     private PreferenceScreen mLockscreenButtons;
     private CheckBoxPreference mExpandedDesktopPref;
@@ -68,6 +69,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mKillAppLongpressBack;
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
+    private CheckBoxPreference mFullscreenKeyboard;
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
 
@@ -112,6 +114,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
                 Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0) == 1);
         mCrtOn.setEnabled(isCrtOffChecked);
         mCrtOn.setOnPreferenceChangeListener(this);
+
+        mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
+        mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
+                Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
 
         mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
         mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
@@ -196,6 +202,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
                     mVolumeAdjustSounds.isChecked() ? 1 : 0);
          } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
+         } else if (preference == mFullscreenKeyboard) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
+                    mFullscreenKeyboard.isChecked() ? 1 : 0);
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);
