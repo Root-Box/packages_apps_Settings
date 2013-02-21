@@ -33,6 +33,8 @@ import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -61,6 +63,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
+    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     
     private PreferenceScreen mLockscreenButtons;
     private CheckBoxPreference mExpandedDesktopPref;
@@ -70,6 +73,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
+    private ListPreference mVolumeKeyCursorControl;
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
 
@@ -118,6 +122,14 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
         mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
+
+        mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
+        if(mVolumeKeyCursorControl != null) {
+            mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
+            mVolumeKeyCursorControl.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0)));
+            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
+        }
 
         mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
         mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
@@ -212,10 +224,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
          return true;    
      }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
+    public boolean onPreferenceChange(Preference preference, Object Value) {
         final String key = preference.getKey();
          if (mCrtOff.equals(preference)) {
-            isCrtOffChecked = ((Boolean) newValue).booleanValue();
+            isCrtOffChecked = ((Boolean) Value).booleanValue();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
                     (isCrtOffChecked ? 1 : 0));
@@ -230,7 +242,15 @@ public class Rootbox extends SettingsPreferenceFragment implements
         } else if (mCrtOn.equals(preference)) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
-                    ((Boolean) newValue).booleanValue() ? 1 : 0);
+                    ((Boolean) Value).booleanValue() ? 1 : 0);
+            return true;
+        } else if (preference == mVolumeKeyCursorControl) {
+            String volumeKeyCursorControl = (String) Value;
+            int val = Integer.parseInt(volumeKeyCursorControl);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, val);
+            int index = mVolumeKeyCursorControl.findIndexOfValue(volumeKeyCursorControl);
+            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
             return true;
         }
         return false;
