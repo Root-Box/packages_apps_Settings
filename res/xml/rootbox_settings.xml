@@ -39,6 +39,14 @@
         android:summary="@string/lcd_density_summary" />
 
   <ListPreference
+        android:key="pref_low_battery_warning_policy"
+        android:icon="@drawable/ic_rb_battery_warning"
+        android:title="@string/pref_low_battery_warning_policy_title"
+        android:entries="@array/pref_low_battery_warning_policy_entries"
+        android:entryValues="@array/pref_low_battery_warning_policy_values"
+        android:defaultValue="3" />
+
+  <ListPreference
         android:key="volume_key_cursor_control"
         android:icon="@drawable/ic_rb_cursor"
         android:persistent="false"
