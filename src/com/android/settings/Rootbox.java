@@ -65,8 +65,11 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+    private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
+    private static final String RB_GENERAL_UI = "rb_general_ui";
     
     private PreferenceScreen mLockscreenButtons;
+    private PreferenceScreen mHardwareKeys;
     private CheckBoxPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
@@ -79,9 +82,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
 
-    public boolean hasButtons() {
-        return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
-    }
     
     private boolean isCrtOffChecked = false;
 
@@ -95,9 +95,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
         PreferenceScreen prefs = getPreferenceScreen();
 
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
-        if (!hasButtons()) {
-            getPreferenceScreen().removePreference(mLockscreenButtons);
-        }
+        mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
 
        // respect device default configuration
         // true fades while false animates
@@ -155,10 +153,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
 
-        if (hasNavBarByDefault) {
-            getPreferenceScreen().removePreference(mKillAppLongpressBack);
-        }
-
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
         boolean showExpandedDesktopPref =
             getResources().getBoolean(R.bool.config_show_expandedDesktop);
@@ -179,7 +173,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
                 ServiceManager.getService(Context.WINDOW_SERVICE));
         try {
             if (windowManager.hasNavigationBar()) {
-                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
+                  getPreferenceScreen().removePreference(findPreference(RB_HARDWARE_KEYS));
+                  PreferenceCategory generalCategory = (PreferenceCategory) findPreference(RB_GENERAL_UI);
+                  generalCategory.removePreference(mKillAppLongpressBack);
             }
         } catch (RemoteException e) {
             // Do nothing
