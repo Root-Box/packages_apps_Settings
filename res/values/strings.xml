@@ -4932,6 +4932,10 @@
    <!-- Fullscreen Keyboard -->
    <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
    <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
+   
+   <!-- Lockscreen See Through -->
+   <string name="lockscreen_seethrough">Lockscreen See through</string>
+   <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>

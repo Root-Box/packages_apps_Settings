@@ -59,6 +59,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
+    private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
@@ -77,6 +78,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
+    private CheckBoxPreference mSeeThrough;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mLowBatteryWarning;
     private final Configuration mCurConfig = new Configuration();
@@ -93,6 +95,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.rootbox_settings);
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
+        mSeeThrough.setChecked(Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
 
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
@@ -222,6 +228,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mFullscreenKeyboard) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
                     mFullscreenKeyboard.isChecked() ? 1 : 0);
+         } else if (preference == mSeeThrough) {
+            Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
+                    mSeeThrough.isChecked() ? 1 : 0);
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);
