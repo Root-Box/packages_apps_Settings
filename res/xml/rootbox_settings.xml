@@ -95,7 +95,7 @@
 
   <CheckBoxPreference
         android:key="see_through"
-        android:icon="@drawable/ic_rb_targets"
+        android:icon="@drawable/ic_rb_lock_alpha"
         android:title="@string/lockscreen_seethrough"
         android:summary="@string/lockscreen_seethrough_summary" />
 
@@ -130,7 +130,7 @@
 
     <ListPreference
         android:key="notifications_behaviour"
-      android:icon="@drawable/ic_rb_targets"
+      android:icon="@drawable/ic_rb_notification"
         android:title="@string/notification_behaviour_title"
         android:entries="@array/notifs_beh_entries"
         android:entryValues="@array/notifs_beh_values" />
