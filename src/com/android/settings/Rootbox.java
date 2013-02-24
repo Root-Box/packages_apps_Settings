@@ -60,6 +60,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     private static final String KEY_SEE_TRHOUGH = "see_through";
+    private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
@@ -81,8 +82,12 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mSeeThrough;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mLowBatteryWarning;
+    private ListPreference mNotificationsBeh;
     private final Configuration mCurConfig = new Configuration();
+    private ContentResolver mCr;
     private Context mContext;
+    private PreferenceScreen mPrefSet;
+
 
     
     private boolean isCrtOffChecked = false;
@@ -92,6 +97,8 @@ public class Rootbox extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         ContentResolver resolver = getContentResolver();
         mContext = getActivity();
+        mPrefSet = getPreferenceScreen();
+        mCr = getContentResolver();
 
         addPreferencesFromResource(R.xml.rootbox_settings);
         PreferenceScreen prefs = getPreferenceScreen();
@@ -99,6 +106,12 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
+
+        int CurrentBeh = Settings.Secure.getInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR, 0);
+        mNotificationsBeh = (ListPreference) findPreference(KEY_NOTIFICATION_BEHAVIOUR);
+        mNotificationsBeh.setValue(String.valueOf(CurrentBeh));
+                mNotificationsBeh.setSummary(mNotificationsBeh.getEntry());
+        mNotificationsBeh.setOnPreferenceChangeListener(this);
 
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
@@ -272,6 +285,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL, val);
             int index = mVolumeKeyCursorControl.findIndexOfValue(volumeKeyCursorControl);
             mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
+            return true;
+        } else if (preference == mNotificationsBeh) {
+            String val = (String) Value;
+                     Settings.Secure.putInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR,
+            Integer.valueOf(val));
+            int index = mNotificationsBeh.findIndexOfValue(val);
+            mNotificationsBeh.setSummary(mNotificationsBeh.getEntries()[index]);
             return true;
         }
         return false;

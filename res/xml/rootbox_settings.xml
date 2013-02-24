@@ -125,6 +125,19 @@
  </PreferenceCategory>
 
  <PreferenceCategory
+        android:key="rb_statusbar"
+        android:title="@string/statusbar_header">
+
+    <ListPreference
+        android:key="notifications_behaviour"
+      android:icon="@drawable/ic_rb_targets"
+        android:title="@string/notification_behaviour_title"
+        android:entries="@array/notifs_beh_entries"
+        android:entryValues="@array/notifs_beh_values" />
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
         android:key="rb_clock"
         android:title="@string/clock_header">
 

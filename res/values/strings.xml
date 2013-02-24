@@ -4448,6 +4448,7 @@
     <string name="clock_header">Clock</string>
     <string name="sound_header">Sound</string>
     <string name="lockscreen_header">Lockscreen</string>
+    <string name="statusbar_header">StatusBar</string>
     <string name="general_ui_header">General UI</string>
     <string name="hardware_keys_header">Hardware Keys</string>
  
@@ -4936,6 +4937,9 @@
    <!-- Lockscreen See Through -->
    <string name="lockscreen_seethrough">Lockscreen See through</string>
    <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
+
+   <!-- Notification Behaviour -->
+   <string name="notification_behaviour_title">Notification behaviour</string>
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
