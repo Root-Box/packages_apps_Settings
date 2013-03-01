@@ -101,21 +101,21 @@
 
   <PreferenceScreen
         android:key="lock_screen_targets"
-        android:icon="@drawable/ic_rb_targets"
+        android:icon="@drawable/ic_rb_lock_targets"
         android:fragment="com.android.settings.rb.Targets"
         android:title="@string/lockscreen_target_title"
         android:summary="@string/lockscreen_target_summary" />
 
   <PreferenceScreen
         android:key="lock_screen_shortcuts"
-        android:icon="@drawable/ic_rb_shortcuts"
+        android:icon="@drawable/ic_rb_lock_shortcuts"
         android:fragment="com.android.settings.rb.Shortcuts"
         android:title="@string/lock_screen_shortcuts_title"
         android:summary="@string/lock_screen_shortcuts_summary" />
 
   <PreferenceScreen
         android:key="screen_security"
-        android:icon="@drawable/ic_rb_security"
+        android:icon="@drawable/ic_rb_lock_security"
         android:fragment="com.android.settings.SecuritySettings"
         android:title="@string/screen_security_category"
         android:summary="@string/screen_security_summary">
@@ -130,14 +130,14 @@
 
   <CheckBoxPreference
         android:key="notification_show_wifi_ssid"
-        android:icon="@drawable/ic_rb_notification"
+        android:icon="@drawable/ic_rb_notification_wifi"
         android:title="@string/notification_show_wifi_ssid_title"
         android:summary="@string/notification_show_wifi_ssid_summary"
         android:defaultValue="false" />
 
     <PreferenceScreen
         android:id="@+id/slim_notification_shortcuts"
-        android:icon="@drawable/ic_rb_notification"
+        android:icon="@drawable/ic_rb_notification_shortcuts"
         android:fragment="com.android.settings.slim.notificationshortcuts.NotificationShortcuts"
         android:key="slim_shortcuts_settings"
         android:title="@string/notification_shortcuts_settings_title"
@@ -145,7 +145,7 @@
 
     <ListPreference
         android:key="notifications_behaviour"
-        android:icon="@drawable/ic_rb_notification"
+        android:icon="@drawable/ic_rb_notification_behaviour"
         android:title="@string/notification_behaviour_title"
         android:entries="@array/notifs_beh_entries"
         android:entryValues="@array/notifs_beh_values" />
@@ -188,10 +188,9 @@
 
   <CheckBoxPreference
         android:key="swap_volume_buttons"
-        android:icon="@drawable/ic_rb_sound"
+        android:icon="@drawable/ic_rb_volume_swap"
         android:title="@string/swap_volume_keys_title"
-        android:summary="@string/swap_volume_keys_summary"
-        android:dependency="accelerometer" />
+        android:summary="@string/swap_volume_keys_summary" />
 
  </PreferenceCategory>
 

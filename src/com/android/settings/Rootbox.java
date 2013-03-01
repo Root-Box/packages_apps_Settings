@@ -176,7 +176,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
 
         mSwapVolumeButtons = (CheckBoxPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
         mSwapVolumeButtons.setChecked(Settings.System.getInt(resolver,
-                Settings.System.SWAP_VOLUME_KEYS, 0) == 1;
+                Settings.System.SWAP_VOLUME_KEYS, 0) == 1);
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
