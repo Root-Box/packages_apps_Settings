@@ -128,9 +128,16 @@
         android:key="rb_statusbar"
         android:title="@string/statusbar_header">
 
+  <CheckBoxPreference
+        android:key="notification_show_wifi_ssid"
+        android:icon="@drawable/ic_rb_notification"
+        android:title="@string/notification_show_wifi_ssid_title"
+        android:summary="@string/notification_show_wifi_ssid_summary"
+        android:defaultValue="false" />
+
     <ListPreference
         android:key="notifications_behaviour"
-      android:icon="@drawable/ic_rb_notification"
+        android:icon="@drawable/ic_rb_notification"
         android:title="@string/notification_behaviour_title"
         android:entries="@array/notifs_beh_entries"
         android:entryValues="@array/notifs_beh_values" />

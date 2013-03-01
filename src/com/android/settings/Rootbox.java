@@ -66,6 +66,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
     private static final String RB_GENERAL_UI = "rb_general_ui";
@@ -80,6 +81,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
     private CheckBoxPreference mSeeThrough;
+    private CheckBoxPreference mShowWifiName;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mLowBatteryWarning;
     private ListPreference mNotificationsBeh;
@@ -106,6 +108,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
+
+        mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
+        mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
 
         int CurrentBeh = Settings.Secure.getInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR, 0);
         mNotificationsBeh = (ListPreference) findPreference(KEY_NOTIFICATION_BEHAVIOUR);
@@ -244,6 +250,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
                     mSeeThrough.isChecked() ? 1 : 0);
+         } else if (preference == mShowWifiName) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
+                    mShowWifiName.isChecked() ? 1 : 0);
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);
