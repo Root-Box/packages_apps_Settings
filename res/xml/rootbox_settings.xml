@@ -186,6 +186,13 @@
         android:summary="@string/volume_adjust_sounds_enable_summary"
         android:persistent="true" />
 
+  <CheckBoxPreference
+        android:key="swap_volume_buttons"
+        android:icon="@drawable/ic_rb_sound"
+        android:title="@string/swap_volume_keys_title"
+        android:summary="@string/swap_volume_keys_summary"
+        android:dependency="accelerometer" />
+
  </PreferenceCategory>
 
  <PreferenceCategory

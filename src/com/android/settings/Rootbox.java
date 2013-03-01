@@ -61,6 +61,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
+    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
@@ -82,6 +83,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mFullscreenKeyboard;
     private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mShowWifiName;
+    private CheckBoxPreference mSwapVolumeButtons;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mLowBatteryWarning;
     private ListPreference mNotificationsBeh;
@@ -172,6 +174,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mVolumeAdjustSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED, 1) != 0);
 
+        mSwapVolumeButtons = (CheckBoxPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
+        mSwapVolumeButtons.setChecked(Settings.System.getInt(resolver,
+                Settings.System.SWAP_VOLUME_KEYS, 0) == 1;
+
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
 
@@ -242,6 +248,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mVolumeAdjustSounds) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
                     mVolumeAdjustSounds.isChecked() ? 1 : 0);
+        } else if (preference == mSwapVolumeButtons) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SWAP_VOLUME_KEYS,
+                    mSwapVolumeButtons.isChecked() ? 1 : 0);
          } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
          } else if (preference == mFullscreenKeyboard) {
