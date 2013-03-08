@@ -130,7 +130,7 @@
 
   <CheckBoxPreference
         android:key="mms_breath"
-        android:icon="@drawable/ic_rb_notification_wifi"
+        android:icon="@drawable/ic_rb_breath_sms"
         android:title="@string/mms_breath"
         android:summary="@string/mms_breath_summary"
         android:defaultValue="false" />
