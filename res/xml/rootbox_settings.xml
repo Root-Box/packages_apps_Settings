@@ -129,6 +129,13 @@
         android:title="@string/statusbar_header">
 
   <CheckBoxPreference
+        android:key="mms_breath"
+        android:icon="@drawable/ic_rb_notification_wifi"
+        android:title="@string/mms_breath"
+        android:summary="@string/mms_breath_summary"
+        android:defaultValue="false" />
+
+  <CheckBoxPreference
         android:key="notification_show_wifi_ssid"
         android:icon="@drawable/ic_rb_notification_wifi"
         android:title="@string/notification_show_wifi_ssid_title"

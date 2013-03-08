@@ -4939,6 +4939,10 @@
    <!-- Low Battery Warning -->
    <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
 
+   <!-- Breathing Notifications -->
+   <string name="mms_breath">Breathing SMS</string>
+   <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
+
    <!-- Fullscreen Keyboard -->
    <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
    <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
