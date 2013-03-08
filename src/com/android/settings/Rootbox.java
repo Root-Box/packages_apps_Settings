@@ -18,6 +18,7 @@ package com.android.settings;
 
 import android.app.Activity;
 import android.app.ActivityManagerNative;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -67,11 +68,15 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
+    private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
+    private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
     private static final String RB_GENERAL_UI = "rb_general_ui";
+
+    private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s
     
     private PreferenceScreen mLockscreenButtons;
     private PreferenceScreen mHardwareKeys;
@@ -82,11 +87,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
+    private CheckBoxPreference mKeyboardRotationToggle;
     private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mMMSBreath;
     private CheckBoxPreference mShowWifiName;
     private CheckBoxPreference mSwapVolumeButtons;
     private ListPreference mVolumeKeyCursorControl;
+    private ListPreference mKeyboardRotationTimeout;
     private ListPreference mLowBatteryWarning;
     private ListPreference mNotificationsBeh;
     private final Configuration mCurConfig = new Configuration();
@@ -156,6 +163,15 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
 
+        mKeyboardRotationToggle = (CheckBoxPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
+        mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
+
+        mKeyboardRotationTimeout = (ListPreference) findPreference(KEYBOARD_ROTATION_TIMEOUT);
+        mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
+        updateRotationTimeout(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.KEYBOARD_ROTATION_TIMEOUT, KEYBOARD_ROTATION_TIMEOUT_DEFAULT));
+
         mLowBatteryWarning = (ListPreference) findPreference(PREF_LOW_BATTERY_WARNING_POLICY);
         int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
                                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 3);
@@ -218,6 +234,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
             // Do nothing
         }
     }
+
+    public void updateRotationTimeout(int timeout) {
+        if (timeout == 0)
+            timeout = KEYBOARD_ROTATION_TIMEOUT_DEFAULT;
+        mKeyboardRotationTimeout.setValue(Integer.toString(timeout));
+        mKeyboardRotationTimeout.setSummary(getString(R.string.keyboard_rotation_timeout_summary, mKeyboardRotationTimeout.getEntry()));
+    }
     
     @Override
     public void onResume() {
@@ -239,6 +262,15 @@ public class Rootbox extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
+    public void mKeyboardRotationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(R.string.keyboard_rotation_dialog);
+        builder.setCancelable(false);
+        builder.setPositiveButton(getResources().getString(com.android.internal.R.string.ok), null);
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
          boolean value;
@@ -254,7 +286,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mVolumeAdjustSounds) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
                     mVolumeAdjustSounds.isChecked() ? 1 : 0);
-        } else if (preference == mSwapVolumeButtons) {
+         } else if (preference == mSwapVolumeButtons) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SWAP_VOLUME_KEYS,
                     mSwapVolumeButtons.isChecked() ? 1 : 0);
          } else if (preference == mKillAppLongpressBack) {
@@ -271,6 +303,15 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mShowWifiName) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
                     mShowWifiName.isChecked() ? 1 : 0);
+         } else if (preference == mKeyboardRotationToggle) {
+            boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
+                        Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
+            if (isAutoRotate && mKeyboardRotationToggle.isChecked())
+                mKeyboardRotationDialog();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT,
+                    mKeyboardRotationToggle.isChecked() ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);
+            updateRotationTimeout(KEYBOARD_ROTATION_TIMEOUT_DEFAULT);
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -319,6 +360,12 @@ public class Rootbox extends SettingsPreferenceFragment implements
             Integer.valueOf(val));
             int index = mNotificationsBeh.findIndexOfValue(val);
             mNotificationsBeh.setSummary(mNotificationsBeh.getEntries()[index]);
+            return true;
+        } else if (preference == mKeyboardRotationTimeout) {
+            int timeout = Integer.parseInt((String) Value);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT, timeout);
+            updateRotationTimeout(timeout);
             return true;
         }
         return false;

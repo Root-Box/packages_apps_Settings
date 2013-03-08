@@ -4451,18 +4451,6 @@
     <string name="update_settings_title">Update Center</string>
     <string name="rootbox_settings_title">RootBox Settings</string>
 
-    <!-- RootBox Settings -->
-    <string name="clock_header">Clock</string>
-    <string name="sound_header">Sound</string>
-    <string name="lockscreen_header">Lockscreen</string>
-    <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
-    <string name="general_ui_header">General UI</string>
-    <string name="hardware_keys_header">Hardware Keys</string>
- 
-    <!-- LockClock CyanogenMod -->
-    <string name="lock_clock_title">cLock</string>
-    <string name="lock_clock_summary">View or change how the \'cLock\' Home and Lock screen widgets will display</string>
-
     <!--- Sms security limit -->
     <string name="app_security_title">App security</string>
     <string name="sms_security_check_limit_title">SMS message limit</string>
@@ -4515,6 +4503,21 @@
     <string name="quiet_hours_dim_title">Disable notification light</string>
     <string name="quiet_hours_active_from">Active from</string>
     <string name="quiet_hours_active_to">to</string>
+
+    <!-- ROOTBOX SETTINGS BEGINNING -->
+
+    <!-- RootBox Settings -->
+    <string name="clock_header">Clock</string>
+    <string name="sound_header">Sound</string>
+    <string name="lockscreen_header">Lockscreen</string>
+    <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
+    <string name="general_ui_header">General UI</string>
+    <string name="keyboard_header">Keyboard</string>
+    <string name="hardware_keys_header">Hardware Keys</string>
+ 
+    <!-- LockClock CyanogenMod -->
+    <string name="lock_clock_title">cLock</string>
+    <string name="lock_clock_summary">View or change how the \'cLock\' Home and Lock screen widgets will display</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>
@@ -4916,56 +4919,63 @@
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
-   <!-- Kill app on long-press -->
-   <string name="kill_app_longpress_back">Hold back to kill</string>
-   <string name="kill_app_longpress_back_summary">Holding back button will kill the current activity</string>
+    <!-- Kill app on long-press -->
+    <string name="kill_app_longpress_back">Hold back to kill</string>
+    <string name="kill_app_longpress_back_summary">Holding back button will kill the current activity</string>
 
-   <!-- Hostname setting -->
-   <string name="device_hostname">Device hostname</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
 
-   <!-- Increasing Ring Volume --> 
-   <string name="increasing_ring_title">Ascending ringtone</string>
-   <string name="checkbox_increasing_ring">Enable</string>
-   <string name="increasing_ring_min_volume_title">Ringing start volume</string>
-   <string name="increasing_ring_volume_notice">Notice:\nAs the start volume is set higher than the ringer volume, the ring tone will be played using the ringer volume.</string>
-   <string name="increasing_ring_interval_title">Increase interval</string>
-   <string name="increasing_ring_interval_eachring">On each ring</string>
-   <string name="increasing_ring_interval_half_second">0.5 seconds</string>
-   <string name="increasing_ring_interval_1second">1 second</string>
-   <string name="increasing_ring_interval_2seconds">2 seconds</string>
-   <string name="increasing_ring_interval_3seconds">3 seconds</string>
-   <string name="increasing_ring_interval_5seconds">5 seconds</string>
-   <string name="increasing_ring_interval_10seconds">10 seconds</string>
+    <!-- Increasing Ring Volume --> 
+    <string name="increasing_ring_title">Ascending ringtone</string>
+    <string name="checkbox_increasing_ring">Enable</string>
+    <string name="increasing_ring_min_volume_title">Ringing start volume</string>
+    <string name="increasing_ring_volume_notice">Notice:\nAs the start volume is set higher than the ringer volume, the ring tone will be played using the ringer volume.</string>
+    <string name="increasing_ring_interval_title">Increase interval</string>
+    <string name="increasing_ring_interval_eachring">On each ring</string>
+    <string name="increasing_ring_interval_half_second">0.5 seconds</string>
+    <string name="increasing_ring_interval_1second">1 second</string>
+    <string name="increasing_ring_interval_2seconds">2 seconds</string>
+    <string name="increasing_ring_interval_3seconds">3 seconds</string>
+    <string name="increasing_ring_interval_5seconds">5 seconds</string>
+    <string name="increasing_ring_interval_10seconds">10 seconds</string>
 
-   <!-- Stylus Icon -->
-   <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
-   <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
+    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
 
-   <!-- CRT --> 
-   <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
-   <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
-   <string name="system_power_crt_screen_on_title">CRT Screen On</string>
-   <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
+    <!-- CRT --> 
+    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
+    <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
+    <string name="system_power_crt_screen_on_title">CRT Screen On</string>
+    <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
 
-   <!-- Low Battery Warning -->
-   <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
+    <!-- Low Battery Warning -->
+    <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
 
-   <!-- Breathing Notifications -->
-   <string name="mms_breath">Breathing SMS</string>
-   <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
+    <!-- Breathing Notifications -->
+    <string name="mms_breath">Breathing SMS</string>
+    <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
 
-   <!-- Fullscreen Keyboard -->
-   <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
-   <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
+    <!-- Fullscreen Keyboard -->
+    <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
+    <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
    
-   <!-- Lockscreen See Through -->
-   <string name="lockscreen_seethrough">Lockscreen See through</string>
-   <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
+    <!-- Lockscreen See Through -->
+    <string name="lockscreen_seethrough">Lockscreen See through</string>
+    <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
 
-   <!-- Notification Behaviour -->
-   <string name="notification_behaviour_title">Notification behaviour</string>
-   <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
-   <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
+    <!-- Notification Behaviour -->
+    <string name="notification_behaviour_title">Notification behaviour</string>
+    <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
+    <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
+
+    <!-- Keyboard Rotation -->
+    <string name="keyboard_rotation_toggle_title">Auto keyboard rotation</string>
+    <string name="keyboard_rotation_toggle_summary">Force auto-rotate when keyboard is shown</string>
+    <string name="keyboard_rotation_timeout_title">Auto-rotate timeout</string>
+    <string name="keyboard_rotation_timeout_summary">Disables auto-rotate sensor <xliff:g id="rotate_timeout">%1$s</xliff:g> seconds after keyboard is hidden</string>
+    <string name="keyboard_rotation_dialog">Note: This feature forces auto-rotate to turn on temporarily while the keyboard is out.  It has no effect when auto-rotate is already enabled.</string>
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
@@ -5070,4 +5080,6 @@
     <string name="notification_shortcuts_icon_picker_terminal">Terminal</string>
     <string name="notification_shortcuts_icon_picker_twitter">Twitter</string>
     <string name="notification_shortcuts_icon_picker_unlock">Unlock</string>
+
+    <!-- ROOTBOX SETTINGS END -->
 </resources>

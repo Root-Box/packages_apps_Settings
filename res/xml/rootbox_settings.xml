@@ -46,22 +46,6 @@
         android:entryValues="@array/pref_low_battery_warning_policy_values"
         android:defaultValue="3" />
 
-  <ListPreference
-        android:key="volume_key_cursor_control"
-        android:icon="@drawable/ic_rb_cursor"
-        android:persistent="false"
-        android:dialogTitle="@string/volume_key_cursor_control_title"
-        android:title="@string/volume_key_cursor_control_title"
-        android:entries="@array/volume_key_cursor_control_entries"
-        android:entryValues="@array/volume_key_cursor_control_values" />
-
-  <CheckBoxPreference
-        android:key="fullscreen_keyboard"
-        android:icon="@drawable/ic_rb_keyboard"
-        android:title="@string/fullscreen_keyboard"
-        android:summary="@string/fullscreen_keyboard_summary"
-        android:defaultValue="false" />
-
   <CheckBoxPreference
 	android:key="power_menu_expanded_desktop"
         android:icon="@drawable/ic_rb_expanded_desktop"
@@ -86,6 +70,46 @@
         android:icon="@drawable/ic_rb_crt_on"
         android:summary="@string/system_power_crt_screen_on_summary"
         android:title="@string/system_power_crt_screen_on_title" />
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="rb_keyboard"
+        android:title="@string/keyboard_header">
+
+  <CheckBoxPreference
+        android:key="fullscreen_keyboard"
+        android:icon="@drawable/ic_rb_keyboard"
+        android:title="@string/fullscreen_keyboard"
+        android:summary="@string/fullscreen_keyboard_summary"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="keyboard_rotation_toggle"
+        android:icon="@drawable/ic_rb_keyboard"
+        android:title="@string/keyboard_rotation_toggle_title"
+        android:summary="@string/keyboard_rotation_toggle_summary"
+        android:defaultValue="false"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="keyboard_rotation_timeout"
+        android:icon="@drawable/ic_rb_keyboard"
+        android:persistent="false"
+        android:dialogTitle="@string/keyboard_rotation_timeout_title"
+        android:title="@string/keyboard_rotation_timeout_title"
+        android:entries="@array/keyboard_rotation_timeout_entries"
+        android:entryValues="@array/keyboard_rotation_timeout_values"
+        android:dependency="keyboard_rotation_toggle" />
+
+  <ListPreference
+        android:key="volume_key_cursor_control"
+        android:icon="@drawable/ic_rb_cursor"
+        android:persistent="false"
+        android:dialogTitle="@string/volume_key_cursor_control_title"
+        android:title="@string/volume_key_cursor_control_title"
+        android:entries="@array/volume_key_cursor_control_entries"
+        android:entryValues="@array/volume_key_cursor_control_values" />
 
  </PreferenceCategory>
 
