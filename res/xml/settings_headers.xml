@@ -119,6 +119,12 @@
         android:icon="@drawable/ic_rb_settings"
         android:title="@string/rootbox_settings_title" />
 
+    <!-- TRDS -->
+    <header
+        android:id="@+id/drb_settings"
+        android:icon="@drawable/ic_rb_settings"
+        android:title="@string/drb_settings_title" />
+
     <!-- LMT Settings -->
     <header 
             android:id="@+id/lmt_settings"
