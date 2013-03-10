@@ -4626,6 +4626,8 @@
     <string name="rootbox_googleplus_title">Google+ Community</string>
     <string name="rootbox_googleplus_summary">Join our G+ Community page for real time updates.</string>
     <string name="support_team_title">Support Team</string>
+    <string name="graphics_team_title">Graphics Team</string>
+    <string name="maintainers_team_title">Device Maintainers</string>
     <string name="title_about">About RootBox</string>
 
     <!-- LMT Settings -->
