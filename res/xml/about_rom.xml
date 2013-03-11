@@ -46,6 +46,11 @@
 		android:title="@string/maintainers_team_title">
 
 		<com.android.settings.widgets.DeveloperPreference
+            android:title="Myles Nystrom"
+            rb:nameDev="Myles Nystrom (Grouper)"
+            rb:twitterHandle="Mylesnystrom" />
+
+		<com.android.settings.widgets.DeveloperPreference
             android:title="Joao"
             rb:nameDev="Joao Simoes (t0lte)"
             rb:twitterHandle="rootbox_rom" />
