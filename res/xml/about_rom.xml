@@ -9,24 +9,18 @@
 		android:title="@string/rootbox">
 
 		<Preference
-			android:key="rootbox_source"
-			android:title="@string/rootbox_source_title"
-			android:summary="@string/rootbox_source_summary" />
-
-		<Preference
-			android:key="rootbox_blog"
+			android:key="rootbox_site"
 			android:title="@string/rootbox_blog_title"
 			android:summary="@string/rootbox_blog_summary" />
 
-		<Preference
-			android:key="rootbox_facebook"
-			android:title="@string/rootbox_facebook_title"
-			android:summary="@string/rootbox_facebook_summary" />
+		<com.android.settings.widgets.DeveloperPreference
+                        android:title="RootBox"
+                        rb:nameDev="RootBox"
+                        rb:twitterHandle="rootbox_rom"
+                        rb:googleLink="@string/google_rootbox"
+                        rb:facebookLink="@string/facebook_rootbox"
+                        rb:githubLink="@string/github_rootbox" />
 
-		<Preference
-			android:key="rootbox_googleplus"
-			android:title="@string/rootbox_googleplus_title"
-			android:summary="@string/rootbox_googleplus_summary" />
 	</PreferenceCategory>
 
 	<PreferenceCategory
@@ -37,7 +31,8 @@
             android:title="Bajee"
             rb:nameDev="Bajee"
             rb:twitterHandle="Bajee11"
-            rb:donateLink="@string/donate_bajee" />
+            rb:donateLink="@string/donate_rootbox"
+            rb:githubLink="@string/github_rootbox" />
 
 	</PreferenceCategory>
 
@@ -47,18 +42,20 @@
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Myles Nystrom"
-            rb:nameDev="Myles Nystrom (Grouper)"
+            rb:nameDev="Myles N. (Grouper)"
             rb:twitterHandle="Mylesnystrom" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Joao"
-            rb:nameDev="Joao Simoes (t0lte)"
-            rb:twitterHandle="rootbox_rom" />
+            rb:nameDev="Joao (t0lte)"
+            rb:twitterHandle="manelscout4life"
+            rb:githubLink="@string/github_joao" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Ricky S"
-            rb:nameDev="Ricky S (l900/i605)"
-            rb:twitterHandle="slickrick_xda" />
+            rb:nameDev="Ricky S. (l900/i605)"
+            rb:twitterHandle="slickrick_xda"
+            rb:githubLink="@string/github_slick" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Ashley Sykes"
@@ -74,12 +71,14 @@
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Kroz"
             rb:nameDev="Kroz"
-            rb:twitterHandle="kroz46" />
+            rb:twitterHandle="kroz46"
+            rb:githubLink="@string/github_kroz" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="OlliG"
             rb:nameDev="OlliG"
-            rb:twitterHandle="OliverGeith" />
+            rb:twitterHandle="OliverGeith"
+            rb:githubLink="@string/github_ollig" />
 
 	</PreferenceCategory>      
 
@@ -110,7 +109,8 @@
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Blue Falcon"
             rb:nameDev="Blue Falcon"
-            rb:twitterHandle="bluefa1con" />
+            rb:twitterHandle="bluefa1con"
+            rb:githubLink="@string/github_bluefalcon" />
 
 	</PreferenceCategory>         
 
@@ -122,19 +122,22 @@
             android:title="Pier"
             rb:nameDev="PieR"
             rb:twitterHandle="XniX"
-            rb:donateLink="@string/donate_pier" />
+            rb:donateLink="@string/donate_pier"
+            rb:githubLink="@string/github_pier" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="AOKP"
             rb:nameDev="AOKP"
             rb:twitterHandle="aokp_rom"
-            rb:donateLink="@string/donate_aokp" />
+            rb:donateLink="@string/donate_aokp"
+            rb:githubLink="@string/github_aokp" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="CyanogenMod"
             rb:nameDev="CyanogenMod"
             rb:twitterHandle="cyanogenmod"
-            rb:donateLink="@string/donate_cyanogenmod" />
+            rb:donateLink="@string/donate_cyanogenmod"
+            rb:githubLink="@string/github_cyanogenmod" />
 
 	</PreferenceCategory>
 

@@ -36,18 +36,12 @@ public class About extends SettingsPreferenceFragment {
     public static final String TAG = "About";
 
     Preference mBlogUrl;
-    Preference mSourceUrl;
-    Preference mFacebookUrl;
-    Preference mGooglePlusUrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.about_rom);
         mBlogUrl = findPreference("rootbox_blog");
-        mSourceUrl = findPreference("rootbox_source");
-        mFacebookUrl = findPreference("rootbox_facebook");
-        mGooglePlusUrl = findPreference("rootbox_googleplus");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
         ArrayList<Preference> devs = new ArrayList<Preference>();
@@ -69,12 +63,6 @@ public class About extends SettingsPreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mBlogUrl) {
             launchUrl("http://www.rootbox.ca");
-        } else if (preference == mSourceUrl) {
-            launchUrl("http://github.com/Root-Box");
-        } else if (preference == mFacebookUrl) {
-            launchUrl("http://facebook.com/333083833406934");
-        } else if (preference == mGooglePlusUrl) {
-            launchUrl("https://plus.google.com/u/0/communities/115833651542488654391");
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -84,5 +72,11 @@ public class About extends SettingsPreferenceFragment {
         Uri uriUrl = Uri.parse(url);
         Intent donate = new Intent(Intent.ACTION_VIEW, uriUrl);
         getActivity().startActivity(donate);
+        Intent github = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(github);
+        Intent google = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(google);
+        Intent facebook = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(facebook);
     }
 }

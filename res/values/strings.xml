@@ -4610,29 +4610,34 @@
     <string name="link_volume_mutes">Link mute states</string>
 
     <!-- About RootBox -->
+    <string name="rootbox">Vanilla RootBox</string>
     <string name="about_rb_settings_title">About RootBox</string>
     <string name="about_rootbox">About RootBox</string>
     <string name="about_rootbox_summary">@null</string>
     <string name="app_name">RootBox</string>
-    <string name="contributors_title">Contributors</string>
-    <string name="devs">Developer</string>
-    <string name="donate_bajee">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=62LG5GU2RSW9Y</string>
-    <string name="donate_pier">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=UR24T97QA36CJ</string>
-    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
-    <string name="donate_aokp">http://aokp.co/</string>
-    <string name="rootbox">Vanilla RootBox</string>
     <string name="rootbox_blog_title">RootBox Blog</string>
     <string name="rootbox_blog_summary">Visit RootBox Blog for latest news about the ROM.</string>
-    <string name="rootbox_source_title">RootBox Sources</string>
-    <string name="rootbox_source_summary">RootBox Project is open sourced and you can find sources @ www.github.com/Root-Box</string>
-    <string name="rootbox_facebook_title">Facebook Page</string>
-    <string name="rootbox_facebook_summary">Subscribe to RootBox Facebook page for updates.</string>
-    <string name="rootbox_googleplus_title">Google+ Community</string>
-    <string name="rootbox_googleplus_summary">Join our G+ Community page for real time updates.</string>
+    <string name="title_about">About RootBox</string>
+    <string name="devs">Lead Developer</string>
     <string name="support_team_title">Support Team</string>
     <string name="graphics_team_title">Graphics Team</string>
     <string name="maintainers_team_title">Device Maintainers</string>
-    <string name="title_about">About RootBox</string>
+    <string name="contributors_title">Contributors</string>
+    <string name="donate_rootbox">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=62LG5GU2RSW9Y</string>
+    <string name="donate_pier">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=UR24T97QA36CJ</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
+    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="github_rootbox">https://github.com/Root-Box</string>
+    <string name="github_pier">https://github.com/PierPP</string>
+    <string name="github_cyanogenmod">https://github.com/CyanogenMod</string>
+    <string name="github_aokp">https://github.com/AOKP</string>
+    <string name="github_bluefalcon">https://github.com/bluefa1con</string>
+    <string name="github_kroz">https://github.com/kroz</string>
+    <string name="github_ollig">https://github.com/olivergeith</string>
+    <string name="github_joao">https://github.com/manelscout4life</string>
+    <string name="github_slick">https://github.com/slickrick</string>
+    <string name="google_rootbox">https://plus.google.com/u/0/communities/115833651542488654391</string>
+    <string name="facebook_rootbox">https://www.facebook.com/pages/RootBox-AOKP-ROM/333083833406934</string>
 
     <!-- LMT Settings -->
     <string name="lmt_settings_title">LMT Settings</string>
