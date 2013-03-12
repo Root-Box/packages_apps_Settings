@@ -198,6 +198,13 @@
         android:entryValues="@array/status_bar_icon_opacity_values"
         android:defaultValue="140" />
 
+    <PreferenceScreen
+        android:id="@+id/power_widget_settings"
+        android:icon="@drawable/ic_rb_powerwidget"
+        android:title="@string/power_widget"
+        android:summary="@string/power_widget_summary"
+        android:fragment="com.android.settings.cyanogenmod.PowerWidget" />
+
  </PreferenceCategory>
 
  <PreferenceCategory
