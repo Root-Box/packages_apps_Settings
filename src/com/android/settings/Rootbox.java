@@ -63,6 +63,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_MMS_BREATH = "mms_breath";
     private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
+    private static final String KEY_STATUS_BAR_ICON_OPACITY = "status_bar_icon_opacity";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
@@ -96,6 +97,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private ListPreference mKeyboardRotationTimeout;
     private ListPreference mLowBatteryWarning;
     private ListPreference mNotificationsBeh;
+    private ListPreference mStatusBarIconOpacity;
     private final Configuration mCurConfig = new Configuration();
     private ContentResolver mCr;
     private Context mContext;
@@ -133,6 +135,12 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mNotificationsBeh.setValue(String.valueOf(CurrentBeh));
                 mNotificationsBeh.setSummary(mNotificationsBeh.getEntry());
         mNotificationsBeh.setOnPreferenceChangeListener(this);
+
+        int iconOpacity = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_NOTIF_ICON_OPACITY, 140);
+        mStatusBarIconOpacity = (ListPreference) findPreference(KEY_STATUS_BAR_ICON_OPACITY);
+        mStatusBarIconOpacity.setValue(String.valueOf(iconOpacity));
+        mStatusBarIconOpacity.setOnPreferenceChangeListener(this);
 
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
@@ -360,6 +368,11 @@ public class Rootbox extends SettingsPreferenceFragment implements
             Integer.valueOf(val));
             int index = mNotificationsBeh.findIndexOfValue(val);
             mNotificationsBeh.setSummary(mNotificationsBeh.getEntries()[index]);
+            return true;
+        } else if (preference == mStatusBarIconOpacity) {
+            int iconOpacity = Integer.valueOf((String) Value);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_NOTIF_ICON_OPACITY, iconOpacity);
             return true;
         } else if (preference == mKeyboardRotationTimeout) {
             int timeout = Integer.parseInt((String) Value);

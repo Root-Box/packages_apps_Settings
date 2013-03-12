@@ -4965,6 +4965,10 @@
     <string name="lockscreen_seethrough">Lockscreen See through</string>
     <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
 
+    <!-- Status bar notification icon opacity -->
+    <string name="status_bar_icon_opacity">Notification icon opacity</string>
+    <string name="status_bar_icon_opacity_summary">Sets opacity of status bar notification icons</string>
+
     <!-- Notification Behaviour -->
     <string name="notification_behaviour_title">Notification behaviour</string>
     <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>

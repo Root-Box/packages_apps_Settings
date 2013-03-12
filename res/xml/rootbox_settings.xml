@@ -181,6 +181,16 @@
         android:entries="@array/notifs_beh_entries"
         android:entryValues="@array/notifs_beh_values" />
 
+    <ListPreference
+        android:key="status_bar_icon_opacity"
+        android:icon="@drawable/ic_rb_notification_behaviour"
+        android:dialogTitle="@string/status_bar_icon_opacity"
+        android:title="@string/status_bar_icon_opacity"
+        android:summary="@string/status_bar_icon_opacity_summary"
+        android:entries="@array/status_bar_icon_opacity_entries"
+        android:entryValues="@array/status_bar_icon_opacity_values"
+        android:defaultValue="140" />
+
  </PreferenceCategory>
 
  <PreferenceCategory
