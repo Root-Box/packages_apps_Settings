@@ -94,7 +94,7 @@
 
     <ListPreference
         android:key="keyboard_rotation_timeout"
-        android:icon="@drawable/ic_rb_keyboard_rotate"
+        android:icon="@drawable/ic_rb_keyboard_timeout"
         android:persistent="false"
         android:dialogTitle="@string/keyboard_rotation_timeout_title"
         android:title="@string/keyboard_rotation_timeout_title"
@@ -183,7 +183,7 @@
 
     <ListPreference
         android:key="status_bar_icon_opacity"
-        android:icon="@drawable/ic_rb_notification_behaviour"
+        android:icon="@drawable/ic_rb_notification_opacity"
         android:dialogTitle="@string/status_bar_icon_opacity"
         android:title="@string/status_bar_icon_opacity"
         android:summary="@string/status_bar_icon_opacity_summary"
