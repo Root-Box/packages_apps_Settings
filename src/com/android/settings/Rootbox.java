@@ -62,6 +62,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_MMS_BREATH = "mms_breath";
+    private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String KEY_STATUS_BAR_ICON_OPACITY = "status_bar_icon_opacity";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
@@ -91,6 +92,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mKeyboardRotationToggle;
     private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mMMSBreath;
+    private CheckBoxPreference mMissedCallBreath;
     private CheckBoxPreference mShowWifiName;
     private CheckBoxPreference mSwapVolumeButtons;
     private ListPreference mVolumeKeyCursorControl;
@@ -125,6 +127,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mMMSBreath = (CheckBoxPreference) findPreference(KEY_MMS_BREATH);
         mMMSBreath.setChecked(Settings.System.getInt(resolver,
                 Settings.System.MMS_BREATH, 0) == 1);
+
+        mMissedCallBreath = (CheckBoxPreference) findPreference(KEY_MISSED_CALL_BREATH);
+        mMissedCallBreath.setChecked(Settings.System.getInt(resolver,
+                Settings.System.MISSED_CALL_BREATH, 0) == 1);
 
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
         mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -305,6 +311,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mMMSBreath) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.MMS_BREATH, 
                     mMMSBreath.isChecked() ? 1 : 0);
+         } else if (preference == mMissedCallBreath) {
+            Settings.System.putInt(mContext.getContentResolver(), Settings.System.MISSED_CALL_BREATH, 
+                    mMissedCallBreath.isChecked() ? 1 : 0);
          } else if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
                     mSeeThrough.isChecked() ? 1 : 0);
