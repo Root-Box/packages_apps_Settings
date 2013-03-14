@@ -122,7 +122,7 @@
     <!-- TRDS -->
     <header
         android:id="@+id/drb_settings"
-        android:icon="@drawable/ic_rb_settings"
+        android:icon="@drawable/ic_rb_dark"
         android:title="@string/drb_settings_title" />
 
     <!-- LMT Settings -->
@@ -309,7 +309,7 @@
     <header
         android:id="@+id/about_rom"
         android:fragment="com.android.settings.rb.About"
-        android:icon="@drawable/ic_settings_about_rb"
+        android:icon="@drawable/ic_rb_about"
         android:title="@string/about_rb_settings_title" />
 
     <!-- About Device -->
