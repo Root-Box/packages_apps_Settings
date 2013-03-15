@@ -727,7 +727,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (preference == mLockAfter) {
             int timeout = Integer.parseInt((String) value);
             try {
-                Settings.Global.putInt(getContentResolver(),
+                Settings.Secure.putInt(getContentResolver(),
                         Settings.Secure.LOCK_SCREEN_LOCK_AFTER_TIMEOUT, timeout);
             } catch (NumberFormatException e) {
                 Log.e("SecuritySettings", "could not persist lockAfter timeout setting", e);
@@ -735,7 +735,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
             updateLockAfterPreferenceSummary();
         } else if (preference == mSmsSecurityCheck) {
             int smsSecurityCheck = Integer.valueOf((String) value);
-            Settings.Secure.putInt(getContentResolver(), Settings.Global.SMS_OUTGOING_CHECK_MAX_COUNT,
+            Settings.Global.putInt(getContentResolver(), Settings.Global.SMS_OUTGOING_CHECK_MAX_COUNT,
                      smsSecurityCheck);
             updateSmsSecuritySummary(smsSecurityCheck);
             checkPowerInstantLockDependency();
