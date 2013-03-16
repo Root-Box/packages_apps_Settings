@@ -112,29 +112,18 @@
     <!-- ROOTBOX SECTION -->
     <header android:title="@string/header_category_rootbox" />
 
-    <!-- RootBox Settings -->
-    <header
-        android:id="@+id/rb_settings"
-        android:fragment="com.android.settings.Rootbox"
-        android:icon="@drawable/ic_rb_settings"
-        android:title="@string/rootbox_settings_title" />
-
     <!-- TRDS -->
     <header
         android:id="@+id/drb_settings"
         android:icon="@drawable/ic_rb_dark"
         android:title="@string/drb_settings_title" />
 
-    <!-- LMT Settings -->
-    <header 
-            android:id="@+id/lmt_settings"
-            android:icon="@drawable/ic_menu_scan_network"
-            android:title="@string/lmt_settings_title">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.lmt"
-                android:targetClass="com.android.lmt.LMT" />
-    </header>
+    <!-- RootBox Settings -->
+    <header
+        android:id="@+id/rb_settings"
+        android:fragment="com.android.settings.Rootbox"
+        android:icon="@drawable/ic_rb_settings"
+        android:title="@string/rootbox_settings_title" />
 
     <!-- Update Me -->
     <header 

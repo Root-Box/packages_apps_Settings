@@ -129,7 +129,6 @@ public class Settings extends PreferenceActivity
             R.id.themes,
             R.id.performance,
             R.id.advanced_settings,
-            R.id.lmt_settings,
             R.id.sprint_tools
     };
 
@@ -436,7 +435,7 @@ public class Settings extends PreferenceActivity
             Header header = target.get(i);
             // Ids are integers, so downcasting
             int id = (int) header.id;
-            if (id == R.id.operator_settings || id == R.id.manufacturer_settings || id == R.id.lmt_settings) {
+            if (id == R.id.operator_settings || id == R.id.manufacturer_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
             } else if (id == R.id.advanced_settings) {
                 if (!needsAdvancedSettings())
