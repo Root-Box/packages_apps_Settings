@@ -1838,4 +1838,117 @@
     <string name="user_picture_title" msgid="7297782792000291692">"Документ с фото"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Широковещательная передача сообщений"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Выберите типы экстренных оповещений на экране."</string>
+
+         <!-- RootBox -->
+    <string name="header_category_rootbox">ROOTBOX</string>
+    <string name="update_settings_title">Центр обновлений</string>
+    <string name="rootbox_settings_title">Настройки RootBox</string>
+
+    <!--- Sms security limit -->
+    <string name="app_security_title">Безопасность приложений</string>
+    <string name="sms_security_check_limit_title">Лимит SMS</string>
+    <string name="sms_security_check_limit_summary">Отображение предупреждения, предотвращение отправки приложениями большого количества сообщений. Текущий лимит: %d SMS за 15 минут</string>
+    <string name="sms_security_check_limit_default">30 (По умолчанию)</string>
+
+    <string name="quick_links_title">Быстрый доступ</string>
+    <string name="rom_control_title">Настройки AOKP</string>
+    <string name="themes_title">Темы</string>
+    <string name="performance_title">Производительность</string>
+
+    <string name="mod_version">Версия RootBox</string>
+
+    <!-- Anonymous Statistics #CM -->
+    <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
+    <string name="anonymous_statistics_title">Статистика AOKP</string>
+    <string name="anonymous_statistics_summary">Помогите сделать AOKP лучше, предоставляя анонимные отчеты</string>
+    <string name="anonymous_statistics_warning_title">Информация</string>
+    <string name="anonymous_statistics_warning">Opting into AOKP Statistics will allow non-personal data to be submitted to the
+        developers of AOKP to track unique installations across devices. The information submitted includes an unique identifier,
+        which does not compromise your privacy or personal data. The data is submitted once weekly, during boot.\n\nFor an example of the data that is submitted, tap on Preview Data.</string>
+    <string name="enable_reporting_title">Отправка отчетов</string>
+    <string name="preview_data_title">Предварительный просмотр</string>
+    <string name="preview_data_summary">%s</string>
+    <string name="view_stats_title">Глобальная статистика</string>
+    <string name="anonymous_learn_more">Узнать больше</string>
+
+    <!-- Anonymous Statistics - Notification -->
+    <string name="anonymous_notification_desc">Включение или отключение статистики AOKP</string>
+
+    <!-- Anonymous Statistics - Preview -->
+    <string name="preview_id_title">Уникальный ID</string>
+    <string name="preview_device_title">Устройство</string>
+    <string name="preview_version_title">Версия</string>
+    <string name="preview_country_title">Страна</string>
+    <string name="preview_carrier_title">Оператор</string>
+
+    <!-- Quiet hours #CM -->
+    <string name="quiet_hours_title">Тихие часы</string>
+    <string name="quiet_hours_summary">Настройка времени, в которое устройство должно вести себя тихо</string>
+    <string name="quiet_hours_enabled_title">Включить тихие часы</string>
+    <string name="quiet_hours_start">Начало тихих часов</string>
+    <string name="quiet_hours_start_summary">Время окончания действия тихих часов</string>
+    <string name="quiet_hours_end">Конец тихих часов</string>
+    <string name="quiet_hours_end_summary">Время окончания действия тихих часов</string>
+    <string name="quiet_hours_notifications_title">Отключить звук уведомлений</string>
+    <string name="quiet_hours_ringer_title">Отключить звук звонков</string>
+    <string name="quiet_hours_still_title">Отключить вибрацию</string>
+    <string name="quiet_hours_dim_title">Отключить подсветку уведомлений</string>
+    <string name="quiet_hours_active_from">Включено с</string>
+    <string name="quiet_hours_active_to">до</string>
+
+    <!-- ROOTBOX SETTINGS BEGINNING -->
+
+    <!-- RootBox Settings -->
+    <string name="clock_header">Часы</string>
+    <string name="sound_header">Звук</string>
+    <string name="lockscreen_header">Экран блокировки</string>
+    <string name="statusbar_header">Статусбар &amp; область уведомлений</string>
+    <string name="general_ui_header">Основной интерфейс</string>
+    <string name="keyboard_header">Клавиатура</string>
+    <string name="hardware_keys_header">Кнопки</string>
+ 
+    <!-- LockClock CyanogenMod -->
+    <string name="lock_clock_title">cLock</string>
+    <string name="lock_clock_summary">Настройки отображения виджетов \'cLock\'</string>
+
+    <!-- Hardware keys -->
+    <string name="hardware_keys_title">Кнопки</string>
+    <string name="hardware_keys_summary">Изменение действий при нажатии кнопок</string>
+    <string name="hardware_keys_bindings_title">Действия кнопок</string>
+    <string name="hardware_keys_enable_custom_title">Пользовательские действия</string>
+    <string name="hardware_keys_home_long_press_title">Домой (долгое нажате)</string>
+    <string name="hardware_keys_menu_press_title">Меню</string>
+    <string name="hardware_keys_menu_long_press_title">Меню (долгое нажате)</string>
+    <string name="hardware_keys_assist_press_title">Поиск</string>
+    <string name="hardware_keys_assist_long_press_title">Поиск (долгое нажате)</string>
+    <string name="hardware_keys_app_switch_press_title">Переключение приложений</string>
+    <string name="hardware_keys_app_switch_long_press_title">Переключение приложений (долгое нажате)</string>
+    <string name="hardware_keys_show_overflow_title">Кнопка меню</string>
+    <string name="hardware_keys_show_overflow_summary">Отображения кнопки меню с тремя точками в приложениях</string>
+    <string name="hardware_keys_show_overflow_toast_enable">Может потребоваться перезапуск приложений</string>
+    <string name="hardware_keys_show_overflow_toast_disable">Может потребоваться перезапуск приложений</string>
+    <string name="hardware_keys_action_nothing">Нет действия</string>
+    <string name="hardware_keys_action_menu">Открыть/закрыть меню</string>
+    <string name="hardware_keys_action_app_switch">Последние приложения</string>
+    <string name="hardware_keys_action_search">Помощник по поиску</string>
+    <string name="hardware_keys_action_voice_search">Голосовой поиск</string>
+    <string name="hardware_keys_action_in_app_search">Поиск в приложении</string>
+    <string name="hardware_keys_action_torch">Фонарик</string>
+
+    <!-- Lockscreen Hardware keys -->
+    <string name="lockscreen_buttons_title">Действия кнопок</string>
+    <string name="lockscreen_buttons_summary">Изменение действий при нажатии кнопок на экране блокировки</string>
+    <string name="lockscreen_long_press_back_title">Долгое нажате кнопки Назад</string>
+    <string name="lockscreen_long_press_home_title">Долгое нажате кнопки Домой</string>
+    <string name="lockscreen_long_press_menu_title">Долгое нажате кнопки Меню</string>
+    <string name="lockscreen_buttons_no_action">Нет действия</string>
+    <string name="lockscreen_buttons_flashlight">Фонарик</string>
+    <string name="lockscreen_buttons_next">Следующая песня</string>
+    <string name="lockscreen_buttons_previous">Предыдущая песня</string>
+    <string name="lockscreen_buttons_playpause">Воспроизведение/Пауза</string>
+    <string name="lockscreen_buttons_toggle_sound">Режим звука</string>
+
+    <!-- Lock screen vibrate settings -->
+    <string name="lockscreen_vibrate_enabled_title">Вибрация</string>
+    <string name="lockscreen_vibrate_enabled_head">Вибрация при разблокировке</string>
 </resources>
