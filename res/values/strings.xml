@@ -4523,6 +4523,7 @@
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_summary">View or change hardware keys actions</string>
     <string name="hardware_keys_bindings_title">Key actions</string>
     <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
     <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
@@ -4656,7 +4657,7 @@
     <string name="icon_default">Default</string>
     <string name="icon_presets">Presets</string>
     <string name="icon_custom">Custom</string>
-    <string name="lock_screen_shortcuts_title">Shortcuts</string>
+    <string name="lock_screen_shortcuts_title">Lockscreen Shortcuts</string>
     <string name="lock_screen_shortcuts_reset_message">Reset lock screen shortcuts?</string>
     <string name="lock_screen_shortcuts_summary">View or change custom lock screen shortcuts</string>
     <string name="lock_screen_shortcuts_add">@string/profiles_add</string>

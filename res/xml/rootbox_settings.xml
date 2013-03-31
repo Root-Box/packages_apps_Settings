@@ -118,13 +118,6 @@
         android:title="@string/lock_screen_shortcuts_title"
         android:summary="@string/lock_screen_shortcuts_summary" />
 
-  <CheckBoxPreference
-	android:key="power_menu_expanded_desktop"
-        android:icon="@drawable/ic_lock_expanded_desktop"
-	android:title="@string/power_menu_expanded_desktop"
-        android:summary="@string/power_menu_expanded_desktop_summary"
-	android:defaultValue="false" />
-
   <PreferenceScreen
         android:key="screen_security"
         android:icon="@drawable/ic_rb_lock_security"
@@ -245,7 +238,8 @@
         android:key="hardware_keys"
         android:icon="@drawable/ic_rb_hardware_keys"
         android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
-        android:title="@string/hardware_keys_title" />
+        android:title="@string/hardware_keys_title"
+        android:summary="@string/hardware_keys_summary" />
 
   <PreferenceScreen
         android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
