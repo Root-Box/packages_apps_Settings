@@ -4664,6 +4664,9 @@
     <string name="lock_screen_shortcuts_reset">Reset</string>
     <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
 
+    <!-- Paranoid Settings -->
+    <string name="hybrid_settings">Hybrid Settings</string>
+
     <!-- Lock screen shortcuts -->
     <string name="choose_app">Choose application</string>
     <string name="dialog_delete_title">Delete</string>
