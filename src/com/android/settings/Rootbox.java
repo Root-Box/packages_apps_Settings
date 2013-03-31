@@ -209,16 +209,12 @@ public class Rootbox extends SettingsPreferenceFragment implements
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
 
         // Only show the hardware keys config on a device that does not have a navbar
-        IWindowManager windowManager = IWindowManager.Stub.asInterface(
-                ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
-            if (windowManager.hasNavigationBar()) {
+        boolean hasHardwareButtons = mContext.getResources().getBoolean(
+                R.bool.has_hardware_buttons);
+        if (!hasHardwareButtons) {
                   getPreferenceScreen().removePreference(findPreference(RB_HARDWARE_KEYS));
                   PreferenceCategory generalCategory = (PreferenceCategory) findPreference(RB_GENERAL_UI);
                   generalCategory.removePreference(mKillAppLongpressBack);
-            }
-        } catch (RemoteException e) {
-            // Do nothing
         }
     }
 
