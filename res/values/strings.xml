@@ -4942,12 +4942,6 @@
     <string name="increasing_ring_interval_5seconds">5 seconds</string>
     <string name="increasing_ring_interval_10seconds">10 seconds</string>
 
-    <!-- CRT --> 
-    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
-    <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
-    <string name="system_power_crt_screen_on_title">CRT Screen On</string>
-    <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
-
     <!-- Low Battery Warning -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
 

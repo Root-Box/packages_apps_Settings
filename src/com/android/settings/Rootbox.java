@@ -67,8 +67,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_STATUS_BAR_ICON_OPACITY = "status_bar_icon_opacity";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-    private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
-    private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
@@ -105,9 +103,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private Context mContext;
     private PreferenceScreen mPrefSet;
 
-
-    
-    private boolean isCrtOffChecked = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -150,28 +145,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
 
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
-
-       // respect device default configuration
-        // true fades while false animates
-        boolean electronBeamFadesConfig = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_animateScreenLights);
-
-        // use this to enable/disable crt on feature
-        // crt only works if crt off is enabled
-        // total system failure if only crt on is enabled
-        isCrtOffChecked = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
-                electronBeamFadesConfig ? 0 : 1) == 1;
-
-        mCrtOff = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_OFF);
-        mCrtOff.setChecked(isCrtOffChecked);
-        mCrtOff.setOnPreferenceChangeListener(this);
-
-        mCrtOn = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_ON);
-        mCrtOn.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0) == 1);
-        mCrtOn.setEnabled(isCrtOffChecked);
-        mCrtOn.setOnPreferenceChangeListener(this);
 
         mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
         mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
@@ -338,25 +311,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object Value) {
         final String key = preference.getKey();
-         if (mCrtOff.equals(preference)) {
-            isCrtOffChecked = ((Boolean) Value).booleanValue();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
-                    (isCrtOffChecked ? 1 : 0));
-            // if crt off gets turned off, crt on gets turned off and disabled
-            if (!isCrtOffChecked) {
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0);
-                mCrtOn.setChecked(false);
-            }
-            mCrtOn.setEnabled(isCrtOffChecked);
-            return true;
-        } else if (mCrtOn.equals(preference)) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
-                    ((Boolean) Value).booleanValue() ? 1 : 0);
-            return true;
-        } else if (preference == mLowBatteryWarning) {
+         if (preference == mLowBatteryWarning) {
             int lowBatteryWarning = Integer.valueOf((String) Value);
             int index = mLowBatteryWarning.findIndexOfValue((String) Value);
             Settings.System.putInt(getActivity().getContentResolver(),
