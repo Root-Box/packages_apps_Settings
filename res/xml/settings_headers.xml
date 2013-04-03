@@ -89,17 +89,6 @@
                 android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
     </header>
 
-    <!-- Hybrid Settings -->
-    <header
-        android:id="@+id/hybrid_settings"
-        android:icon="@drawable/ic_hybrid_settings"
-        android:title="@string/hybrid_settings">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.paranoid.preferences"
-            android:targetClass="com.paranoid.preferences.MainActivity" />
-    </header>
-
    <!-- Device Options -->
     <header android:id="@+id/advanced_settings"
             android:title="@string/advanced_settings_title"
@@ -149,23 +138,16 @@
     <!-- DPI Settings -->
     <header android:title="@string/dpi_settings" />
 
-    <header 
-            android:icon="@drawable/ic_settings_advanced"
-            android:title="@string/xposed_frameworks_settings">
+    <!-- Hybrid Settings -->
+    <header
+        android:id="@+id/hybrid_settings"
+        android:icon="@drawable/ic_hybrid_settings"
+        android:title="@string/hybrid_settings">
         <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.installer"
-                android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
-   </header>
-
-   <header 
-            android:icon="@drawable/ic_settings_multiuser"
-            android:title="@string/xposed_dpi_settings">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.mods.appsettings"
-                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-   </header>
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.paranoid.preferences"
+            android:targetClass="com.paranoid.preferences.MainActivity" />
+    </header>
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"

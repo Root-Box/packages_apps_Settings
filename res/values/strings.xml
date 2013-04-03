@@ -4650,11 +4650,6 @@
     <!-- LMT Settings -->
     <string name="lmt_settings_title">LMT Settings</string>
 
-    <!-- Per App Dpi -->
-    <string name="dpi_settings">DPI &amp; TABLET SETTINGS</string>
-    <string name="xposed_dpi_settings">Per-App Settings</string>
-    <string name="xposed_frameworks_settings">Modules Management</string>
-
     <!-- Paranoid Lockscreen -->
     <string name="icon_picker_type">Select icon type:</string>
     <string name="icon_default">Default</string>
@@ -4668,6 +4663,7 @@
     <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
 
     <!-- Paranoid Settings -->
+    <string name="dpi_settings">DPI &amp; LAYOUT SETTINGS</string>
     <string name="hybrid_settings">Hybrid Settings</string>
 
     <!-- Lock screen shortcuts -->
