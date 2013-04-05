@@ -295,4 +295,62 @@
     <item msgid="5077768429488260031">"Asla izin verme"</item>
     <item msgid="1417929597727989746">"Her zaman izin ver"</item>
   </string-array>
+  <string-array name="profile_entries">
+        <item>Açık</item>
+        <item>Kapalı</item>
+        <item>Geçersiz kıl</item>
+   </string-array>
+   <string-array name="profile_connection_entries">
+        <item>Devre dışı</item>
+        <item>Etkin</item>
+   </string-array>
+   <string-array name="silent_mode_entries">
+        <item>Kapalı</item>
+        <item>Titreşim</item>
+        <item>Sessiz</item>
+   </string-array>
+   <string-array name="pref_low_battery_warning_policy_entries">
+        <item>Açılır pencere ve ses</item>
+        <item>Sadece açılır pencere</item>
+        <item>Sadece ses</item>
+        <item>Kapalı</item>
+    </string-array>
+     <string-array name="notifs_beh_entries">
+        <item>Normal</item>
+        <item>Asla genişletme</item>
+        <item>Her zaman genişlet</item>
+        <item>Eski tarz</item>
+    </string-array>
+    <string-array name="notification_shortcuts_quantity_entries" translatable="false">
+        <item>4</item>
+        <item>6 (Varsayılan)</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+    </string-array>
+    <string-array name="status_bar_icon_opacity_entries">
+        <item>35%</item>
+        <item>45%</item>
+        <item>55% (Varsayılan)</item>
+        <item>65%</item>
+        <item>75%</item>
+        <item>85%</item>
+        <item>95%</item>
+        <item>100%</item>
+    </string-array>
+    <string-array name="entries_screentimeout_widget">
+        <item>15s | 1d | 5d</item>
+        <item>30s | 2d | 5d</item>
+    </string-array>
+    <string-array name="entries_flash_widget">
+        <item>Normal</item>
+        <item>High</item>
+    </string-array>
+    <string-array name="haptic_feedback_entries">
+        <item>Genel ayarları kullan</item>
+        <item>Açık</item>
+        <item>Kapalı</item>
+    </string-array>
 </resources>
