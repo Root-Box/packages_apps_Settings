@@ -30,14 +30,6 @@
         android:title="@string/pie_controls_title"
         android:summary="@string/pie_controls_summary" />
 
-
-  <PreferenceScreen
-        android:key="lcd_density_setup"
-        android:icon="@drawable/ic_rb_dpi"
-        android:fragment="com.android.settings.rb.DensityChanger"
-        android:title="@string/lcd_density_title"
-        android:summary="@string/lcd_density_summary" />
-
   <ListPreference
         android:key="pref_low_battery_warning_policy"
         android:icon="@drawable/ic_rb_battery_warning"
