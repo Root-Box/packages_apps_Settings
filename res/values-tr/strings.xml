@@ -2222,6 +2222,8 @@
     <string name="pie_stick_summary">Eğer işaretli olursa telefon hangi yönde olursa olsun Gizli tuşlar yerinde kalacak</string>
     <string name="all_color">Özel renkler</string>
     <string name="stock_color">Varsayılan renkler</string>
+    <string name="pie_restart_launcher_title">Arayüzü yeniden başlat</string>
+    <string name="pie_restart_launcher_summary">Ekran boyutu değiştirmenin olumsuz etkileri olabilir.Bu seçenek arayüzün yeniden başlatılmasına izin verir, küçük bir kararma olabilir (önerilir)</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Renk Seçici</string>
@@ -2357,39 +2359,7 @@
     <!-- Dark RB Settings -->
     <string name="drb_settings_title">RootBox Koyu</string>
 
-    <!-- LCD Density -->
-    <string name="dpi">DPI</string>
-    <string name="lcd_density_title">LCD Yoğunluğu</string>
-    <string name="lcd_density_summary">Cihazınızın DPI değerini değiştirin</string>
-    <string name="current_lcd_density">"Mevcut LCD Yoğunluğu: "</string>
-    <string name="lcd_density_wizard">LCD Yoğunluk Sihirbazı</string>
-    <string name="follow_through_title">Talimatları izleyin!</string>
-    <string name="follow_through_summary">Yeni adıma geçmeden önce bulunduğunuz adımı doğru yaptığınıza emin olun.</string>
-    <string name="stock_density_title">1. Standart LCD yoğunluğunu değiştirin</string>
-    <string name="stock_density_summary">Tabletler ve eski telefonlar için 160 dır. Çoğu telefon 240 kullanır. Galaxy Nexus standart olarak 320 ile gelir.</string>
-    <string name="stock_density_changed_summary">"Yoğunluk Ayarı: "</string>
-    <string name="reboot_title">2. Yeniden başlat!</string>
-    <string name="reboot_summary">Yeniden başlattıktan sonra buraya gelin ve bütün adımları tamamlayın!</string>
-    <string name="clear_market_data_title">3. Market verisini temizleyin</string>
-    <string name="clear_market_data_summary">Bu adım Google Play ve Google servis hizmetlerindeki tüm verileri siler.</string>
-    <string name="clear_market_data_cleared">Market verisi temizlendi</string>
-    <string name="clear_market_data_donot_cleared">"Market verisi temizlenemedi, lütfen kendiniz temizleyin!"</string>
-    <string name="reboot_cleardata_title">4. Yeniden başlat!</string>
-    <string name="reboot_cleardata_summary">Cihaz yeniden açıldığında kalan adımları tamamlamak için buraya geri dönün!</string>
-    <string name="open_market_title">5. Marketi açın ve Kabul Et tıklayın</string>
-    <string name="open_market_summary">Tamamladığınızda buraya geri dönün.</string>
-    <string name="open_market_summary_could_not_open">"Market açılamadı.Yüklü olduğundan eminseniz Anasayfadan kendiniz açın."</string>
-    <string name="custom_density_title">6. LCD yoğunluğunu nasıl istiyorsanız değiştirin!</string>
-    <string name="custom_density_summary">Eğer marketle ilgili uyum sorunu olursa, buraya gelin ve adımları baştan doğru bir şekilde yapın.</string>
-    <string name="custom_density_summary_invalid">GEÇERSİZ YOĞUNLUK!</string>
-    <string name="custom_density">Özel</string>
-    <string name="set_custom_density_title">Özel Yoğunluk Ayarla</string>
-    <string name="set_custom_density_set">Ayarla</string>
-    <string name="custom_density_dialog_title">UYARI!</string>
-    <string name="custom_density_dialog_summary">LCD yoğunluğunun değiştirilmesi uygulamalarda beklenmedik davranışlara sebeb olabilir.Bu şekilde bir sorun ile karşılaşırsanız buraya dönün ve 1. adımdan süreci yeniden başlatın.</string>
-    <string name="custom_density_dialog_button_got">Tamam!</string>
-    <string name="custom_density_dialog_button_reboot">Yeniden Başlat</string>
-
+    
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Özel uygulama kullan</string>
     <string name="use_custom_app_summary">Son uygulamalar iletişim kutusu yerine özel bir uygulama kullanın</string>
@@ -2523,4 +2493,37 @@
     <string name="brightness_slider_top">Üstte</string>
     <string name="brightness_slider_bottom">Altta</string>
     <string name="brightness_slider_none">Gösterme</string>
+    
+    <!-- Custom lock screen background -->
+    <string name="lockscreen_custom_background_title">Arka Plan</string>
+    <string name="lockscreen_custom_background_dialog_title">Renk Seç</string>
+    <string name="lockscreen_background_result_successful">Arka plan başarıyla değiştirildi</string>
+    <string name="lockscreen_background_result_not_successful">Arka plan değiştirilemedi</string>
+    <string name="lockscreen_background_color_fill">Dolgu rengi</string>
+    <string name="lockscreen_background_custom_image">Özel resim</string>
+    <string name="lockscreen_background_default_wallpaper">Varsayılan duvar kağıdı</string>
+
+    <!-- ROOTBOX SETTINGS END -->
+
+    <!-- Automatic brightness customization -->
+    <string name="light_sensor_current_value">Mevcut ışık sensörü değeri: <xliff:g id="light_level">%d</xliff:g> lux</string>
+    <string name="auto_brightness_dialog_title">Otomatik parlaklık seviyeleri</string>
+    <string name="auto_brightness_level_format"><xliff:g id="start_level">%1$s</xliff:g> -\n<xliff:g id="end_level">%2$s</xliff:g> lux</string>
+    <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
+    <string name="auto_brightness_adjust_button">Ayarla</string>
+    <string name="auto_brightness_reset_button">Sıfırla</string>
+    <string name="auto_brightness_remove_button">Kaldır</string>
+    <string name="auto_brightness_add_line">Satır ekle</string>
+    <string name="auto_brightness_lux_dialog_title">Ortam parlaklık aralığı</string>
+    <string name="auto_brightness_split_dialog_title">Bölünmüş parlaklık seviyesi</string>
+    <string name="auto_brightness_start_lux">Başlangıç aralığı (lux)</string>
+    <string name="auto_brightness_end_lux">Bitiş aralığı (lux)</string>
+    <string name="auto_brightness_reset_dialog_title">Seviyeleri sıfırla?</string>
+    <string name="auto_brightness_reset_confirmation">Tüm parlaklık değerleri varsayılan ayarlara sıfırlanacak.</string>
+    <string name="auto_brightness_split_lux_format"Bölme pozisyonu (arasında <xliff:g id="min">%1$d</xliff:g> ve <xliff:g id="max">%2$d</xliff:g> lux)</string>
+    <string name="auto_brightness_level_options">Işık seviyesi seçenekleri</string>
+    <string name="auto_brightness_menu_edit_lux">Ortam parlaklık aralığı</string>
+    <string name="auto_brightness_menu_split">Böl</string>
+    <string name="auto_brightness_menu_remove">Kaldır</string>
+    <string name="ok">TAMAM</string>
 </resources>
