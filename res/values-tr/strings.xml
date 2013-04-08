@@ -683,6 +683,8 @@
     <string name="sound_effects_enable_title" msgid="1171590821131077296">"Dokunma sesleri"</string>
     <string name="lock_sounds_enable_title" msgid="450098505659399520">"Ekran kilidi sesi"</string>
     <string name="haptic_feedback_enable_title" msgid="2438293710530828760">"Dokunulduğunda titreşim"</string>
+    <string name="camera_sounds_title">Kamera deklanşör sesi</string>
+    <string name="camera_sounds_summary">UYARI: Deklanşör sesinin devre dışı bırakılması, bazı bölgelerde yasaktır!</string>
     <string name="audio_record_proc_title" msgid="4271091199976457534">"Gürültü giderme"</string>
     <string name="volume_media_description" msgid="7949355934788807863">"Müzik, video, oyunlar ve diğer medyalar"</string>
     <string name="volume_ring_description" msgid="5936851631698298989">"Zil sesi ve bildirimler"</string>
@@ -1276,6 +1278,8 @@
     <string name="enable_adb_summary" msgid="4881186971746056635">"USB bağlandığında hata ayıklama modu"</string>
     <string name="bugreport_in_power" msgid="4548816486587403971">"Güç menüsü hata raporları"</string>
     <string name="bugreport_in_power_summary" msgid="5764234382355067053">"Güç menüsünde hata raporunu alma seçeneğini dahil et"</string>
+    <string name="adb_notify">USB Hata Ayıklama Bildirimi</string>
+    <string name="adb_notify_summary">USB Hata Ayıklama bağlandığında ekranda bildirim olarak göster</string>
     <string name="keep_screen_on" msgid="1146389631208760344">"Uyanık kal"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"Şarj edilirken ekran hiçbir zaman uykuya geçmez"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"Sahte konumlara izin ver"</string>
