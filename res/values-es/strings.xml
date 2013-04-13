@@ -1868,7 +1868,7 @@
     <string name="pie_gravity_top">Arriba</string>
     <string name="pie_gravity_bottom">Abajo</string>
     <string name="pie_gravity_right">Derecha</string>
-    <string name="pie_gravity_left">Izquierda</string>>
+    <string name="pie_gravity_left">Izquierda</string>
     <string name="pie_size_title">Tamaño de los controles</string>
     <string name="pie_size_summary">Define el tamaño de los controles circulares</string>
     <string name="pie_size_small">Pequeño</string>

@@ -2524,7 +2524,7 @@
     <string name="auto_brightness_end_lux">Bitiş aralığı (lux)</string>
     <string name="auto_brightness_reset_dialog_title">Seviyeleri sıfırla?</string>
     <string name="auto_brightness_reset_confirmation">Tüm parlaklık değerleri varsayılan ayarlara sıfırlanacak.</string>
-    <string name="auto_brightness_split_lux_format"Bölme pozisyonu (arasında <xliff:g id="min">%1$d</xliff:g> ve <xliff:g id="max">%2$d</xliff:g> lux)</string>
+    <string name="auto_brightness_split_lux_format">Bölme pozisyonu (arasında <xliff:g id="min">%1$d</xliff:g> ve <xliff:g id="max">%2$d</xliff:g> lux)</string>
     <string name="auto_brightness_level_options">Işık seviyesi seçenekleri</string>
     <string name="auto_brightness_menu_edit_lux">Ortam parlaklık aralığı</string>
     <string name="auto_brightness_menu_split">Böl</string>
