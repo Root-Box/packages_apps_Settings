@@ -60,7 +60,7 @@
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Ashley Sykes"
             rb:nameDev="Ashley Sykes (Maguro)"
-            rb:twitterHandle="rootbox_rom" />
+            rb:twitterHandle="ashsykes15" />
 
 	</PreferenceCategory> 
 
