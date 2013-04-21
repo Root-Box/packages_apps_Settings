@@ -1566,7 +1566,6 @@
         <!-- RootBox -->
         <activity android:name="Rootbox" />
         <activity android:name=".rb.About" />
-        <activity android:name=".rb.Shortcuts" />
         <activity android:name=".paranoid.Pie" />
         <activity android:name=".paranoid.PieColor" />
         <activity android:name=".cyanogenmod.LockscreenButtons" />

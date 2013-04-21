@@ -113,13 +113,6 @@
         android:entryValues="@array/lockscreen_background_values" />
 
   <PreferenceScreen
-        android:key="lock_screen_shortcuts"
-        android:icon="@drawable/ic_rb_lock_shortcuts"
-        android:fragment="com.android.settings.rb.Shortcuts"
-        android:title="@string/lock_screen_shortcuts_title"
-        android:summary="@string/lock_screen_shortcuts_summary" />
-
-  <PreferenceScreen
         android:key="screen_security"
         android:icon="@drawable/ic_rb_lock_security"
         android:fragment="com.android.settings.SecuritySettings"
