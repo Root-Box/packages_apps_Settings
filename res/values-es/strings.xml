@@ -1900,6 +1900,8 @@
     <string name="pie_search_summary">Activar botón de búsqueda en los controles circulares</string>
     <string name="pie_lastapp_title">Botón de última aplicación</string>
     <string name="pie_lastapp_summary">Habilitar botón de última aplicación en los controles circulares</string>
+    <string name="pie_center_title">Centrar controles circulares</string>
+    <string name="pie_center_summary">Si no está activada, los controles circulares aparecerán donde sus dedos accionen</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Seleccionar color</string>
     <string name="press_color_to_apply">Seleccione el color a aplicar</string>
@@ -1911,10 +1913,6 @@
     <string name="ics_color">Holo</string>
     <!-- Low Battery Warning -->
     <string name="pref_low_battery_warning_policy_title">Advertencia de batería baja</string>
-    <string name="low_battery_warning_policy_popup_sound">Pop-up y sonido</string>
-    <string name="low_battery_warning_policy_popup">Solo dialogo Pop-up</string>
-    <string name="low_battery_warning_policy_sound">Solo sonido</string>
-    <string name="low_battery_warning_policy_disabled">Nada</string>
     <!-- Expanded Desktop -->
     <string name="power_menu_expanded_desktop">Extender escritorio</string>
     <string name="power_menu_expanded_desktop_summary">Agregar opción en menú apagar para ocultar barra de estado y barra de navegación.</string>
@@ -1992,10 +1990,6 @@
     <string name="notification_show_wifi_ssid_title">Ver nombre de conexión wifi</string>
     <string name="notification_show_wifi_ssid_summary">Mostrar el nombre de la conexión actual wifi</string>
     <string name="notification_behaviour_title">Comportamiento de notificaciones</string>
-    <string name="notification_behaviour_normal">Normal</string>
-    <string name="notification_behaviour_neverexpand">Nunca expandir</string>
-    <string name="notification_behaviour_alwaysexpand">Siempre expandir</string>
-    <string name="notification_behaviour_oldstyle">Estilo antiguo</string>
     <!-- Notification Shortcuts -->
     <string name="notification_shortcuts_grouptitle">Atajos</string>
     <string name="notification_shortcuts_settings_title">Atajos en notificaciones</string>
@@ -2123,5 +2117,12 @@
     <string name="lockscreen_buttons_previous">Pista anterior</string>
     <string name="lockscreen_buttons_playpause">Reproducir/Pausar</string>
     <string name="lockscreen_buttons_toggle_sound">Alternar sonido</string>
-    
+    <!-- Custom lock screen background -->
+    <string name="lockscreen_custom_background_title">Fondo</string>
+    <string name="lockscreen_custom_background_dialog_title">Eligir el color</string>
+    <string name="lockscreen_background_result_successful">Fondo cambiado</string>
+    <string name="lockscreen_background_result_not_successful">Fondo no cambiado</string>
+    <string name="lockscreen_background_color_fill">Color de relleno</string>
+    <string name="lockscreen_background_custom_image">Imagen personalizada</string>
+    <string name="lockscreen_background_default_wallpaper">Fondo de pantalla por defecto</string
 </resources>
