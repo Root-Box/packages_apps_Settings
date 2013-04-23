@@ -295,4 +295,21 @@
     <item msgid="5077768429488260031">"No permitir nunca"</item>
     <item msgid="1417929597727989746">"Permitir siempre"</item>
   </string-array>
+    <string-array name="pref_low_battery_warning_policy_entries">
+    <item>Pop-up y sonido</item>
+    <item>Solo dialogo Pop-up</item>
+    <item>Solo sonido</item>
+    <item>Nada</item>
+  </string-array>
+  <string-array name="notifs_beh_entries">
+    <item>Normal</item>
+    <item>Nunca expandir</item>
+    <item>Siempre expandir</item>
+    <item>Estilo antiguo</item>
+  </string-array>
+  <string-array name="haptic_feedback_entries">
+    <item>Usar configuración global</item>
+    <item>Encendido</item>
+    <item>Apagado</item>
+  </string-array>
 </resources>
