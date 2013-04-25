@@ -4466,7 +4466,7 @@
     <string name="rom_control_title">ROM Control</string>
     <string name="themes_title">Themes</string>
 
-    <string name="mod_version">RootBox version</string>
+    <string name="rb_version">RootBox version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- Anonymous Statistics #CM -->
