@@ -84,7 +84,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_STATUS_BAR_ICON_OPACITY = "status_bar_icon_opacity";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
-    private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
@@ -101,7 +100,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
-    private CheckBoxPreference mKillAppLongpressBack;
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
@@ -208,9 +206,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mSwapVolumeButtons.setChecked(Settings.System.getInt(resolver,
                 Settings.System.SWAP_VOLUME_KEYS, 0) == 1);
 
-        mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
-                updateKillAppLongpressBackOptions();
-
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
         updateCustomBackgroundSummary();
@@ -241,8 +236,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
                 R.bool.has_hardware_buttons);
         if (!hasHardwareButtons) {
                   getPreferenceScreen().removePreference(findPreference(RB_HARDWARE_KEYS));
-                  PreferenceCategory generalCategory = (PreferenceCategory) findPreference(RB_GENERAL_UI);
-                  generalCategory.removePreference(mKillAppLongpressBack);
         }
     }
 
@@ -300,16 +293,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
         }
     }
 
-    private void writeKillAppLongpressBackOptions() {
-        Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.KILL_APP_LONGPRESS_BACK, mKillAppLongpressBack.isChecked() ? 1 : 0);
-    }
-
-    private void updateKillAppLongpressBackOptions() {
-        mKillAppLongpressBack.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.KILL_APP_LONGPRESS_BACK, 0) != 0);
-    }
-
     @Override
     public void onPause() {
         super.onPause();
@@ -342,8 +325,6 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mSwapVolumeButtons) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SWAP_VOLUME_KEYS,
                     mSwapVolumeButtons.isChecked() ? 1 : 0);
-         } else if (preference == mKillAppLongpressBack) {
-            writeKillAppLongpressBackOptions();
          } else if (preference == mFullscreenKeyboard) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
                     mFullscreenKeyboard.isChecked() ? 1 : 0);

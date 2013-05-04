@@ -4863,10 +4863,6 @@
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
-    <!-- Kill app on long-press -->
-    <string name="kill_app_longpress_back">Hold back to kill</string>
-    <string name="kill_app_longpress_back_summary">Holding back button will kill the current activity</string>
-
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
