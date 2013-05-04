@@ -2128,4 +2128,35 @@
     <string name="lockscreen_background_color_fill">Color de relleno</string>
     <string name="lockscreen_background_custom_image">Imagen personalizada</string>
     <string name="lockscreen_background_default_wallpaper">Fondo de pantalla por defecto</string>
+    <string name="hardware_info">Información de hardware</string>
+    <string name="device_rear_camera">Cámara trasera</string>
+    <string name="device_front_camera">Cámara frontal</string>
+    <string name="device_screen_resolution">Resolución de pantalla</string>
+    <string name="gpu_info">GPU</string>
+    <string name="cpu_info">Procesador</string>
+    <string name="chipset_info">Chipset</string>
+    <string name="mem_info">Memoria</string>
+    <string name="advanced_settings_title">Opciones avanzadas</string>
+    <!-- Paranoid Settings -->
+    <string name="hybrid_settings">Configuraciones Híbridas</string>
+    <string name="permissions_settings_title">Permisos</string>
+    <!-- anonymous statistics. -->
+    <string name="anonymous_statistics_title">Estadísticas AOKP</string>
+    <string name="anonymous_statistics_summary">Ayudar a mejorar AOKP permitiendo estadísticas anónimas</string>
+    <string name="anonymous_statistics_warning_title">Acerca de</string>
+    <string name="anonymous_statistics_warning">Permitiendo las estadisticas, AOKP enviará datos no personales a los
+        desarrolladores de AOKP y así realizar un seguimiento de instalaciones únicas en cada dispositivo. La información enviada incluye un identificador
+        único, que no compromete su privacidad ni datos de carácter personal. Los datos son enviados en cada arranque.\n\nPara ver un ejemplo de los datos que
+        se envían, pulse sobre la vista previa de datos.</string>
+    <string name="enable_reporting_title">Habilitar informes</string>
+    <string name="preview_data_title">Vista previa de datos</string>
+    <string name="preview_data_summary">%s</string>
+    <string name="view_stats_title">Ver estadísticas</string>
+    <string name="anonymous_learn_more">Más información</string>
+    <string name="anonymous_notification_desc">Habilitar o deshabilitar las estadísticas AOKP</string>
+    <string name="preview_id_title">ID único</string>
+    <string name="preview_device_title">Dispositivo</string>
+    <string name="preview_version_title">Versión</string>
+    <string name="preview_country_title">País</string>
+    <string name="preview_carrier_title">Operador</string>
 </resources>
