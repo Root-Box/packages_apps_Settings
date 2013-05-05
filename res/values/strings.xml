@@ -4622,8 +4622,8 @@
     <string name="about_rootbox">About RootBox</string>
     <string name="about_rootbox_summary">@null</string>
     <string name="app_name">RootBox</string>
-    <string name="rootbox_blog_title">RootBox Blog</string>
-    <string name="rootbox_blog_summary">Visit RootBox Blog for latest news about the ROM.</string>
+    <string name="rootbox_site_title">RootBox Website</string>
+    <string name="rootbox_site_summary">Visit RootBox website for latest news about the ROM.</string>
     <string name="title_about">About RootBox</string>
     <string name="devs">Lead Developer</string>
     <string name="support_team_title">Support Team</string>

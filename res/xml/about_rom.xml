@@ -13,8 +13,8 @@
 
 		<Preference
 			android:key="rootbox_site"
-			android:title="@string/rootbox_blog_title"
-			android:summary="@string/rootbox_blog_summary" />
+			android:title="@string/rootbox_site_title"
+			android:summary="@string/rootbox_site_summary" />
 
 		<com.android.settings.widgets.DeveloperPreference
                         android:title="RootBox"

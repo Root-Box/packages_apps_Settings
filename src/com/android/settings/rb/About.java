@@ -35,13 +35,13 @@ public class About extends SettingsPreferenceFragment {
 
     public static final String TAG = "About";
 
-    Preference mBlogUrl;
+    Preference mSiteUrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.about_rom);
-        mBlogUrl = findPreference("rootbox_blog");
+        mSiteUrl = findPreference("rootbox_site");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
         ArrayList<Preference> devs = new ArrayList<Preference>();
@@ -61,7 +61,7 @@ public class About extends SettingsPreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mBlogUrl) {
+        if (preference == mSiteUrl) {
             launchUrl("http://www.rootbox.ca");
         }
 
