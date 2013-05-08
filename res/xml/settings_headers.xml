@@ -80,16 +80,6 @@
                 android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 
-   <!-- Device Options -->
-    <header android:id="@+id/advanced_settings"
-            android:title="@string/advanced_settings_title"
-            android:icon="@drawable/ic_settings_advanced">
-        <intent
-                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-                android:targetPackage="com.cyanogenmod.settings.device"
-                android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </header>
-
    <!-- Sprint Tools -->
     <header android:id="@+id/sprint_tools"
             android:title="@string/sprint_tools_title"
@@ -185,6 +175,16 @@
         android:icon="@drawable/ic_settings_multiuser"
         android:title="@string/user_settings_title"
         android:id="@+id/user_settings" />
+        
+   <!-- Device Options -->
+    <header android:id="@+id/advanced_settings"
+            android:title="@string/advanced_settings_title"
+            android:icon="@drawable/ic_settings_advanced">
+        <intent
+                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+                android:targetPackage="com.cyanogenmod.settings.device"
+                android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
+    </header>        
 
     <!-- Manufacturer hook -->
     <header
