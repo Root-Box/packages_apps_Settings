@@ -92,6 +92,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
     private static final String RB_GENERAL_UI = "rb_general_ui";
+    private static final String SHOW_ENTER_KEY = "show_enter_key";
 
     private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s
     
@@ -109,6 +110,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mMissedCallBreath;
     private CheckBoxPreference mShowWifiName;
     private CheckBoxPreference mSwapVolumeButtons;
+    private CheckBoxPreference mShowEnterKey;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mKeyboardRotationTimeout;
     private ListPreference mLowBatteryWarning;
@@ -168,6 +170,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
         mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
+
+        mShowEnterKey = (CheckBoxPreference) findPreference(SHOW_ENTER_KEY);
+        mShowEnterKey.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.FORMAL_TEXT_INPUT, 0) == 1);
 
         mKeyboardRotationToggle = (CheckBoxPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
         mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -340,6 +346,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mShowWifiName) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
                     mShowWifiName.isChecked() ? 1 : 0);
+         } else if (preference == mShowEnterKey) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FORMAL_TEXT_INPUT, 
+                    mShowEnterKey.isChecked() ? 1 : 0);
          } else if (preference == mKeyboardRotationToggle) {
             boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
                         Settings.System.ACCELEROMETER_ROTATION, 0) == 1);

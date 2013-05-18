@@ -51,7 +51,14 @@
         android:key="rb_keyboard"
         android:title="@string/keyboard_header">
 
-  <CheckBoxPreference
+    <CheckBoxPreference
+        android:key="show_enter_key"
+        android:icon="@drawable/ic_rb_keyboard"
+        android:title="@string/show_enter_key_title"
+        android:summary="@string/show_enter_key_summary"
+        android:persistent="false" />
+
+    <CheckBoxPreference
         android:key="fullscreen_keyboard"
         android:icon="@drawable/ic_rb_keyboard"
         android:title="@string/fullscreen_keyboard"
