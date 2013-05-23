@@ -4746,17 +4746,6 @@
     <string name="pie_size_default">@string/pie_mode_default</string>
     <string name="pie_size_large">Large</string>
     <string name="pie_size_gigantic">Gigantic</string>
-    <string name="pie_color_title">Pie color settings</string>
-    <string name="pie_color_style_title">Pie color style</string>
-    <string name="pie_background_title">Background color</string>
-    <string name="pie_select_title">Selection color</string>
-    <string name="pie_outlines_title">Outlines color</string>
-    <string name="pie_status_clock_title">Clock color</string>
-    <string name="pie_status_title">Status color</string>
-    <string name="pie_chevron_left_title">Left chevron color</string>
-    <string name="pie_chevron_right_title">Right chevron color</string>
-    <string name="pie_juice_title">Battery juice color</string>
-    <string name="pie_button_color_title">Buttons color</string>
     <string name="pie_gap_title">Pie gap</string>
     <string name="pie_gap_summary">Adjust the gap that separates Pie elements</string>
     <string name="pie_gap_none">None</string>
