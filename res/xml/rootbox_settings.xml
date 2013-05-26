@@ -57,7 +57,7 @@
 
     <CheckBoxPreference
         android:key="show_enter_key"
-        android:icon="@drawable/ic_rb_keyboard"
+        android:icon="@drawable/ic_rb_keyboard_enter"
         android:title="@string/show_enter_key_title"
         android:summary="@string/show_enter_key_summary"
         android:persistent="false" />
