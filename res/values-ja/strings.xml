@@ -1870,11 +1870,15 @@
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"エリアメール"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"表示する緊急警報の種類を選択してください。"</string>
 
+    <!-- RootBox -->
+    <string name="update_settings_title">更新センター</string>
+    <string name="rootbox_settings_title">RootBox設定</string>
+
     <string name="quick_links_title">クイックリンク</string>
     <string name="rom_control_title">ROMコントロール</string>
     <string name="themes_title">テーマ</string>
 
-    <string name="mod_version">AOKPバージョン</string>
+    <string name="rb_version">RootBoxバージョン</string>
     <string name="mod_version_default">不明</string>
 
     <!-- Anonymous Statistics #CM -->
@@ -1916,6 +1920,102 @@
     <string name="quiet_hours_active_from">有効時間</string>
     <string name="quiet_hours_active_to">から</string>
 
+    <!-- ROOTBOX SETTINGS BEGINNING -->
+
+    <!-- RootBox Settings -->
+    <string name="clock_header">時計</string>
+    <string name="sound_header">音声</string>
+    <string name="lockscreen_header">ロック画面</string>
+    <string name="statusbar_header">ステータスバー・通知領域</string>
+    <string name="general_ui_header">UI全般</string>
+    <string name="keyboard_header">キーボード</string>
+    <string name="hardware_keys_header">ハードウェアボタン</string>
+
+    <!-- LockClock CyanogenMod -->
+    <string name="lock_clock_title">cLock</string>
+    <string name="lock_clock_summary">cLockホーム・ロック画面ウィジェットの表示を表示・変更します</string>
+
+    <!-- Hardware keys -->
+    <string name="hardware_keys_title">ハードウェアボタン</string>
+    <string name="hardware_keys_summary">ハードウェアボタン動作を表示・変更します</string>
+    <string name="hardware_keys_bindings_title">ボタン動作</string>
+    <string name="hardware_keys_enable_custom_title">カスタム動作を有効にする</string>
+    <string name="hardware_keys_home_long_press_title">ホームボタン(長押し)</string>
+    <string name="hardware_keys_menu_press_title">メニューボタン</string>
+    <string name="hardware_keys_menu_long_press_title">メニューボタン (長押し)</string>
+    <string name="hardware_keys_assist_press_title">検索ボタン</string>
+    <string name="hardware_keys_assist_long_press_title">検索ボタン (長押し)</string>
+    <string name="hardware_keys_app_switch_press_title">アプリ切り替えボタン</string>
+    <string name="hardware_keys_app_switch_long_press_title">アプリ切り替えボタン (長押し)</string>
+    <string name="hardware_keys_show_overflow_title">アクションオーバーフローを表示する</string>
+    <string name="hardware_keys_show_overflow_summary">アプリ内に3ドットのオーバーフローメニューボタンを表示する</string>
+    <string name="hardware_keys_show_overflow_toast_enable">アクションオーバーフローボタンはアプリが再起動されるまで表示されないかもしれません</string>
+    <string name="hardware_keys_show_overflow_toast_disable">アクションオーバーフローボタンはアプリが再起動されるまで非表示にならないかもしれません</string>
+    <string name="hardware_keys_action_nothing">なにもしない</string>
+    <string name="hardware_keys_action_menu">メニューを開閉する</string>
+    <string name="hardware_keys_action_app_switch">最近開いたアプリ</string>
+    <string name="hardware_keys_action_search">検索アシスタント</string>
+    <string name="hardware_keys_action_voice_search">音声検索</string>
+    <string name="hardware_keys_action_in_app_search">アプリ内検索</string>
+    <string name="hardware_keys_action_torch">トーチトグル</string>
+
+    <!-- Lockscreen Hardware keys -->
+    <string name="lockscreen_buttons_title">ボタン動作</string>
+    <string name="lockscreen_buttons_summary">ロックスクリーンボタン動作を表示・変更する</string>
+    <string name="lockscreen_long_press_back_title">戻るボタン長押し</string>
+    <string name="lockscreen_long_press_home_title">ホームボタン長押し</string>
+    <string name="lockscreen_long_press_menu_title">メニューボタン長押し</string>
+    <string name="lockscreen_buttons_no_action">なにもしない</string>
+    <string name="lockscreen_buttons_flashlight">フラッシュライト</string>
+    <string name="lockscreen_buttons_next">次の歌</string>
+    <string name="lockscreen_buttons_previous">前の歌</string>
+    <string name="lockscreen_buttons_playpause">音楽を再生・一時停止する</string>
+    <string name="lockscreen_buttons_toggle_sound">音声トグル</string>
+
+    <!-- Lock screen vibrate settings -->
+    <string name="lockscreen_vibrate_enabled_title">バイブレーション</string>
+    <string name="lockscreen_vibrate_enabled_head">ロック解除時に振動する</string>
+
+    <!-- Screen security - Screen security   -->
+    <string name="screen_security_category">ロック画面セキュリティ</string>
+    <string name="screen_security_title">ロック画面</string>
+    <string name="screen_security_summary">ロック画面セキュリティや遅延、タイムアウト設定を表示・変更します</string>
+    <string name="additional_options_title">追加設定</string>
+    <string name="unlock_menu_unlock_title">メニューロック解除</string>
+    <string name="unlock_menu_unlock_summary">メニューボタンを押すことで端末のロックを解除します</string>
+    <string name="unlock_home_unlock_title">ホームロック解除</string>
+    <string name="unlock_home_unlock_summary">ホームボタンを押すことで端末のロックを解除します</string>
+    <string name="unlock_quick_unlock_control_title">クイックロック解除</string>
+    <string name="unlock_quick_unlock_control_summary">正しいPIN/パスワードが入力されたとき自動的にロック解除します</string>
+
+    <!-- Slide lock delay -->
+    <string name="delay_and_timeout_title">ロック遅延</string>
+    <string name="slide_lock_delay_title">画面ロック遅延</string>
+    <string name="slide_lock_timeout_delay_title">ロック遅延</string>
+    <string name="slide_lock_screenoff_delay_title">画面を切った後ロックするのを遅らせます</string>
+    <string name="slide_lock_delay_none">なし</string>
+    <string name="slide_lock_delay_1s">1秒</string>
+    <string name="slide_lock_delay_5s">5秒</string>
+    <string name="slide_lock_delay_10s">10秒</string>
+    <string name="slide_lock_delay_15s">15秒</string>
+    <string name="slide_lock_delay_30s">30秒</string>
+    <string name="slide_lock_delay_1m">1分</string>
+    <string name="slide_lock_delay_5m">5分</string>
+    <string name="slide_lock_delay_10m">10分</string>
+    <string name="slide_lock_delay_30m">30分</string>
+
+    <!-- Expanded Desktop -->
+    <string name="power_menu_expanded_desktop">デスクトップ拡大</string>
+    <string name="power_menu_expanded_desktop_summary">電源メニューにステータスバーとナビゲーションバーを押すオプションを追加します</string>
+
+    <!-- Headset Music -->
+    <string name="headset_connect_player_title">ヘッドホン</string>
+    <string name="headset_connect_player_summary">ヘッドホンが接続されたとき音楽アプリを起動します</string>
+
+    <!-- Swap volume buttons on rotation -->
+    <string name="swap_volume_keys_title">音量ボタン入れ替え</string>
+    <string name="swap_volume_keys_summary">画面が90度、180度回転したとき音量ボタンを入れ替えます</string>
+
     <!-- time range preference -->
     <string name="start_time_title">開始</string>
     <string name="end_time_title">終了</string>
@@ -1924,15 +2024,399 @@
     <string name="link_volume_ringtones">着信音と同じ音量にする</string>
     <string name="link_volume_mutes">ミュート状態をリンクさせる</string>
 
+    <!-- About RootBox -->
+    <string name="about_rb_settings_title">RootBoxについて</string>
+    <string name="about_rootbox">RootBoxについて</string>
+    <string name="rootbox_site_title">RootBoxウェブサイト</string>
+    <string name="rootbox_site_summary">このROMについての最新の情報を得るためにRootBoxウェブ際にアクセスします。</string>
+    <string name="title_about">RootBoxについて</string>
+    <string name="devs">主導開発者</string>
+    <string name="support_team_title">サポートチーム</string>
+    <string name="graphics_team_title">デザインチーム</string>
+    <string name="maintainers_team_title">デバイスメンテナー</string>
+    <string name="contributors_title">貢献者</string>
+
+    <!-- LMT Settings -->
+    <string name="lmt_settings_title">LMT設定</string>
+
+    <!-- Paranoid Settings -->
+    <string name="dpi_settings">DPI・レイアウト設定</string>
+    <string name="hybrid_settings">ハイブリット設定</string>
+
     <!-- AOKP specific sound settings
     <string name="camera_sounds">シャッター音</string> ** TODO ** -->
     <string name="safe_headset_volume_title">安全なヘッドセット音量</string>
 
+    <!-- Profiles settings  -->
+    <string name="profiles_settings_title">プロファイル</string>
+    <string name="profiles_general_title">標準</string>
+    <string name="profiles_add">追加</string>
+    <string name="profile_menu_delete">削除</string>
+    <string name="profile_settings_title">プロファイル</string>
+    <string name="profile_empty_list_profiles_off">プロファイルを設定し、使用するにはプロファイルをオンにしてください。</string>
+
+    <!-- Add Profile -->
+    <string name="add_profile_dialog_title">新しいプロファイルを作成する</string>
+    <string name="profile_name_title">名前</string>
+    <string name="profile_profile_name_prompt">新しいプロファイルの名前を入力してください</string>
+    <string name="menu_new_profile">新規プロファイル</string>
+    <string name="menu_new_profile_summary">新しいプロファイルを追加、設定します</string>
+    <string name="new_profile_name">&lt;新規プロファイル&gt;</string>
+
+    <!-- Rename Dialog  -->
+    <string name="rename_dialog_title">名前の変更</string>
+    <string name="rename_dialog_message">新しい名前を入力してください</string>
+    <string name="duplicate_profile_name">プロファイル名が重複しています</string>
+    <string name="duplicate_appgroup_name">アプリケーショングループ名が重複しています</string>
+
+    <!-- Reset Profiles -->
+    <string name="profile_reset_title">リセット</string>
+    <string name="profile_reset_message">すべての作成されたプロファイルとアプリケーショングループを削除してそれらを標準に復元します</string>
+
+    <!-- Delete confimation messages -->
+    <string name="profile_delete_confirm">このプロファイルを削除します</string>
+    <string name="profile_app_delete_confirm">このアプリケーションを削除します</string>
+    <string name="profile_cannot_delete">アクティブなプロファイルは削除できません</string>
+
+    <!-- Profile Config screen PreferenceGroup titles -->
+    <string name="profile_connectionoverrides_title">接続拒否</string>
+    <string name="profile_volumeoverrides_title">音量固定</string>
+    <string name="profile_vibratoroverrides_title">バイブレーション固定</string>
+    <string name="connection_state_disabled">無効</string>
+    <string name="connection_state_enabled">有効</string>
+    <string name="volume_override_summary">設定値 : </string>
+    <string name="vibrator_state_disabled">無効</string>
+    <string name="vibrator_state_enabled">有効</string>
+    <string name="vibrator_state_silent">サイレントモード時のみ</string>
+
+    <!-- Menu item for managing profiles -->
+    <string name="profile_profiles_manage">プロファイル</string>
+    <string name="profile_profile_manage">プロファイル管理</string>
+    <string name="profile_applist_manage">アプリケーションリスト</string>
+    <string name="profile_appgroups_manage">アプリケーショングループ</string>
+    <string name="profile_appgroup_manage">アプリケーショングループを管理する</string>
+
+    <!-- Profile settings screen, section header for settings related to notification profiles -->
+    <string name="profile_settings">プロファイル設定</string>
+    <string name="profile_name">名前</string>
+
+    <!-- Profile Settings sound modes labels -->
+    <string name="sound_mode">通知モード</string>
+    <string name="ringer_mode">通知音モード</string>
+    <string name="lights_mode">通知ライトモード</string>
+    <string name="vibrate_mode">バイブレーションモード</string>
+    <string name="choose_soundtone">通知音を選択してください</string>
+    <string name="choose_ringtone">着信音を選択してください</string>
+    <string name="silent_mode_title">サイレントモード</string>
+
+    <!-- Pie controls -->
+    <string name="pie_controls_title">パイコントロール</string>
+    <string name="pie_controls_summary">ナビゲーションとステータス報告を有効にします</string>
+    <string name="pie_targets_title">ボタン</string>
+    <string name="pie_gravity_title">パイの位置</string>
+    <string name="pie_gravity_summary">パイが置かれる位置を選択します</string>
+    <string name="pie_gravity_top">上</string>
+    <string name="pie_gravity_bottom">下</string>
+    <string name="pie_gravity_right">右</string>
+    <string name="pie_gravity_left">左</string>
+    <string name="pie_mode_title">パイスタイル</string>
+    <string name="pie_mode_summary">アニメーションや追加ステータスの表示方法を管理します</string>
+    <string name="pie_mode_bare">Bare (画面がパイで隠れない)</string>
+    <string name="pie_mode_quick">クイック</string>
+    <string name="pie_mode_default">標準</string>
+    <string name="pie_mode_slow">遅い</string>
+    <string name="pie_size_title">パイの大きさ</string>
+    <string name="pie_size_summary">パイコントロールの大きさを設定します</string>
+    <string name="pie_size_small">小さい</string>
+    <string name="pie_size_large">大きい</string>
+    <string name="pie_size_gigantic">最大</string>
+    <string name="pie_gap_title">パイの間隔</string>
+    <string name="pie_gap_summary">パイの要素を区切る隙間を調整します</string>
+    <string name="pie_gap_none">なし</string>
+    <string name="pie_gap_small">小さい</string>
+    <string name="pie_gap_big">大きい</string>
+    <string name="pie_gap_huge">最大 (標準)</string>
+    <string name="pie_center_title">中央にパイを表示</string>
+    <string name="pie_center_summary">チェックを外すと、パイが指を置いたところに表示されます</string>
+    <string name="pie_trigger_title">トリガーサイズ</string>
+    <string name="pie_trigger_summary">パイコントロールを開始するトリガー領域の大きさを決定します</string>
+    <string name="pie_trigger_small">小さい</string>
+    <string name="pie_trigger_normal">普通 (標準)</string>
+    <string name="pie_trigger_big">大きい</string>
+    <string name="pie_trigger_huge">最大</string>
+    <string name="pie_notifications_title">外側のターゲットを有効にする</string>
+    <string name="pie_notifications_summary">有効にすると、スワイプしたとき通知領域とクイック設定が表示されます。</string>
+    <string name="pie_menu_title">メニューボタンを常に表示する</string>
+    <string name="pie_menu_summary">メニューボタンが必要かどうかに関わらず表示されます</string>
+    <string name="pie_search_title">検索ボタンを表示する</string>
+    <string name="pie_search_summary">パイを通してGoogleNowにアクセスします</string>
+    <string name="pie_lastapp_title">ラストアプリボタン</string>
+    <string name="pie_lastapp_summary">最後に起動したアプリを起動するボタンを有効にします</string>
+    <string name="pie_stick_title">パイの位置を固定</string>
+    <string name="pie_stick_summary">チェックすると画面の向きに関わらずパイの位置を同じ場所にします</string>
+    <string name="all_color">カスタムカラー</string>
+    <string name="stock_color">標準色</string>
+    <string name="pie_restart_launcher_title">ランチャーを再起動</string>
+    <string name="pie_restart_launcher_summary">画面の大きさの変更は悪い影響を及ぼすことがあります。このオプションでランチャーを正しい状態に戻します。これにより画面が暗転します。(推薦)</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">色の変更</string>
+    <string name="press_color_to_apply">適用するには色を押してください</string>
+    <string name="hex">16進数:</string>
+    <string name="set">設定</string>
+
+    <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
+    <string name="soundtone_title">通知音</string>
+    <string name="soundtone_summary">""</string>
+
+    <!-- Title for application group setting screen -->
+    <string name="profile_appgroups_title">アプリけーしぃんグループ</string>
+    <string name="profile_applist_title">アプリケーション</string>
+    <string name="profile_new_appgroup">新しいアプリケーショングループ</string>
+    <string name="profile_delete_appgroup">このアプリケーショングループを削除します</string>
+    <string name="profile_appgroup_name_prompt">新しいアプリケーショングループの名前を入力してください</string>
+    <string name="profile_appgroup_name_title">名前</string>
+    <string name="profile_add_app">アプリケーションを追加する</string>
+    <string name="profile_delete_app">アプリケーションを削除する</string>
+
+    <!-- Add application dialog box title -->
+    <string name="profile_choose_app">アプリケーションを選択してください</string>
+    <string name="profile_settings_header">プロファイル設定</string>
+
+    <!-- Profiles - system settings -->
+    <string name="profile_system_settings_title">システム設定</string>
+    <string name="profile_lockmode_title">ロック画面モード</string>
+    <string name="profile_lockmode_default">標準</string>
+    <string name="profile_lockmode_insecure">セキュア</string>
+    <string name="profile_lockmode_disabled">無効</string>
+    <string name="profile_lockmode_default_summary">システム標準を使います</string>
+    <string name="profile_lockmode_insecure_summary">セキュアなロック画面を使います</string>
+    <string name="profile_lockmode_disabled_summary">ロック画面が無効になります</string>
+    <string name="profile_airplanemode_title">機内モード</string>
+    <string name="profile_disable_screen_lock_summary">このプロファイルが有効なときロック画面セキュリティを無効にします</string>
+
     <string name="lockscreen_quick_unlock_control_title">クイックPINロック解除</string>
     <string name="lockscreen_quick_unlock_control_summary">エンターボタンを押さなくてもパスワード/PINロックを解除する</string>
 
+    <string name="vibrator_type_ringer">着信</string>
+    <string name="vibrator_type_notification">通知</string>
+
+    <!-- Connection override toggles (not all are used at this time ) -->
+    <string name="possibleButtons">使用可能なボタン</string>
+    <string name="toggleWifiAp">ポータブルWi-Fiホットスポット</string>
+    <string name="toggleData">モバイルデーター</string>
+    <string name="toggleSync">データー同期</string>
+    <string name="toggleSound">着信モード</string>
+    <string name="toggleBrightness">明るさ</string>
+    <string name="toggleAutoRotate">画面回転</string>
+    <string name="toggleScreenTimeout">画面タイムアウト</string>
+    <string name="toggleAirplane">飛行機</string>
+    <string name="toggleFlashlight">フラッシュライト</string>
+    <string name="toggleLockScreen">ロック画面</string>
+
+    <string name="profile_write_nfc_tag">NFCタグに書き込む</string>
+    <string name="profile_write_touch_tag">書き込むタグをタッチしてください</string>
+    <string name="profile_write_success">タグの書き込みに成功しました</string>
+    <string name="profile_write_failed">タグの書き込みに失敗しました</string>
+    <string name="profile_selected">選択されたプロファイル: %1$s</string>
+    <string name="profile_nfc_text">タグにプロファイルを書き込むとタグをタップすることでプロファイルを選択できるようになります。2秒タップすると以前選択していたプロファイルが選択されます。</string>
+    <string name="profile_unknown_nfc_tag">不明なプロファイル</string>
+    <string name="profile_add_nfc_text">このNFCタグは不明なプロファイルを参照しています。このNFCタグを既存のプロファイルに関連付けることでそのプロファイルを選択できるようになります。</string>
+    <string name="profile_select">プロファイルを選択してください</string>
+
+    <!--- Volume key cursor control -->
+    <string name="volume_key_cursor_control_title">音量ボタンカーソルコントロール</string>
+    <string name="volume_key_cursor_control_off">無効</string>
+    <string name="volume_key_cursor_control_on">音量上/下でカーソルを左/右に動かす</string>
+    <string name="volume_key_cursor_control_on_reverse">音量上/下でカーソルを右/左に動かす</string>
+
     <!-- Hostname setting -->
     <string name="device_hostname">デバイスのホスト名</string>
+
+    <!-- Increasing Ring Volume -->
+    <string name="increasing_ring_title">徐々に着信音の音量を上げる</string>
+    <string name="checkbox_increasing_ring">有効</string>
+    <string name="increasing_ring_min_volume_title">開始時音量</string>
+    <string name="increasing_ring_volume_notice">注意:\n開始音量が着信音量より大きいと、着信音は着信音量で再生されます。</string>
+    <string name="increasing_ring_interval_title">増加感覚</string>
+    <string name="increasing_ring_interval_eachring">再生するごと</string>
+    <string name="increasing_ring_interval_half_second">0.5秒</string>
+    <string name="increasing_ring_interval_1second">1秒</string>
+    <string name="increasing_ring_interval_2seconds">2秒</string>
+    <string name="increasing_ring_interval_3seconds">3秒</string>
+    <string name="increasing_ring_interval_5seconds">5秒</string>
+    <string name="increasing_ring_interval_10seconds">10秒</string>
+
+    <!-- Low Battery Warning -->
+    <string name="pref_low_battery_warning_policy_title">電池残量低下警告</string>
+
+    <!-- Breathing Notifications -->
+    <string name="mms_breath">Breathing SMS</string>
+    <string name="mms_breath_summary">Breathing effectをステータスバーで行うことでSMS通知をします。</string>
+    <string name="missed_call_breath">Breathing 不在着信</string>
+    <string name="missed_call_breath_summary">Breathing effectをステータスバーで行うことでSMS通知をします。</string>
+
+    <!-- Enter Keyboard -->
+    <string name="show_enter_key_title">Enterキーを表示する</string>
+    <string name="show_enter_key_summary">キーボードがエモーティコンキーの代わりにEnterキーをh行事するようにします</string>
+
+    <!-- Fullscreen Keyboard -->
+    <string name="fullscreen_keyboard">フルスクリーンキーボードを無効にする</string>
+    <string name="fullscreen_keyboard_summary">ランドスケープモードで入力しているときメッセージが読めるようにします。</string>
+
+    <!-- Lockscreen See Through -->
+    <string name="lockscreen_seethrough">ロック画面透過</string>
+    <string name="lockscreen_seethrough_summary">ロック画面の背景にホーム画面やアプリが見えるようにします。</string>
+
+    <!-- Status bar notification icon opacity -->
+    <string name="status_bar_icon_opacity">通知アイコン不透明度</string>
+    <string name="status_bar_icon_opacity_summary">ステータスバーの通知アイコンの不透明度を設定します</string>
+
+    <!-- Notification Behaviour -->
+    <string name="notification_behaviour_title">通知動作</string>
+    <string name="notification_show_wifi_ssid_title">Wi-Fiネットワーク名を表示する</string>
+    <string name="notification_show_wifi_ssid_summary">現在接続されているWi-Fiネットワークの名前を表示します</string>
+
+    <!-- Keyboard Rotation -->
+    <string name="keyboard_rotation_toggle_title">自動キーボード回転</string>
+    <string name="keyboard_rotation_toggle_summary">キーボードが表示されるとき自動回転をする</string>
+    <string name="keyboard_rotation_timeout_title">自動回転タイムアウト</string>
+    <string name="keyboard_rotation_timeout_summary">キーボードが隠れてから<xliff:g id="rotate_timeout">%1$s</xliff:g>秒後に自動回転を無効にする</string>
+    <string name="keyboard_rotation_dialog">注意: この機能はキーボードが出ている間一時的に自動回転を強制的に入れます。自動回転がすでに有効な場合影響はありません。</string>
+
+    <!-- Shortcut picker -->
+    <string name="picker_activities">アクティビティ</string>
+    <string name="select_custom_app_title">カスタムアプリケーションを選択してください</string>
+    <string name="select_custom_activity_title">カスタムアクティビティを選択してください</string>
+    <string name="use_custom_app_title">カスタムアプリケーションを使う</string>
+    <string name="use_custom_app_summary">最近利用したアプリダイアログの代わりにカスタムアプリケーションを使います</string>
+    <string name="group_applications">アプリケーション</string>
+
+    <!-- Notification Shortcuts -->
+    <string name="notification_shortcuts_grouptitle">ショートカット</string>
+    <string name="notification_shortcuts_settings_title">通知ショートカット</string>
+    <string name="notification_shortcuts_settings_summary">通知領域にショートカットを表示する</string>
+    <string name="notification_shortcuts_empty_title">なし</string>
+    <string name="notification_shortcuts_edit_title">ショートカットを編集する</string>
+    <string name="notification_shortcuts_edit_msg">希望するアプリケーションやアイコンを選択・変更してください</string>
+    <string name="notification_shortcuts_reset_title">ショートカットを消去する</string>
+    <string name="notification_shortcuts_category_reset_title">リセット</string>
+    <string name="notification_shortcuts_title">ショートカット</string>
+    <string name="notification_shortcuts_icon_picker_stock_icons_title">Stockアイコン</string>
+    <string name="notification_shortcuts_quantity_title">ショートカットの数</string>
+    <string name="notification_shortcuts_quantity_summary">表示するショートカットの数です</string>
+    <string name="notification_shortcuts_move_text">順番を変える</string>
+    <string name="notification_shortcuts_move_up"><xliff:g id="app_name">%s</xliff:g> を上のスロットに移動しました</string>
+    <string name="notification_shortcuts_move_down"><xliff:g id="app_name">%s</xliff:g> を上のスロットに移動しました</string>
+    <string name="notification_shortcuts_color_title">ショートカットアイコンカラー</string>
+    <string name="notification_shortcuts_color_summary">Stockとアプリケーションショートカットアイコンを色づけします</string>
+    <string name="notification_shortcuts_colorize_toggle_title">アプリケーションアイコンを色づけする</string>
+    <string name="notification_shortcuts_colorize_toggle_summary">選択されたアイコンカラーでアプリケーションアイコンを色づけします</string>
+    <string name="notification_shortcuts_hide_carrier_title">キャリアラベルを隠す</string>
+
+    <!-- Notification Icons -->
+    <string name="notification_shortcuts_icon_picker_alarm">アラーム</string>
+    <string name="notification_shortcuts_icon_picker_andy">Andy</string>
+    <string name="notification_shortcuts_icon_picker_battery">電池</string>
+    <string name="notification_shortcuts_icon_picker_browser">ブラウザ</string>
+    <string name="notification_shortcuts_icon_picker_calendar">カレンダー</string>
+    <string name="notification_shortcuts_icon_picker_camera">カメラ</string>
+    <string name="notification_shortcuts_icon_picker_cloud">クラウド</string>
+    <string name="notification_shortcuts_icon_picker_contact">連絡先</string>
+    <string name="notification_shortcuts_icon_picker_directdial">直通ダイヤル</string>
+    <string name="notification_shortcuts_icon_picker_directmessage">直通メッセージ</string>
+    <string name="notification_shortcuts_icon_picker_email">メール</string>
+    <string name="notification_shortcuts_icon_picker_email2">メール 2</string>
+    <string name="notification_shortcuts_icon_picker_favorite">お気に入り</string>
+    <string name="notification_shortcuts_icon_picker_file_browser">ファイルブラウザ</string>
+    <string name="notification_shortcuts_icon_picker_file_browser2">ファイルブラウザ2</string>
+    <string name="notification_shortcuts_icon_picker_gallery">ギャラリー</string>
+    <string name="notification_shortcuts_icon_picker_help">ヘルプ</string>
+    <string name="notification_shortcuts_icon_picker_joystick">ジョイスティック</string>
+    <string name="notification_shortcuts_icon_picker_key">キー/アカウント</string>
+    <string name="notification_shortcuts_icon_picker_laptop">ラップトップ</string>
+    <string name="notification_shortcuts_icon_picker_luggage">旅行</string>
+    <string name="notification_shortcuts_icon_picker_maps">マップ</string>
+    <string name="notification_shortcuts_icon_picker_market">マーケット</string>
+    <string name="notification_shortcuts_icon_picker_movie">動画</string>
+    <string name="notification_shortcuts_icon_picker_music">音楽</string>
+    <string name="notification_shortcuts_icon_picker_nav">ナビ</string>
+    <string name="notification_shortcuts_icon_picker_phone">電話</string>
+    <string name="notification_shortcuts_icon_picker_play">再生</string>
+    <string name="notification_shortcuts_icon_picker_quicksettings">クイック設定</string>
+    <string name="notification_shortcuts_icon_picker_rss">RSSフィード</string>
+    <string name="notification_shortcuts_icon_picker_sdcard">SDカード</string>
+    <string name="notification_shortcuts_icon_picker_search">検索</string>
+    <string name="notification_shortcuts_icon_picker_sms">SMS</string>
+    <string name="notification_shortcuts_icon_picker_terminal">端末</string>
+    <string name="notification_shortcuts_icon_picker_unlock">ロック解除</string>
+
+    <!-- Icon Picker -->
+    <string name="icon_picker_title">アイコンソースを選択してください</string>
+    <string name="icon_picker_system_icons_title">システムアイコン</string>
+    <string name="icon_picker_gallery_title">ギャラリー</string>
+    <string name="icon_picker_pack_title">アイコンパック</string>
+
+    <!-- Powerwidget -->
+    <string name="power_widget">電源ウィジェット</string>
+    <string name="power_widget_summary">電源ウィジェットの要素をカスタマイズします</string>
+    <string name="title_expanded_widget">電源ウィジェット</string>
+    <string name="power_widget_buttons">ウィジェットボタン</string>
+    <string name="power_widget_behavior">ウィジェット動作</string>
+    <string name="title_expanded_hide_onchange">ドロワーを閉じる (変更時)</string>
+    <string name="title_expanded_hide_indicator">インジケーターを隠す</string>
+    <string name="title_expanded_hide_scrollbar">スクロールバーを隠す</string>
+    <string name="title_widget_picker">ウィジェットボタン</string>
+    <string name="summary_widget_picker">表示されるボタンを表示・変更します</string>
+    <string name="title_widget_order">ボタン順序</string>
+    <string name="summary_widget_order">ボタンの順序を表示・変更します</string>
+    <string name="title_toggle_sound">音声</string>
+    <string name="title_toggle_brightness">明るさ</string>
+    <string name="title_toggle_sync">同期</string>
+    <string name="title_toggle_screentimeout">画面タイムアウト</string>
+    <string name="title_toggle_mobiledata">モバイルデータ</string>
+    <string name="title_toggle_lockscreen">ロック画面</string>
+    <string name="title_toggle_networkmode">ネットワークモード</string>
+    <string name="title_toggle_autorotate">画面回転</string>
+    <string name="title_toggle_airplane">きないモード</string>
+    <string name="title_toggle_flashlight">LEDフラッシュライト</string>
+    <string name="title_toggle_sleep">スリープ</string>
+    <string name="title_toggle_media_play_pause">音楽を再生/一時停止</string>
+    <string name="title_toggle_media_previous">前の音楽トラック</string>
+    <string name="title_toggle_media_next">次の音楽トラック</string>
+    <string name="title_button_modes">ボタンモード</string>
+    <string name="pref_brightness_mode_title">明るさモード</string>
+    <string name="pref_brightness_mode_summary">明るさモードを表示・変更します</string>
+    <string name="cm_brightness_mode_auto">自動</string>
+    <string name="cm_brightness_mode_dim">暗い</string>
+    <string name="pref_network_mode_title">ネットワークモード</string>
+    <string name="pref_screentimeout_mode_title">画面タイムアウトモード</string>
+    <string name="pref_ring_mode_title">音声モード</string>
+    <string name="pref_ring_mode_summary">音声モードを表示・変更します</string>
+    <string name="cm_sound_mode_silent">サイレント</string>
+    <string name="cm_sound_mode_vibrate">バイブレーション</string>
+    <string name="cm_sound_mode_sound">音声</string>
+    <string name="cm_sound_mode_soundVibrate">音声・バイブレーション</string>
+    <string name="pref_flash_mode_title">フラッシュモード</string>
+    <string name="expanded_haptic_feedback_title">Hapticフィードバック</string>
+    <string name="power_widget_additional_options_cat">追加設定</string>
+    <string name="right_clock">右に時計を表示</string>
+    <string name="center_clock">中央に時計を表示</string>
+    <string name="brightness_location_title">明るさスライドバー位置</string>
+    <string name="brightness_slider_top">上</string>
+    <string name="brightness_slider_bottom">下</string>
+    <string name="brightness_slider_none">表示しない</string>
+
+    <!-- Custom lock screen background -->
+    <string name="lockscreen_custom_background_title">背景</string>
+    <string name="lockscreen_custom_background_dialog_title">色を選ぶ</string>
+    <string name="lockscreen_background_result_successful">背景を正常に変更しました</string>
+    <string name="lockscreen_background_result_not_successful">背景を変更できませんでした</string>
+    <string name="lockscreen_background_color_fill">単色</string>
+    <string name="lockscreen_background_custom_image">カスタム画像</string>
+    <string name="lockscreen_background_default_wallpaper">標準壁紙</string>
+
+    <!-- ROOTBOX SETTINGS END -->
 
     <!--- Sms security limit -->
     <string name="app_security_title">アプリのセキュリティ</string>
@@ -1994,6 +2478,18 @@
 『削除』は選択したライトレベルを削除します。
     </string>
     <string name="ok">OK</string>
+
+    <!-- Category title for power sound notification specific Settings.
+         [CHAR LIMIT=40] -->
+    <string name="power_notifications_category_title">電源通知音</string>
+    <!-- Sound settings, power notifications enable/disable, setting check box label -->
+    <string name="power_notifications_enable_title">有効</string>
+    <!-- Sound settings, power notifications vibrate enable/disable, setting check box label -->
+    <string name="power_notifications_vibrate_title">バイブレーション</string>
+    <!-- Sound settings, power notifications ringtone selection, preference label -->
+    <string name="power_notifications_ringtone_title">通知音</string>
+    <!-- Sound settings, power notifications label for ringtone == none -->
+    <string name="power_notifications_ringtone_silent">サイレント</string>
 
     <!-- Permissions Management -->
     <string name="permissions_settings_title">パーミッション</string>
