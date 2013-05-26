@@ -71,6 +71,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final int LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE = 1;
     private static final int LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER = 2;
 
+    private static final String KEY_HOME_WAKE = "pref_home_wake";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
@@ -98,6 +99,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     
     private PreferenceScreen mLockscreenButtons;
     private PreferenceScreen mHardwareKeys;
+    private CheckBoxPreference mHomeWake;
     private CheckBoxPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
@@ -234,6 +236,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
                 Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
         }
 
+        // Home button wake
+        mHomeWake = (CheckBoxPreference) findPreference(KEY_HOME_WAKE);
+
         // Do not display lock clock preference if its not installed
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
 
@@ -242,6 +247,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
                 R.bool.has_hardware_buttons);
         if (!hasHardwareButtons) {
                   getPreferenceScreen().removePreference(findPreference(RB_HARDWARE_KEYS));
+        } else {
+            mHomeWake.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.HOME_WAKE_SCREEN, 1) == 1);
         }
     }
 
@@ -322,6 +330,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
                     value ? 1 : 0);
+         } else if (preference == mHomeWake) {
+            Settings.System.putInt(getContentResolver(), Settings.System.HOME_WAKE_SCREEN,
+                    mHomeWake.isChecked() ? 1 : 0);
          } else if (preference == mHeadsetConnectPlayer) {
             Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
                     mHeadsetConnectPlayer.isChecked() ? 1 : 0);

@@ -240,6 +240,12 @@
         android:key="rb_hardware_keys"
         android:title="@string/hardware_keys_header">
 
+  <CheckBoxPreference
+        android:key="pref_home_wake"
+        android:title="@string/pref_home_wake_title"
+        android:summary="@string/pref_home_wake_summary"
+        android:defaultValue="true" />
+
   <PreferenceScreen
         android:key="hardware_keys"
         android:icon="@drawable/ic_rb_hardware_keys"

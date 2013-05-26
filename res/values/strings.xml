@@ -4563,6 +4563,8 @@
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
     <string name="hardware_keys_action_torch">Toggle torch</string>
+    <string name="pref_home_wake_title">Home button</string>
+    <string name="pref_home_wake_summary">Pressing the home button will wake your device</string>
 
     <!-- Lockscreen Hardware keys -->
     <string name="lockscreen_buttons_title">Button actions</string>
