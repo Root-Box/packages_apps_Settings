@@ -4986,6 +4986,7 @@
     <!-- Icon Picker -->
     <string name="icon_picker_title">Choose icon source</string>
     <string name="icon_picker_system_icons_title">System icons</string>
+    <string name="icon_picker_choose_icon_title">Choose icon</string>
     <string name="icon_picker_gallery_title">Gallery</string>
     <string name="icon_picker_pack_title">Icon pack</string>
 
