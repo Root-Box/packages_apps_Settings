@@ -2181,6 +2181,8 @@
     <string name="menu_restore">Reset to default</string>
     <!-- APNs screen toast message to inform reset default APN settings is completed -->
     <string name="restore_default_apn_completed">Reset default APN settings completed.</string>
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">The APN will be deleted.</string>
 
     <!-- Master Clear -->
     <!-- SD card & phone storage settings screen, setting option name under Internal phone storage heading -->
