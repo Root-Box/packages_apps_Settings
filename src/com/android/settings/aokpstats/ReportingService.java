@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aokpstats;
+package com.android.settings.rbstats;
 
 import android.app.Service;
 import android.content.Context;
@@ -45,7 +45,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReportingService extends Service {
-    /* package */ static final String TAG = "AOKPStats";
+    /* package */ static final String TAG = "RBStats";
 
     private StatsUploadTask mTask;
 
@@ -87,31 +87,14 @@ public class ReportingService extends Service {
             GoogleAnalytics ga = GoogleAnalytics.getInstance(ReportingService.this);
             //ga.setDebug(true);
             Tracker tracker = ga.getTracker(getString(R.string.ga_trackingId));
-            tracker.setAppName("AOKP");
+            tracker.setAppName("ROOTBOX");
             tracker.setAppVersion(deviceVersion);
             tracker.setCustomDimension(1, deviceId);
             tracker.setCustomDimension(2, deviceName);
             tracker.setCustomMetric(1, 1L);
             tracker.sendEvent("checkin", deviceName, deviceVersion, null);
             tracker.close();
-
-            // report to the aokpstats service
-            HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://stats.aokp.co/submit.php");
-            boolean success = false;
-            try {
-                List<NameValuePair> kv = new ArrayList<NameValuePair>(2);
-                kv.add(new BasicNameValuePair("hash", deviceId));
-                kv.add(new BasicNameValuePair("aokp_version", deviceVersion));
-
-                httpPost.setEntity(new UrlEncodedFormEntity(kv));
-                httpClient.execute(httpPost);
-
-                success = true;
-            } catch (IOException e) {
-                Log.w(TAG, "Could not upload stats checkin", e);
-            }
-            return success;
+            return null;
         }
 
         @Override

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aokpstats;
+package com.android.settings.rbstats;
 
 import android.content.Context;
 import android.os.SystemProperties;
@@ -67,21 +67,21 @@ public class Utilities {
     }
 
     public static String getDevice() {
-        String device = SystemProperties.get("ro.aokp.device");
+        String device = SystemProperties.get("ro.rootbox.device");
         return device == null ? SystemProperties.get("ro.product.device") : device;
     }
 
     public static String getModVersion() {
-        String version = SystemProperties.get("ro.aokp.version");
-        String branch = SystemProperties.get("ro.aokp.branch");
-        if (version == null || branch == null || !version.startsWith("aokp")) {
+        String version = SystemProperties.get("ro.rootbox.version");
+        String branch = SystemProperties.get("ro.rootbox.branch");
+        if (version == null || branch == null || !version.startsWith("RootBox") || version.contains("Unofficial")) {
             return "KANG";
         } else {
-            String[] splitVer = version.split("_");
-            if (version.contains("milestone")) {
-                return branch + "_" + splitVer[3]; // exact milestone version
+            String[] splitVer = version.split("-");
+            if (version.contains("Nightly")) {
+                return "Nightly" + "-" + splitVer[4]; // exact milestone version
             } else {
-                return branch + "_" + splitVer[2]; // nightly || unofficial
+                return "Stable" + "-" + splitVer[3]; // nightly || unofficial
             }
         }
     }

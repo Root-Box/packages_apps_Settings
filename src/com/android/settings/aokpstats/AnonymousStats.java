@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aokpstats;
+package com.android.settings.rbstats;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -36,7 +36,7 @@ public class AnonymousStats extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String VIEW_STATS = "pref_view_stats";
 
-    private static final String PREF_FILE_NAME = "AOKPStats";
+    private static final String PREF_FILE_NAME = "RBStats";
     /* package */ static final String ANONYMOUS_OPT_IN = "pref_anonymous_opt_in";
     /* package */ static final String ANONYMOUS_LAST_CHECKED = "pref_anonymous_checked_in";
 
@@ -89,7 +89,7 @@ public class AnonymousStats extends SettingsPreferenceFragment implements
             }
         } else if (preference == mViewStats) {
             // Display the stats page
-            Uri uri = Uri.parse("http://stats.aokp.co");
+            Uri uri = Uri.parse("http://stats.rootbox.ca");
             startActivity(new Intent(Intent.ACTION_VIEW, uri));
         } else {
             // If we didn't handle it, let preferences handle it.
@@ -119,7 +119,7 @@ public class AnonymousStats extends SettingsPreferenceFragment implements
         } else if (which == DialogInterface.BUTTON_NEGATIVE) {
             mEnableReporting.setChecked(false);
         } else {
-            Uri uri = Uri.parse("http://stats.aokp.co/info/");
+            Uri uri = Uri.parse("http://stats.rootbox.ca/info/");
             startActivity(new Intent(Intent.ACTION_VIEW, uri));
         }
     }

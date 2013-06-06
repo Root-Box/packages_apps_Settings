@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aokpstats;
+package com.android.settings.rbstats;
 
 import android.content.Context;
 import android.os.Bundle;
