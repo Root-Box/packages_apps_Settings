@@ -94,7 +94,7 @@ public class ReportingService extends Service {
             tracker.setCustomMetric(1, 1L);
             tracker.sendEvent("checkin", deviceName, deviceVersion, null);
             tracker.close();
-            return null;
+            return true;
         }
 
         @Override
