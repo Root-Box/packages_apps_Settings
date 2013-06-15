@@ -51,11 +51,13 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_PAUSE = "halo_pause";
+    private static final String PREF_HALO_STYLE = "halo_style";
 
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
     private CheckBoxPreference mHaloPause;
+    private CheckBoxPreference mHaloStyle;
 
     private Context mContext;
     private INotificationManager mNotificationManager; 
@@ -86,6 +88,10 @@ public class Halo extends SettingsPreferenceFragment
         mHaloPause = (CheckBoxPreference) findPreference(KEY_HALO_PAUSE);
         mHaloPause.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_PAUSE, isLowRAM) == 1);
+
+        mHaloStyle = (CheckBoxPreference) findPreference(PREF_HALO_STYLE);
+        mHaloStyle.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_STYLE, 0) == 1);
         }
 
     private boolean isHaloPolicyBlack() {
@@ -110,7 +116,12 @@ public class Halo extends SettingsPreferenceFragment
         } else if (preference == mHaloPause) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_PAUSE, mHaloPause.isChecked()
-                    ? 1 : 0);	
+                    ? 1 : 0);
+        } else if (preference == mHaloStyle) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_STYLE, mHaloStyle.isChecked()
+                    ? 1 : 0);
+            Helpers.restartSystemUI();	
         }	
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
