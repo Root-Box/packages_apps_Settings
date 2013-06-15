@@ -54,10 +54,10 @@ public class Halo extends SettingsPreferenceFragment
     private static final String PREF_HALO_STYLE = "halo_style";
 
     private ListPreference mHaloState;
+    private ListPreference mHaloStyle;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
     private CheckBoxPreference mHaloPause;
-    private CheckBoxPreference mHaloStyle;
 
     private Context mContext;
     private INotificationManager mNotificationManager; 
@@ -89,9 +89,8 @@ public class Halo extends SettingsPreferenceFragment
         mHaloPause.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_PAUSE, isLowRAM) == 1);
 
-        mHaloStyle = (CheckBoxPreference) findPreference(PREF_HALO_STYLE);
-        mHaloStyle.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.HALO_STYLE, 0) == 1);
+        mHaloStyle = (ListPreference) findPreference(PREF_HALO_STYLE);
+        mHaloStyle.setOnPreferenceChangeListener(this);
         }
 
     private boolean isHaloPolicyBlack() {
@@ -117,11 +116,6 @@ public class Halo extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_PAUSE, mHaloPause.isChecked()
                     ? 1 : 0);
-        } else if (preference == mHaloStyle) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.HALO_STYLE, mHaloStyle.isChecked()
-                    ? 1 : 0);
-            Helpers.restartSystemUI();	
         }	
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -134,6 +128,12 @@ public class Halo extends SettingsPreferenceFragment
             } catch (android.os.RemoteException ex) {
                 // System dead
             }          
+            return true;
+        } else if (preference == mHaloStyle) {
+            int val = Integer.valueOf((String) Value);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HALO_STYLE, val);
+            Helpers.restartSystemUI();
             return true;
         }
         return false;
