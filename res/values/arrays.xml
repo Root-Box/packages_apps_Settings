@@ -1390,4 +1390,20 @@
         <item>0</item>
     </string-array>
 
+    <string-array name="recents_style_entries">
+        <item>@string/recents_disable</item>
+        <item>@string/recents_bottom_right</item>
+        <item>@string/recents_bottom_left</item>
+        <item>@string/recents_top_right</item>
+        <item>@string/recents_top_left</item>
+    </string-array>
+
+    <string-array name="recents_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
 </resources>

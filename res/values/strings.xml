@@ -4907,6 +4907,15 @@
     <!-- Low Battery Warning -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
 
+    <!-- Recents -->
+    <string name="recent_kill_all">Recents Style</string>
+    <string name="recent_kill_all_summary">Enable kill-all button in Recent Apps window and select position</string>
+    <string name="recents_disable">Disable</string>
+    <string name="recents_bottom_right">Bottom Right</string>
+    <string name="recents_bottom_left">Bottom Left</string>
+    <string name="recents_top_right">Top Right</string>
+    <string name="recents_top_left">Top Left</string>
+
     <!-- Breathing Notifications -->
     <string name="mms_breath">Breathing SMS</string>
     <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>

@@ -42,6 +42,14 @@
         android:summary="@string/halo_settings_summary" />
 
   <ListPreference
+        android:key="pref_recents_style"
+        android:icon="@drawable/ic_rb_recents"
+        android:title="@string/recent_kill_all"
+        android:entries="@array/recents_style_entries"
+        android:entryValues="@array/recents_style_values"
+        android:defaultValue="0" />
+
+  <ListPreference
         android:key="pref_low_battery_warning_policy"
         android:icon="@drawable/ic_rb_battery_warning"
         android:title="@string/pref_low_battery_warning_policy_title"

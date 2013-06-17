@@ -89,6 +89,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String PREF_RECENTS_STYLE = "pref_recents_style";
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
@@ -116,6 +117,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mKeyboardRotationTimeout;
     private ListPreference mLowBatteryWarning;
+    private ListPreference mRecentStyle;
     private ListPreference mNotificationsBeh;
     private ListPreference mStatusBarIconOpacity;
     private ListPreference mCustomBackground;
@@ -217,6 +219,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
         updateCustomBackgroundSummary();
+
+        mRecentStyle = (ListPreference) findPreference(PREF_RECENTS_STYLE);
+        int RecentStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.RECENTS_STYLE, 0);
+        mRecentStyle.setValue(String.valueOf(RecentStyle));
+        mRecentStyle.setSummary(mRecentStyle.getEntry());
+        mRecentStyle.setOnPreferenceChangeListener(this);
 
         mWallpaperImage = new File(getActivity().getFilesDir() + "/lockwallpaper");
         mWallpaperTemporary = new File(getActivity().getCacheDir() + "/lockwallpaper.tmp");
@@ -384,6 +393,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, lowBatteryWarning);
             mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
+            return true;
+         } else if (preference == mRecentStyle) {
+            int recentstyle = Integer.valueOf((String) Value);
+            int index = mRecentStyle.findIndexOfValue((String) Value);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_STYLE, recentstyle);
+            mRecentStyle.setSummary(mRecentStyle.getEntries()[index]);
             return true;
         } else if (preference == mVolumeKeyCursorControl) {
             String volumeKeyCursorControl = (String) Value;
