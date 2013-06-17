@@ -242,6 +242,7 @@
 
   <CheckBoxPreference
         android:key="pref_home_wake"
+        android:icon="@drawable/ic_rb_home_wake"
         android:title="@string/pref_home_wake_title"
         android:summary="@string/pref_home_wake_summary"
         android:defaultValue="true" />
