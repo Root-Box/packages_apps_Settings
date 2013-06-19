@@ -85,6 +85,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_STATUS_BAR_ICON_OPACITY = "status_bar_icon_opacity";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
+    private static final String KEY_PAC_STATUS = "pac_status";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
@@ -114,6 +115,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mShowWifiName;
     private CheckBoxPreference mSwapVolumeButtons;
     private CheckBoxPreference mShowEnterKey;
+    private CheckBoxPreference mStatusPac;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mKeyboardRotationTimeout;
     private ListPreference mLowBatteryWarning;
@@ -139,6 +141,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.rootbox_settings);
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mStatusPac = (CheckBoxPreference) findPreference(KEY_PAC_STATUS);
+        mStatusPac.setChecked(Settings.System.getInt(resolver,
+                Settings.System.PAC_STATUS, 0) == 1);
 
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
@@ -339,6 +345,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
                     value ? 1 : 0);
+         } else if (preference == mStatusPac) {
+            Settings.System.putInt(getContentResolver(), Settings.System.PAC_STATUS,
+                    mStatusPac.isChecked() ? 1 : 0);
          } else if (preference == mHomeWake) {
             Settings.System.putInt(getContentResolver(), Settings.System.HOME_WAKE_SCREEN,
                     mHomeWake.isChecked() ? 1 : 0);

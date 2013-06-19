@@ -4914,6 +4914,10 @@
     <string name="recents_top_right">Top Right</string>
     <string name="recents_top_left">Top Left</string>
 
+    <!-- PAC Status -->
+    <string name="pac_status_title">Battery PAC</string>
+    <string name="pac_status_summary">Enable or disable per-app color for battery icons.</string>
+
     <!-- Breathing Notifications -->
     <string name="mms_breath">Breathing SMS</string>
     <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>

@@ -64,6 +64,13 @@
         android:summary="@string/power_menu_expanded_desktop_summary"
 	android:defaultValue="false" />
 
+  <CheckBoxPreference
+	android:key="pac_status"
+        android:icon="@drawable/ic_rb_expanded_desktop"
+	android:title="@string/pac_status_title"
+        android:summary="@string/pac_status_summary"
+	android:defaultValue="false" />
+
  </PreferenceCategory>
 
  <PreferenceCategory
