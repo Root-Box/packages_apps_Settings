@@ -4613,10 +4613,6 @@
     <string name="slide_lock_delay_10m">10 minutes</string>
     <string name="slide_lock_delay_30m">30 minutes</string>
 
-    <!-- Expanded Desktop -->
-    <string name="power_menu_expanded_desktop">Expanded desktop</string>
-    <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide status and navigation bar.</string>
-
     <!-- Headset Music -->
     <string name="headset_connect_player_title">Headset</string>
     <string name="headset_connect_player_summary">Launch music app on headset connection</string>

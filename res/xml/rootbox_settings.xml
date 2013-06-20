@@ -58,13 +58,6 @@
         android:defaultValue="3" />
 
   <CheckBoxPreference
-	android:key="power_menu_expanded_desktop"
-        android:icon="@drawable/ic_rb_expanded_desktop"
-	android:title="@string/power_menu_expanded_desktop"
-        android:summary="@string/power_menu_expanded_desktop_summary"
-	android:defaultValue="false" />
-
-  <CheckBoxPreference
 	android:key="pac_status"
         android:icon="@drawable/ic_rb_expanded_desktop"
 	android:title="@string/pac_status_title"
