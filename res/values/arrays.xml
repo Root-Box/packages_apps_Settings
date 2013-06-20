@@ -1391,7 +1391,7 @@
     </string-array>
 
     <string-array name="recents_style_entries">
-        <item>@string/recents_disable</item>
+        <item>@string/recents_disabled</item>
         <item>@string/recents_bottom_right</item>
         <item>@string/recents_bottom_left</item>
         <item>@string/recents_top_right</item>

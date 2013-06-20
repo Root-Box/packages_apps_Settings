@@ -4912,7 +4912,7 @@
     <!-- Recents -->
     <string name="recent_kill_all">Recents Style</string>
     <string name="recent_kill_all_summary">Enable kill-all button in Recent Apps window and select position</string>
-    <string name="recents_disable">Disable</string>
+    <string name="recents_disabled">Disabled</string>
     <string name="recents_bottom_right">Bottom Right</string>
     <string name="recents_bottom_left">Bottom Left</string>
     <string name="recents_top_right">Top Right</string>
