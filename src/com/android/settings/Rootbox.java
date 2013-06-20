@@ -49,6 +49,7 @@ import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.IWindowManager;
 import android.view.Display;
+import android.view.VolumePanel;
 import android.view.Window;
 import android.widget.Toast;
 import java.util.regex.Matcher;
@@ -85,6 +86,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_PAC_STATUS = "pac_status";
+    private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
@@ -114,6 +116,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mSwapVolumeButtons;
     private CheckBoxPreference mShowEnterKey;
     private CheckBoxPreference mStatusPac;
+    private ListPreference mVolumeOverlay;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mKeyboardRotationTimeout;
     private ListPreference mLowBatteryWarning;
@@ -223,6 +226,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
         updateCustomBackgroundSummary();
+
+        mVolumeOverlay = (ListPreference) findPreference(KEY_VOLUME_OVERLAY);
+        mVolumeOverlay.setOnPreferenceChangeListener(this);
+        int volumeOverlay = Settings.System.getInt(getContentResolver(),
+                Settings.System.MODE_VOLUME_OVERLAY, VolumePanel.VOLUME_OVERLAY_EXPANDABLE);
+        mVolumeOverlay.setValue(Integer.toString(volumeOverlay));
+        mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
 
         mRecentStyle = (ListPreference) findPreference(PREF_RECENTS_STYLE);
         int RecentStyle = Settings.System.getInt(getActivity().getContentResolver(),
@@ -390,6 +400,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENTS_STYLE, recentstyle);
             mRecentStyle.setSummary(mRecentStyle.getEntries()[index]);
+            return true;
+         } else if (preference == mVolumeOverlay) {
+            int value = Integer.valueOf((String) Value);
+            int index = mVolumeOverlay.findIndexOfValue((String) Value);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.MODE_VOLUME_OVERLAY, value);
+            mVolumeOverlay.setSummary(mVolumeOverlay.getEntries()[index]);
             return true;
         } else if (preference == mVolumeKeyCursorControl) {
             String volumeKeyCursorControl = (String) Value;
