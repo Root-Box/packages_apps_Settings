@@ -59,7 +59,7 @@
 
   <CheckBoxPreference
 	android:key="pac_status"
-        android:icon="@drawable/ic_rb_expanded_desktop"
+        android:icon="@drawable/ic_rb_battery_pac"
 	android:title="@string/pac_status_title"
         android:summary="@string/pac_status_summary"
 	android:defaultValue="false" />
@@ -224,7 +224,7 @@
 
   <ListPreference
         android:key="volume_overlay"
-        android:icon="@drawable/ic_rb_sound"
+        android:icon="@drawable/ic_rb_volume_panel"
         android:title="@string/volume_overlay_title"
         android:entries="@array/volume_overlay_entries"
         android:entryValues="@array/volume_overlay_values" />
