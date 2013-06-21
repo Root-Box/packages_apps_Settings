@@ -4926,7 +4926,7 @@
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
 
     <!-- Recents -->
-    <string name="recent_kill_all">Recents Style</string>
+    <string name="recent_kill_all">Recents style</string>
     <string name="recent_kill_all_summary">Enable kill-all button in Recent Apps window and select position</string>
     <string name="recents_disabled">Disabled</string>
     <string name="recents_bottom_right">Bottom Right</string>
@@ -4941,7 +4941,7 @@
     <!-- Breathing Notifications -->
     <string name="mms_breath">Breathing SMS</string>
     <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
-    <string name="missed_call_breath">Breathing Missed Call</string>
+    <string name="missed_call_breath">Breathing missed call</string>
     <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect on the statusbar.</string>
 
     <!-- Enter Keyboard -->
@@ -4953,7 +4953,7 @@
     <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
    
     <!-- Lockscreen See Through -->
-    <string name="lockscreen_seethrough">Lockscreen See through</string>
+    <string name="lockscreen_seethrough">Lockscreen see through</string>
     <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
 
     <!-- Status bar notification icon opacity -->
@@ -4962,7 +4962,7 @@
 
     <!-- Notification Behaviour -->
     <string name="notification_behaviour_title">Notification behaviour</string>
-    <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
+    <string name="notification_show_wifi_ssid_title">Show wifi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
 
     <!-- Keyboard Rotation -->
