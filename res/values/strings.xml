@@ -4965,6 +4965,10 @@
     <string name="notification_show_wifi_ssid_title">Show wifi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
 
+     <!-- Control media volume -->
+    <string name="volume_keys_control_ring_stream">Media control</string>
+    <string name="volume_keys_control_ring_stream_summary">Volume keys control media volume rather than ringer</string>
+
     <!-- Keyboard Rotation -->
     <string name="keyboard_rotation_toggle_title">Auto keyboard rotation</string>
     <string name="keyboard_rotation_toggle_summary">Force auto-rotate when keyboard is shown</string>

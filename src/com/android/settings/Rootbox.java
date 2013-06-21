@@ -87,6 +87,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_PAC_STATUS = "pac_status";
     private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
+    private static final String KEY_VOL_RING = "volume_keys_control_ring_stream";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
@@ -116,6 +117,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private CheckBoxPreference mSwapVolumeButtons;
     private CheckBoxPreference mShowEnterKey;
     private CheckBoxPreference mStatusPac;
+    private CheckBoxPreference mVolumeKeysControlRing;
     private ListPreference mVolumeOverlay;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mKeyboardRotationTimeout;
@@ -222,6 +224,10 @@ public class Rootbox extends SettingsPreferenceFragment implements
         mSwapVolumeButtons = (CheckBoxPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
         mSwapVolumeButtons.setChecked(Settings.System.getInt(resolver,
                 Settings.System.SWAP_VOLUME_KEYS, 0) == 1);
+
+        mVolumeKeysControlRing = (CheckBoxPreference) findPreference(KEY_VOL_RING);
+        mVolumeKeysControlRing.setChecked(Settings.System.getInt(resolver,
+                Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 0) != 0);
 
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
@@ -351,6 +357,9 @@ public class Rootbox extends SettingsPreferenceFragment implements
          } else if (preference == mSwapVolumeButtons) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SWAP_VOLUME_KEYS,
                     mSwapVolumeButtons.isChecked() ? 1 : 0);
+         } else if (preference == mVolumeKeysControlRing) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
+                    mVolumeKeysControlRing.isChecked() ? 1 : 0);
          } else if (preference == mFullscreenKeyboard) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
                     mFullscreenKeyboard.isChecked() ? 1 : 0);

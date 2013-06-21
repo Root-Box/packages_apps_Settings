@@ -249,6 +249,13 @@
         android:title="@string/swap_volume_keys_title"
         android:summary="@string/swap_volume_keys_summary" />
 
+  <CheckBoxPreference
+        android:key="volume_keys_control_ring_stream"
+        android:icon="@drawable/ic_rb_sound"
+        android:title="@string/volume_keys_control_ring_stream"
+        android:summary="@string/volume_keys_control_ring_stream_summary"
+        android:defaultValue="false" />
+
  </PreferenceCategory>
 
  <PreferenceCategory
