@@ -4523,6 +4523,7 @@
     <string name="general_ui_header">General UI</string>
     <string name="keyboard_header">Keyboard</string>
     <string name="hardware_keys_header">Hardware Keys</string>
+    <string name="recents_header">Recents</string>
  
     <!-- LockClock CyanogenMod -->
     <string name="lock_clock_title">cLock</string>
@@ -4903,14 +4904,19 @@
     <string name="pref_home_wake_title">Home button</string>
     <string name="pref_home_wake_summary">Pressing the home button will wake your device</string>
 
-    <!-- Recents -->
-    <string name="recent_kill_all">Recents style</string>
+    <!-- Recents Clear -->
+    <string name="recents_kill_all">Kill-All</string>
     <string name="recent_kill_all_summary">Enable kill-all button in Recent Apps window and select position</string>
     <string name="recents_disabled">Disabled</string>
     <string name="recents_bottom_right">Bottom Right</string>
     <string name="recents_bottom_left">Bottom Left</string>
     <string name="recents_top_right">Top Right</string>
     <string name="recents_top_left">Top Left</string>
+
+    <!-- Recents Style -->
+    <string name="recents_style">Style</string>
+    <string name="recents_stock">Stock</string>
+    <string name="recents_rootbox">RootBox</string>
 
     <!-- PAC Status -->
     <string name="pac_status_title">Battery PAC</string>

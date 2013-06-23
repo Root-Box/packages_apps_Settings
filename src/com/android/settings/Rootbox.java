@@ -93,6 +93,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String PREF_RECENTS_STYLE = "pref_recents_style";
+    private static final String PREF_RECENTS_CLEAR = "pref_recents_clear";
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
@@ -123,6 +124,7 @@ public class Rootbox extends SettingsPreferenceFragment implements
     private ListPreference mKeyboardRotationTimeout;
     private ListPreference mLowBatteryWarning;
     private ListPreference mRecentStyle;
+    private ListPreference mRecentClear;
     private ListPreference mNotificationsBeh;
     private ListPreference mStatusBarIconOpacity;
     private ListPreference mCustomBackground;
@@ -239,6 +241,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
                 Settings.System.MODE_VOLUME_OVERLAY, VolumePanel.VOLUME_OVERLAY_EXPANDABLE);
         mVolumeOverlay.setValue(Integer.toString(volumeOverlay));
         mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
+
+        mRecentClear = (ListPreference) findPreference(PREF_RECENTS_CLEAR);
+        int RecentClear = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.RECENTS_CLEAR, 0);
+        mRecentClear.setValue(String.valueOf(RecentClear));
+        mRecentClear.setSummary(mRecentClear.getEntry());
+        mRecentClear.setOnPreferenceChangeListener(this);
 
         mRecentStyle = (ListPreference) findPreference(PREF_RECENTS_STYLE);
         int RecentStyle = Settings.System.getInt(getActivity().getContentResolver(),
@@ -409,6 +418,13 @@ public class Rootbox extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENTS_STYLE, recentstyle);
             mRecentStyle.setSummary(mRecentStyle.getEntries()[index]);
+            return true;
+         } else if (preference == mRecentClear) {
+            int recentclear = Integer.valueOf((String) Value);
+            int index = mRecentClear.findIndexOfValue((String) Value);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_CLEAR, recentclear);
+            mRecentClear.setSummary(mRecentClear.getEntries()[index]);
             return true;
          } else if (preference == mVolumeOverlay) {
             int value = Integer.valueOf((String) Value);

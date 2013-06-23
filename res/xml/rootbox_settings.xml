@@ -42,14 +42,6 @@
         android:summary="@string/halo_settings_summary" />
 
   <ListPreference
-        android:key="pref_recents_style"
-        android:icon="@drawable/ic_rb_recents"
-        android:title="@string/recent_kill_all"
-        android:entries="@array/recents_style_entries"
-        android:entryValues="@array/recents_style_values"
-        android:defaultValue="0" />
-
-  <ListPreference
         android:key="pref_low_battery_warning_policy"
         android:icon="@drawable/ic_rb_battery_warning"
         android:title="@string/pref_low_battery_warning_policy_title"
@@ -63,6 +55,28 @@
 	android:title="@string/pac_status_title"
         android:summary="@string/pac_status_summary"
 	android:defaultValue="false" />
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="rb_recents"
+        android:title="@string/recents_header">
+
+  <ListPreference
+        android:key="pref_recents_clear"
+        android:icon="@drawable/ic_rb_recents"
+        android:title="@string/recents_kill_all"
+        android:entries="@array/recents_clear_entries"
+        android:entryValues="@array/recents_clear_values"
+        android:defaultValue="0" />
+
+  <ListPreference
+        android:key="pref_recents_style"
+        android:icon="@drawable/ic_rb_recents"
+        android:title="@string/recents_style"
+        android:entries="@array/recents_style_entries"
+        android:entryValues="@array/recents_style_values"
+        android:defaultValue="0" />
 
  </PreferenceCategory>
 

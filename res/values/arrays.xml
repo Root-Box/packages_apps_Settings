@@ -1407,7 +1407,7 @@
         <item>0</item>
     </string-array>
 
-    <string-array name="recents_style_entries">
+    <string-array name="recents_clear_entries">
         <item>@string/recents_disabled</item>
         <item>@string/recents_bottom_right</item>
         <item>@string/recents_bottom_left</item>
@@ -1415,13 +1415,24 @@
         <item>@string/recents_top_left</item>
     </string-array>
 
-    <string-array name="recents_style_values" translatable="false">
+    <string-array name="recents_clear_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
     </string-array>
+
+    <string-array name="recents_style_entries">
+        <item>@string/recents_stock</item>
+        <item>@string/recents_rootbox</item>
+    </string-array>
+
+    <string-array name="recents_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
 
     <!-- Volume Overlay options. -->
     <string-array name="volume_overlay_entries">
