@@ -72,7 +72,7 @@
 
   <ListPreference
         android:key="pref_recents_style"
-        android:icon="@drawable/ic_rb_recents"
+        android:icon="@drawable/ic_rb_recent_style"
         android:title="@string/recents_style"
         android:entries="@array/recents_style_entries"
         android:entryValues="@array/recents_style_values"
