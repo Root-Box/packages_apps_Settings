@@ -141,12 +141,9 @@ public class InstalledAppDetails extends Fragment
     private Button mForceStopButton;
     private Button mClearDataButton;
     private Button mMoveAppButton;
-<<<<<<< HEAD
     private CompoundButton mNotificationSwitch, mHaloState;
-=======
     private CompoundButton mNotificationSwitch;
     private CompoundButton mPrivacyGuardSwitch;
->>>>>>> 855a3fc... settings: Privacy Guard support
 
     private PackageMoveObserver mPackageMoveObserver;
 
@@ -1327,18 +1324,15 @@ public class InstalledAppDetails extends Fragment
         }
     }
 
-<<<<<<< HEAD
     private void setHaloState(boolean state) {
         try {
             mNotificationManager.setHaloStatus(mAppEntry.info.packageName, state);
         } catch (android.os.RemoteException ex) {
             mHaloState.setChecked(!state); // revert
         }
-=======
     private void setPrivacyGuard(boolean enabled) {
         String packageName = mAppEntry.info.packageName;
         mPm.setPrivacyGuardSetting(packageName, enabled);
->>>>>>> 855a3fc... settings: Privacy Guard support
     }
 
     private int getPremiumSmsPermission(String packageName) {
@@ -1444,17 +1438,14 @@ public class InstalledAppDetails extends Fragment
             } else {
                 setNotificationsEnabled(true);
             }
-<<<<<<< HEAD
         } else if (buttonView == mHaloState) {
             setHaloState(isChecked);
-=======
         } else if (buttonView == mPrivacyGuardSwitch) {
             if (isChecked) {
                 showDialogInner(DLG_PRIVACY_GUARD, 0);
             } else {
                 setPrivacyGuard(false);
             }
->>>>>>> 855a3fc... settings: Privacy Guard support
         }
     }
 }
