@@ -62,14 +62,13 @@
                 android:layout_marginTop="4dip"
                 android:text="@string/app_notifications_switch_label" />
 
-<<<<<<< HEAD
             <!-- HALO notification state for this package -->
             <CheckBox android:id="@+id/halo_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginTop="4dip" />
-=======
+
             <!-- Enable Privacy Guard for an application -->
             <CheckBox android:id="@+id/privacy_guard_switch"
                 android:layout_width="wrap_content"
@@ -77,7 +76,6 @@
                 android:layout_gravity="start"
                 android:layout_marginTop="4dip"
                 android:text="@string/privacy_guard_switch_label" />
->>>>>>> 855a3fc... settings: Privacy Guard support
 
         </LinearLayout>
 
