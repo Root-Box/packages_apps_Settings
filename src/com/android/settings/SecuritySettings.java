@@ -94,7 +94,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String HOME_UNLOCK_PREF = "home_unlock";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
-    private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
+    //private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
     private static final String KEY_PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
 
@@ -129,7 +129,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mMenuUnlock;
     private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
-    private ListPreference mSmsSecurityCheck;
+    //private ListPreference mSmsSecurityCheck;
     private CheckBoxPreference mPrivacyGuardDefault;
 
     @Override
@@ -413,8 +413,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
             if (pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
                 mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
                 mSmsSecurityCheck.setOnPreferenceChangeListener(this);
-                int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
-                updateSmsSecuritySummary(smsSecurityCheck);
+                //int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
+                //updateSmsSecuritySummary(smsSecurityCheck);
             } else {
                 PreferenceGroup appCategory = (PreferenceGroup)
                         root.findPreference(KEY_APP_SECURITY_CATEGORY);
