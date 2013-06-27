@@ -261,7 +261,7 @@
 
   <CheckBoxPreference
         android:key="volume_keys_control_ring_stream"
-        android:icon="@drawable/ic_rb_sound"
+        android:icon="@drawable/ic_rb_volume_media"
         android:title="@string/volume_keys_control_ring_stream"
         android:summary="@string/volume_keys_control_ring_stream_summary"
         android:defaultValue="false" />
