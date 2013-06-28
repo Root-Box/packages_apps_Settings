@@ -56,6 +56,7 @@ public class Pie extends SettingsPreferenceFragment
     private static final String PIE_LASTAPP = "pie_lastapp";
     private static final String PIE_KILLTASK = "pie_killtask";
     private static final String PIE_APPWINDOW = "pie_appwindow";
+    private static final String PIE_POWER = "pie_power";
     private static final String PIE_MENU = "pie_menu";
     private static final String PIE_SEARCH = "pie_search";
     private static final String PIE_RESTART = "pie_restart_launcher";
@@ -72,6 +73,7 @@ public class Pie extends SettingsPreferenceFragment
     private CheckBoxPreference mPieLastApp;
     private CheckBoxPreference mPieKillTask;
     private CheckBoxPreference mPieAppWindow;
+    private CheckBoxPreference mPiePower;
     private CheckBoxPreference mPieMenu;
     private CheckBoxPreference mPieSearch;
     private CheckBoxPreference mPieStick;
@@ -167,6 +169,13 @@ public class Pie extends SettingsPreferenceFragment
         mPieAppWindow.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_APP_WINDOW, 1) == 1);
 
+        mPiePower = (CheckBoxPreference) prefSet.findPreference(PIE_POWER);
+        mPiePower.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_POWER, 0) == 1);
+
+
+
+
         mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
         mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_MENU, 1) == 1);
@@ -206,6 +215,9 @@ public class Pie extends SettingsPreferenceFragment
         } else if (preference == mPieAppWindow) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_APP_WINDOW, mPieAppWindow.isChecked() ? 1 : 0);
+        } else if (preference == mPiePower) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_POWER, mPiePower.isChecked() ? 1 : 0);
         } else if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);

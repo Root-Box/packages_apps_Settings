@@ -127,6 +127,10 @@
             android:title="@string/pie_appwindow_title"
             android:summary="@string/pie_appwindow_summary" />
 
+        <CheckBoxPreference
+            android:key="pie_power"
+            android:title="@string/pie_power_title"
+            android:summary="@string/pie_power_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>
