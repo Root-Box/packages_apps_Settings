@@ -1,0 +1,12 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+   <TextView android:id="@+id/help"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="5pt"/>
+   <!--ImageView android:id="@+id/pa_pie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/paranoid_pie" /-->
+</ScrollView>

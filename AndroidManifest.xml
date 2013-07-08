@@ -1566,6 +1566,13 @@
 
         <!-- RootBox -->
         <activity android:name="Rootbox" />
+        <activity android:name="PieHeader" />
+        <activity android:name=".slim.PieButtonSecondLayerSettings" />
+        <activity android:name=".slim.PieButtonSettings" />
+        <activity android:name=".slim.PieButtonStyleSettings" />
+        <activity android:name=".slim.PieControl" />
+        <activity android:name=".slim.PieStyleSettings" />
+        <activity android:name=".slim.PieTriggerSettings" />
         <activity android:name=".rb.About" />
         <activity android:name=".paranoid.Pie" />
         <activity android:name=".paranoid.Halo" />
