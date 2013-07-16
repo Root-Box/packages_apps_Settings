@@ -52,6 +52,7 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_STATE = "halo_state";
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
+    private static final String KEY_HALO_SIZE = "halo_size";
     private static final String KEY_HALO_PAUSE = "halo_pause";
     private static final String PREF_HALO_COLORS = "halo_colors";
     private static final String PREF_HALO_CIRCLE_COLOR = "halo_circle_color";
@@ -61,6 +62,7 @@ public class Halo extends SettingsPreferenceFragment
 
 
     private ListPreference mHaloState;
+    private ListPreference mHaloSize;
     private CheckBoxPreference mHaloEnabled;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
@@ -121,6 +123,16 @@ public class Halo extends SettingsPreferenceFragment
 
         mHaloBubbleTextColor = (ColorPickerPreference) findPreference(PREF_HALO_BUBBLE_TEXT_COLOR);
         mHaloBubbleTextColor.setOnPreferenceChangeListener(this);
+
+        mHaloSize = (ListPreference) findPreference(KEY_HALO_SIZE);
+        try {
+            float haloSize = Settings.System.getFloat(mContext.getContentResolver(),
+                    Settings.System.HALO_SIZE, 1.0f);
+            mHaloSize.setValue(String.valueOf(haloSize));  
+        } catch(Exception ex) {
+            // So what
+        }
+        mHaloSize.setOnPreferenceChangeListener(this);
         }
 
     private boolean isHaloPolicyBlack() {
@@ -167,6 +179,11 @@ public class Halo extends SettingsPreferenceFragment
             } catch (android.os.RemoteException ex) {
                 // System dead
             }          
+            return true;
+        } else if (preference == mHaloSize) {
+            float haloSize = Float.valueOf((String) Value);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.HALO_SIZE, haloSize);
             return true;
         } else if (preference == mHaloCircleColor) {
             String hex = ColorPickerPreference.convertToARGB(
