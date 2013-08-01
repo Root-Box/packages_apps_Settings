@@ -94,6 +94,7 @@
         <attr name="githubLink" format="string" />
         <attr name="googleLink" format="string" />
         <attr name="facebookLink" format="string" />
+        <attr name="emailDev" format="string" />
     </declare-styleable>
 
     <declare-styleable name="ImageListPreference">
