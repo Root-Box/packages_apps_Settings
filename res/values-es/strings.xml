@@ -1825,12 +1825,16 @@
     <string name="global_locale_change_title" msgid="5956281361384221451">"Cambiar idioma"</string>
     <string name="global_font_change_title" msgid="1887126466191012035">"Cambiar tamaño de fuente"</string>
     <string name="app_notifications_switch_label" msgid="9124072219553687583">"Mostrar notificaciones"</string>
+    <string name="app_halo_label_black">Agregar a lista negra de HALO</string>
+    <string name="app_halo_label_white">Agregar a lista blanca de HALO</string>
     <string name="help_label" msgid="1107174367904110532">"Ayuda"</string>
     <string name="user_account_title" msgid="1127193807312271167">"Cuenta para contenido"</string>
     <string name="user_picture_title" msgid="7297782792000291692">"ID de foto"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Difusiones móviles"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Selecciona los tipos de alertas de emergencia que quieres ver."</string>
-    
+    <string name="device_hostname">Nombre del dispositivo</string>
+    <string name="adb_notify">Notificar depuración USB</string>
+    <string name="adb_notify_summary">Mostrar una notificación cuando el modo de depuración USB esté conectado</string>    
     <!-- RootBox Settings -->
     <string name="general_ui_header">Interface General</string>
     <string name="keyboard_header">Teclado</string>
@@ -1905,6 +1909,13 @@
     <string name="pie_lastapp_summary">Habilitar botón de última aplicación en los controles circulares</string>
     <string name="pie_center_title">Alineación central</string>
     <string name="pie_center_summary">Alinear los controles en el centro de la pantalla, sin importar la posición de activación</string>
+    <string name="pie_angle_title">Angulo de los controles</string>
+    <string name="pie_angle_summary">Ajustar el angulo de los controles</string>
+    <string name="pie_angle_none">Desactivado</string>
+    <string name="pie_angle_small">Pequeño</string>
+    <string name="pie_angle_big">Normal (defecto)</string>
+    <string name="pie_angle_huge">Grande</string>
+    <string name="pie_angle_super">Enorme</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Seleccionar color</string>
     <string name="press_color_to_apply">Seleccione el color a aplicar</string>
@@ -2141,11 +2152,11 @@
     <string name="hybrid_settings">Configuraciones Híbridas</string>
     <string name="permissions_settings_title">Permisos</string>
     <!-- anonymous statistics. -->
-    <string name="anonymous_statistics_title">Estadísticas AOKP</string>
-    <string name="anonymous_statistics_summary">Ayudar a mejorar AOKP permitiendo estadísticas anónimas</string>
+    <string name="anonymous_statistics_title">Estadísticas RootBox</string>
+    <string name="anonymous_statistics_summary">Ayudar a mejorar RootBox permitiendo estadísticas anónimas</string>
     <string name="anonymous_statistics_warning_title">Acerca de</string>
-    <string name="anonymous_statistics_warning">Permitiendo las estadisticas, AOKP enviará datos no personales a los
-        desarrolladores de AOKP y así realizar un seguimiento de instalaciones únicas en cada dispositivo. La información enviada incluye un identificador
+    <string name="anonymous_statistics_warning">Permitiendo las estadisticas, RootBox enviará datos no personales a los
+        desarrolladores de RootBox y así realizar un seguimiento de instalaciones únicas en cada dispositivo. La información enviada incluye un identificador
         único, que no compromete su privacidad ni datos de carácter personal. Los datos son enviados en cada arranque.\n\nPara ver un ejemplo de los datos que
         se envían, pulse sobre la vista previa de datos.</string>
     <string name="enable_reporting_title">Habilitar informes</string>
@@ -2153,7 +2164,7 @@
     <string name="preview_data_summary">%s</string>
     <string name="view_stats_title">Ver estadísticas</string>
     <string name="anonymous_learn_more">Más información</string>
-    <string name="anonymous_notification_desc">Habilitar o deshabilitar las estadísticas AOKP</string>
+    <string name="anonymous_notification_desc">Habilitar o deshabilitar las estadísticas RootBox</string>
     <string name="preview_id_title">ID único</string>
     <string name="preview_device_title">Dispositivo</string>
     <string name="preview_version_title">Versión</string>
@@ -2202,7 +2213,7 @@
     <string name="about_rootbox">Sobre RootBox</string>
     <string name="about_rootbox_summary">@null</string>
     <string name="app_name">RootBox</string>
-    <string name="rootbox_site_title">sitio web RootBox</string>
+    <string name="rootbox_site_title">Sitio web RootBox</string>
     <string name="rootbox_site_summary">Visite el sitio web RootBox para las últimas noticias acerca de la ROM.</string>
     <string name="title_about">Sobre RootBox</string>
     <string name="devs">Desarrollador principal</string>
@@ -2241,6 +2252,40 @@
     <string name="auto_brightness_menu_edit_lux">Editar</string>
     <string name="auto_brightness_menu_split">Dividir</string>
     <string name="auto_brightness_menu_remove">Eliminar</string>
+    <string name="auto_brightness_preview">Previsualizar</string>
+    <string name="auto_brightness_preview_dialog_title">Curva de brillo</string>
+    <string name="auto_brightness_help_dialog_title">Ayuda</string>
+    <string name="auto_brightness_help_text"><b>¿Cómo se calcula el nivel de brillo?</b>
+\n\n
+La curva de brillo es calculada mediante el uso de una <i>interpolación segmentaria cúbica</i>
+bajo un número dado de <i>puntos de control</i>. No se trata de un cálculo lineal, donde
+el brillo de pantalla permanece constante para un rango de luminosidad ambiental determinado.
+Con este sistema, pequeños cambios en la luminosidad ambiental no producirán un gran salto en el
+brillo de la pantalla, pero será complicado poder predecir las consecuencias de cambiar
+algún punto de control.\n
+Para ayudar en esto, se podrá mostrar una previsualización de la curva resultante. Ten en cuenta
+que la previsualización mostrará la curva en escala <i>logarítmica</i> por lo que no todos los
+puntos pueden mostrarse iguales. Si utilizásemos una escala lineal, sería difícil distinguir
+las tendencias de los puntos de control situados en el rango de mínima luminosidad ambiental.
+\n\n
+<b>¿Cómo editar la curva de brillo?</b>
+\n\n
+Cada línea en lista de valores se corresponde con un <i>punto de control</i> de la curva de brillo.
+Para editar el nivel de brillo de ese punto, puedes usar el control deslizante presente en cada
+línea. El brillo de la pantalla cambiará en función del control deslizante para mostrar una
+vista previa del nivel de luminosidad.\n
+Tocando de forma prolongada cada línea se mostrarán opciones adicionales. Seleccionando
+\u00ABEditar\u00BB, podrás editar el nivel de luminosidad ambiental del punto de control así
+como introducir manualmente el brillo de pantalla deseado. Seleccionando \u00ABDividir\u00BB,
+podrás crear una nueva línea con el fin de insertar puntos de control adicionales.
+\u00ABEliminar\u00BB borrará la línea seleccionada.
+    </string>
+    <string name="auto_brightness_sensitivity_title">Sensibilidad</string>
+    <string name="auto_brightness_sensitivity_verylow">Muy baja</string>
+    <string name="auto_brightness_sensitivity_low">Baja</string>
+    <string name="auto_brightness_sensitivity_medium">Media</string>
+    <string name="auto_brightness_sensitivity_high">Alta</string>
+    <string name="auto_brightness_sensitivity_veryhigh">Muy alta</string>
     <string name="screensaver_settings_summary_wireless">Durante la carga inalámbrica</string>	
     <string name="usb_mass_storage_title">Almacenamiento masivo</string>
     <string name="usb_mass_storage_summary">Activar el almacenamiento masivo USB</string>	
@@ -2311,4 +2356,20 @@
     <string name="profile_disable_screen_lock_summary">Desactivar seguridad de bloqueo de pantalla mientras este perfil está activo</string>
     <string name="vibrator_type_ringer">Llamadas</string>
     <string name="vibrator_type_notification">Notificaciones</string>
+    <!-- Enter Keyboard -->
+    <string name="show_enter_key_title">Mostrar tecla enter</string>
+    <string name="show_enter_key_summary">Forzar teclado mostrar tecla enter en lugar de tecla emoticon</string>
+    <!-- HALO -->
+    <string name="halo_settings_title">HALO Settings</string>
+    <string name="halo_settings_summary">Configure halo options</string>
+    <string name="halo_hide_title">Ocultar HALO tras la actividad</string>
+    <string name="halo_hide_summary">HALO aparecerá para tareas entrantes y se desplazará fuera de vista después de un rato</string>
+    <string name="halo_reversed_title">Revertir gestos de HALO</string>
+    <string name="halo_reversed_summary">Aplica para cambio de tareas y los gestos de movimiento</string>
+    <string name="halo_state_title">Política de HALO</string>
+    <string name="halo_state_summary">Activa la lista negra/blanca de notificaciones</string>
+    <string name="halo_state_black">Lista negra</string>
+    <string name="halo_state_white">Lista blanca</string>
+    <string name="halo_pause_title">Pausar aplicación activa</string>
+    <string name="halo_pause_summary">Al iniciar una aplicación con HALO, la aplicación actual será pausada (activado por defecto en los dispositivos con poca memoria)</string>
 </resources>
